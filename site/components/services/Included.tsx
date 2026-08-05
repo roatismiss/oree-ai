@@ -1,0 +1,30 @@
+import { Reveal } from "../Reveal";
+import { included } from "@/content/services";
+
+export function Included() {
+  return (
+    <section className="px-[10px] pt-[10px]">
+      <div className="overflow-hidden rounded-[20px] bg-craie px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[80px]">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-end">
+          <Reveal>
+            <h2 className="h-display text-ink">{included.title}</h2>
+          </Reveal>
+          <Reveal delay={0.06}>
+            <p className="text-[15px] leading-[22px] text-ecorce">{included.intro}</p>
+          </Reveal>
+        </div>
+
+        <ol className="mt-14">
+          {included.items.map((item, i) => (
+            <Reveal key={item.title} delay={0.05 * i}>
+              <li className="grid gap-4 border-t border-hairline py-7 last:border-b lg:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)] lg:gap-10">
+                <h3 className="h-row text-ink">{item.title}</h3>
+                <p className="text-[14px] leading-[22px] text-ecorce">{item.body}</p>
+              </li>
+            </Reveal>
+          ))}
+        </ol>
+      </div>
+    </section>
+  );
+}

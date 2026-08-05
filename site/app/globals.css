@@ -1,0 +1,186 @@
+@import "tailwindcss";
+
+/* Orée Conseil official palette (client brief, July 30 2026). Token names are
+   kept from the template build so every component inherits the change; only
+   the values moved. Distribution rule: ivories ~70% of the page, inks ~20%,
+   khakis ~8%, terracotta as a rare accent (max 2 areas per page). */
+@theme {
+  --color-ink: #3e3a36; /* Basalte: headings, body "black", dark panels */
+  --color-ink-deep: #3e3a36; /* dark panels share Basalte */
+  --color-ink-dark: #3e3a36;
+  --color-grey: #5f5b54; /* Taupe: supporting text, AA on ivory */
+  --color-ecorce: #6b675f; /* Écorce: secondary running text */
+  --color-galet: #b4b0a6; /* Galet: captions, page numbers */
+
+  --color-light: #ffffff; /* Blanc pur: cards and content areas */
+  --color-light-alt: #f5f1e9; /* Ivoire */
+  --color-cream: #f5f1e9; /* Ivoire: primary page background */
+  --color-craie: #e9e7e1; /* Craie: secondary bands and blocks */
+  --color-sand: #e9e2d6; /* Lin: callouts, second-tier surface */
+  --color-hairline: #d8d2c4; /* Grès: rules and borders */
+
+  /* Khaki family: the working accent. */
+  --color-yellow: #b5bc7c; /* Tilleul: accent on dark panels, tags */
+  --color-olive-deep: #4a5323; /* Kaki profond: accent text and links on ivory */
+  --color-amber-ink: #7e8551; /* Kaki Tokyo: eyebrows, labels */
+  --color-mousse: #edf0d9; /* Mousse pâle: khaki callout backgrounds */
+
+  /* Terracotta: rare accent, max 2 areas per page. */
+  --color-amber: #a65d3f; /* Argile: milestones, occasional accent */
+  --color-sienne: #8a4c31; /* Sienne: key figures */
+  --color-terre: #733e28; /* Terre brûlée: strongest accent, sparing */
+  --color-poudre: #f3e3d9; /* Poudre: terracotta callout backgrounds */
+
+  --font-display: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-body: var(--font-jost), "Jost", system-ui, sans-serif;
+  --font-mono: var(--font-dm-mono), "DM Mono", Consolas, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Splash already played this session: suppress it before hydration. */
+html[data-splash-seen] [data-splash] {
+  display: none;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Display headings — the template's uppercase display treatment, kept as the
+   committed design, re-set in Cormorant Garamond at weight 600 (a garalde is
+   wider than the previous condensed face, so scales come down a step). */
+.h-display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: clamp(1.875rem, 4.2vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+/* Display heading sized for a narrower column, so long lines stay on one line
+   instead of overflowing the container. */
+.h-display-tight {
+  font-family: var(--font-display);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: clamp(1.75rem, 3.8vw, 3.25rem);
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.h-band {
+  font-family: var(--font-display);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: clamp(1.5rem, 2.8vw, 2.5rem);
+  line-height: 1.12;
+  letter-spacing: 0;
+}
+
+.h-stat {
+  font-family: var(--font-display);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: clamp(1.75rem, 2.8vw, 2.75rem);
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.h-row {
+  font-family: var(--font-display);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+  line-height: 1.2;
+}
+
+/* Named `eyebrow`, not `overline` — Tailwind ships an `overline`
+   text-decoration utility that would win and draw a rule above the text.
+   DM Mono, tracked caps: the Orée kicker system. */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+/* Quotes read in the practitioner's own voice: italic serif, sentence case. */
+.h-quote {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-style: italic;
+  font-size: 19px;
+  line-height: 1.35;
+}
+
+.h-wordmark {
+  font-family: var(--font-display);
+  font-weight: 500;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-size: clamp(1.75rem, 6vw, 4.5rem);
+  line-height: 0.95;
+  letter-spacing: 0.04em;
+}
+
+.btn-label {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* The refrain — the brand's verbal signature, always italic serif. */
+.refrain {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+}
+
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+.marquee-left { animation: marquee-left 42s linear infinite; }
+.marquee-right { animation: marquee-right 42s linear infinite; }
+.marquee-slow { animation-duration: 55s; }
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none !important; }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

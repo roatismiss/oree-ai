@@ -1,0 +1,9 @@
+{
+  "name": "oree-ai",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Orée website and the live AI demonstrations that run on it",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.70.0"
+  }
+}
