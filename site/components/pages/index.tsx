@@ -16,6 +16,7 @@ import { Hero } from "@/components/Hero";
 import { MethodGlance } from "@/components/MethodGlance";
 import { Stats } from "@/components/Stats";
 import { CostOfInaction } from "@/components/CostOfInaction";
+import { HomeBio } from "@/components/HomeBio";
 import { WhyFirm } from "@/components/WhyFirm";
 import { PracticeAreas } from "@/components/PracticeAreas";
 import { Team } from "@/components/Team";
@@ -60,6 +61,9 @@ export function HomePage({ locale }: P) {
           <Stats locale={locale} />
         </div>
         <CostOfInaction locale={locale} />
+        <div id="bio">
+          <HomeBio locale={locale} />
+        </div>
         <WhyFirm locale={locale} />
         <div id="services">
           <PracticeAreas locale={locale} />
