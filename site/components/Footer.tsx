@@ -24,7 +24,7 @@ export function Footer({ locale }: { locale: Locale }) {
             the column beside it, in both languages. So it gets more room and a
             step down in size, and `min-w-0` lets the flex children shrink at
             all (their default `min-width:auto` is what let the text escape). */}
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,0.85fr)_minmax(0,1.25fr)]">
+        <div className="grid gap-12 xl:grid-cols-[minmax(0,0.85fr)_minmax(0,0.8fr)_minmax(0,1.4fr)]">
           {footer.columns.map((col, i) => {
             const right = i === footer.columns.length - 1;
             return (
@@ -34,7 +34,7 @@ export function Footer({ locale }: { locale: Locale }) {
                     mid-address. Below sm the label sits above its list. */}
                 <div
                   className={`flex min-w-0 flex-col gap-2 sm:flex-row sm:gap-6 ${
-                    right ? "lg:flex-row-reverse lg:text-right" : ""
+                    right ? "xl:flex-row-reverse xl:text-right" : ""
                   }`}
                 >
                   <p className="eyebrow mt-1 shrink-0 text-olive-deep">{col.label}</p>

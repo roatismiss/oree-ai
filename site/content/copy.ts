@@ -59,10 +59,52 @@ export type Dictionary = typeof en;
 
 export const copy: Record<Locale, Dictionary> = { en, fr };
 
-/** Prefix a root-relative path for the given locale. French has no prefix. */
+/**
+ * Top-level URL segment per locale.
+ *
+ * The client asked for the same structure as oree-conseil.ca, so the French
+ * addresses use her own words: methode, offre, risques. English keeps the
+ * labels her old site used on its English side (Method, Offering).
+ *
+ * Content files address pages by the canonical key on the left. Nothing in the
+ * copy has to know about the localized segment, and a rename here moves every
+ * link on the site at once.
+ */
+const SEGMENTS: Record<string, Record<Locale, string>> = {
+  approach: { fr: "methode", en: "method" },
+  about: { fr: "a-propos", en: "about" },
+  why: { fr: "pourquoi-oree", en: "why-oree" },
+  services: { fr: "offre", en: "offering" },
+  deliverables: { fr: "livrables", en: "deliverables" },
+  sectors: { fr: "secteurs", en: "sectors" },
+  insights: { fr: "publications", en: "insights" },
+  risks: { fr: "risques", en: "risks" },
+  contact: { fr: "contact", en: "contact" },
+};
+
+function split(path: string) {
+  const hash = path.includes("#") ? path.slice(path.indexOf("#")) : "";
+  const bare = hash ? path.slice(0, path.indexOf("#")) : path;
+  const [, head = "", ...rest] = bare.split("/");
+  return { head, rest, hash };
+}
+
+/** Canonical path in, localized URL out. French sits at the root, English under /en. */
 export function localePath(locale: Locale, path: string) {
-  if (locale === "fr") return path;
-  return path === "/" ? "/en" : `/en${path}`;
+  const { head, rest, hash } = split(path);
+  const translated = SEGMENTS[head]?.[locale] ?? head;
+  const segments = [locale === "en" ? "en" : "", translated, ...rest].filter(Boolean);
+  return `/${segments.join("/")}${hash}`;
+}
+
+/** Localized URL in, canonical path out. The inverse of `localePath`. */
+export function canonicalPath(locale: Locale, pathname: string) {
+  const stripped =
+    locale === "en" ? pathname.replace(/^\/en(?=\/|$)/, "") || "/" : pathname;
+  const { head, rest, hash } = split(stripped);
+  const key = Object.keys(SEGMENTS).find((k) => SEGMENTS[k][locale] === head);
+  const segments = [key ?? head, ...rest].filter(Boolean);
+  return `/${segments.join("/")}${hash}`;
 }
 
 /** The same page in the other language, for the nav toggle. */

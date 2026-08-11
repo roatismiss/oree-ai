@@ -4,15 +4,89 @@
  * Source of truth: the Orée Conseil web content brief (July 30, 2026).
  */
 
+/* The oree-conseil.ca menu, as it was: Method, About, Why Orée, Offering.
+   Home is carried by the logo and Contact by the button, as on her site.
+   Sectors and Insights, which she did not have, stay in the footer. */
 export const nav = {
   links: [
-    { label: "Approach", href: "/approach" },
-    { label: "Services", href: "/services" },
-    { label: "Sectors", href: "/sectors" },
-    { label: "Insights", href: "/insights" },
+    { label: "Method", href: "/approach" },
+    { label: "About", href: "/about" },
+    { label: "Why Orée", href: "/why" },
+    { label: "Offering", href: "/services" },
   ],
   more: "Demos",
-  call: "Book a call",
+  call: "Book the Diagnostic",
+};
+
+/**
+ * Page headers carried over from oree-conseil.ca. The client asked for the
+ * same structure as her old site, so these are her own headings.
+ */
+export const aboutHero = {
+  eyebrow: "The founder",
+  titleTop: "About —",
+  titleBottom: "Why Aminata",
+};
+
+export const whyHero = {
+  eyebrow: "The context",
+  titleTop: "Why now —",
+  titleBottom: "The Quebec context",
+  seeHistory: "See examples from history",
+};
+
+/* The oree-conseil.ca deliverables page in its original shape: grouped by day,
+   with the O·R·É·E letters and the tools named as tags, then what continues
+   beyond the three days. */
+export const deliverablesPage = {
+  eyebrow: "What you keep",
+  titleTop: "Deliverables of the",
+  titleBottom: "Orée Diagnostic",
+  intro: "Concrete deliverables, not hollow reports.",
+  days: [
+    {
+      day: "Day 1",
+      letters: "O·R",
+      title: "Observe · Uncover",
+      body: "Field interviews and mapping of real work flows.",
+      tools: ["Structured interview guide", "The Orée grid"],
+      note: "Three interviewee profiles, calibrated questions with intent and signals to watch for · analysis across five dimensions — cognitive, process, cultural, technical, governance.",
+    },
+    {
+      day: "Day 2",
+      letters: "É",
+      title: "Evaluate",
+      body: "Analysis of the friction uncovered and prioritization using the Orée grid.",
+      tools: ["Prioritization matrix"],
+      note: "Effort / value / risk prioritization. Each lead is scored to separate quick wins from deeper projects.",
+    },
+    {
+      day: "Day 3",
+      letters: "E",
+      title: "Engage",
+      body: "Executive debrief: findings, priorities, action recommendations.",
+      tools: ["Debrief report"],
+      note: "A picture of the findings, three argued action priorities, a plan with timeline — delivered and editable.",
+    },
+  ],
+  ongoingLabel: "Ongoing — beyond the three days",
+  ongoing: [
+    {
+      title: "Diagnostic map",
+      body: "A visual organizational summary, understandable at a glance by leadership.",
+    },
+    {
+      title: "Progress tracker",
+      body: "Custom indicators to measure progress over time, without depending on the consultant.",
+    },
+    {
+      title: "Guided implementation",
+      body: "Selection of AI tools suited to the needs identified, with direct support carrying out the work — depending on what the client wants to delegate or keep in-house.",
+    },
+  ],
+  closing: "Always time-bounded, never meant to settle in indefinitely.",
+  cta: "Book the Orée Diagnostic",
+  link: "See the detailed deliverables",
 };
 
 /** Page titles and descriptions, one entry per route. */
@@ -26,6 +100,21 @@ export const meta = {
     title: "The approach · Orée",
     description:
       "The O·R·É·E method: observe, uncover, evaluate, engage. Three days inside your practice, ending in a costed plan you approve line by line.",
+  },
+  about: {
+    title: "About · Orée Conseil",
+    description:
+      "Twenty-seven years inside complex organizations. Aminata Diabaté's background, the frameworks she has applied, and why the practice is called Orée.",
+  },
+  why: {
+    title: "Why Orée · The Quebec context",
+    description:
+      "The ISQ and CPQ figures on AI adoption in Quebec, and what inaction costs once the gap starts widening.",
+  },
+  deliverables: {
+    title: "Deliverables of the Orée Diagnostic",
+    description:
+      "Interview guide, the Orée grid and its five dimensions, prioritization matrix, debrief report, diagnostic map and progress tracker. Concrete deliverables, not hollow reports.",
   },
   services: {
     title: "Services · Orée",
@@ -145,8 +234,8 @@ export const stats = {
 
 export const why = {
   eyebrow: "Why Orée",
-  titleTop: "What sets this",
-  titleBottom: "Practice apart",
+  titleTop: "Why now —",
+  titleBottom: "The Quebec context",
   paragraphs: [
     "Orée is an independent AI consulting practice for Quebec SMEs and regulated professional practices. The work starts inside your office, with the way work is actually done, not with a product demonstration.",
     "Every mandate follows one method: observe the real work, uncover the frictions that slow it down, evaluate which ones actually hold back performance, and engage a plan you approve line by line.",
@@ -158,13 +247,14 @@ export const why = {
     "Data hosted in Canada",
     "A human signs every step",
   ],
-  cta: "Book a diagnostic",
+  cta: "See the Quebec context",
 };
 
 export const services = {
-  eyebrow: "The Orée offer",
-  titleTop: "A focused offer,",
-  titleBottom: "One method",
+  eyebrow: "The offering",
+  titleTop: "What I do,",
+  titleBottom: "Who for",
+  cta: "See the full offering",
   leftLabel: "What I do",
   rightLabel: "Who I do it for",
   /* Verbatim from oree-conseil.ca's "Who it's for". "Facts, not impressions"
@@ -211,7 +301,7 @@ export const practice = {
     { org: "Banque Nationale", sector: "Financial services" },
     { org: "Université de Montréal", sector: "Public / para-public sector" },
   ],
-  cta: "Read the approach",
+  cta: "About Aminata",
   // Marquee rows: what the practice covers, not a staff roster.
   rowOne: [
     { title: "Orée Diagnostic", note: "Three days, six to eight interviews, one honest picture" },
@@ -441,18 +531,19 @@ export const footer = {
     {
       label: "Practice",
       links: [
-        { label: "The approach", href: "/approach" },
-        { label: "Services", href: "/services" },
-        { label: "About Aminata", href: "/approach#bio" },
-        { label: "The cost of inaction", href: "/risks" },
+        { label: "The method", href: "/approach" },
+        { label: "The deliverables", href: "/deliverables" },
+        { label: "The offering", href: "/services" },
+        { label: "About Aminata", href: "/about" },
       ],
     },
     {
       label: "Sectors",
       links: [
-        { label: "SMEs, all sectors", href: "/sectors" },
-        { label: "Notaries", href: "/sectors/notaries" },
-        { label: "Law firms", href: "/sectors/law-firms" },
+        { label: "Why Orée", href: "/why" },
+        { label: "The cost of inaction", href: "/risks" },
+        { label: "All sectors", href: "/sectors" },
+        { label: "Insights", href: "/insights" },
       ],
     },
     {

@@ -8,7 +8,9 @@ export function Deliverables({
   items,
   notThis,
 }: {
-  title: string;
+  /* Optional: on the standalone deliverables page the hero already carries the
+     heading, and repeating it put the same words on screen twice. */
+  title?: string;
   intro?: string;
   items: Item[];
   notThis: string;
@@ -16,9 +18,11 @@ export function Deliverables({
   return (
     <section className="px-[10px] pt-[10px]">
       <div className="overflow-hidden rounded-[20px] bg-light px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[90px]">
-        <Reveal>
-          <h2 className="h-display-tight text-ink">{title}</h2>
-        </Reveal>
+        {title && (
+          <Reveal>
+            <h2 className="h-display-tight text-ink">{title}</h2>
+          </Reveal>
+        )}
 
         {intro && (
           <Reveal delay={0.06}>

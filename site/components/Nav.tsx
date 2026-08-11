@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
-import { copy, localePath, otherLocale, type Locale } from "@/content/copy";
+import { canonicalPath, copy, localePath, otherLocale, type Locale } from "@/content/copy";
 
 /**
  * The same page in the other language.
@@ -16,8 +16,9 @@ import { copy, localePath, otherLocale, type Locale } from "@/content/copy";
 function useLocaleSwap(locale: Locale) {
   const pathname = usePathname() ?? "/";
   const target = otherLocale[locale];
-  const bare = locale === "en" ? pathname.replace(/^\/en(?=\/|$)/, "") || "/" : pathname;
-  return { target, href: localePath(target, bare) };
+  // The two locales no longer share a path: /methode is /en/method. Go back to
+  // the canonical key first, then out to the other locale's own wording.
+  return { target, href: localePath(target, canonicalPath(locale, pathname)) };
 }
 
 /** Orée Conseil wordmark: three vertical bars (middle khaki, taller) plus caps

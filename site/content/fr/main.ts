@@ -9,15 +9,91 @@
  * deux-points et avant le symbole pour cent.
  */
 
+/* Le menu d'oree-conseil.ca, à l'identique : Méthode, À propos, Pourquoi Orée,
+   Offre. Accueil est porté par le logo et Contact par le bouton, comme sur son
+   site. Secteurs et Publications, qui n'existaient pas chez elle, restent
+   accessibles depuis le pied de page. */
 export const nav = {
   links: [
     { label: "Méthode", href: "/approach" },
+    { label: "À propos", href: "/about" },
+    { label: "Pourquoi Orée", href: "/why" },
     { label: "Offre", href: "/services" },
-    { label: "Secteurs", href: "/sectors" },
-    { label: "Publications", href: "/insights" },
   ],
   more: "Démos",
-  call: "Réserver un appel",
+  call: "Réserver le Diagnostic",
+};
+
+/**
+ * En-têtes des pages reprises telles quelles d'oree-conseil.ca. La cliente a
+ * demandé la même structure que son ancien site : les titres sont donc les
+ * siens, mot pour mot.
+ */
+export const aboutHero = {
+  eyebrow: "La fondatrice",
+  titleTop: "À propos —",
+  titleBottom: "Pourquoi Aminata",
+};
+
+export const whyHero = {
+  eyebrow: "Le contexte",
+  titleTop: "Pourquoi maintenant —",
+  titleBottom: "Le contexte québécois",
+  seeHistory: "Voir des exemples dans l'histoire",
+};
+
+/* La page « Livrables » d'oree-conseil.ca, dans sa structure d'origine :
+   groupée par jour, avec les lettres O·R·É·E et les outils nommés en
+   étiquettes, puis ce qui continue au-delà des trois jours. */
+export const deliverablesPage = {
+  eyebrow: "Ce que vous gardez",
+  titleTop: "Les livrables du",
+  titleBottom: "Diagnostic Orée",
+  intro: "Des livrables concrets, pas des rapports complexes.",
+  days: [
+    {
+      day: "Jour 1",
+      letters: "O·R",
+      title: "Observer · Relever",
+      body: "Entretiens de terrain et cartographie des flux réels de travail.",
+      tools: ["Guide d'entretien structuré", "La grille Orée"],
+      note: "Trois profils d'interlocuteurs, questions calibrées avec intentions et signaux à détecter · analyse sur cinq dimensions — cognitive, processuelle, culturelle, technique, gouvernance.",
+    },
+    {
+      day: "Jour 2",
+      letters: "É",
+      title: "Évaluer",
+      body: "Analyse des frictions relevées et priorisation avec la grille Orée.",
+      tools: ["Matrice de priorisation"],
+      note: "Priorisation effort / valeur / risque. Chaque piste est scorée pour distinguer les gains rapides des chantiers de fond.",
+    },
+    {
+      day: "Jour 3",
+      letters: "E",
+      title: "Engager",
+      body: "Restitution exécutive : constats, priorités, recommandations d'action.",
+      tools: ["Rapport de restitution"],
+      note: "Portrait des constats, trois priorités d'action argumentées, plan avec échéancier — remis et modifiable.",
+    },
+  ],
+  ongoingLabel: "Continu — au-delà des trois jours",
+  ongoing: [
+    {
+      title: "Carte diagnostic",
+      body: "Outil visuel de synthèse organisationnelle, compréhensible instantanément par une direction.",
+    },
+    {
+      title: "Tableau de suivi",
+      body: "Indicateurs personnalisés pour mesurer la progression dans le temps, sans dépendre de la consultante.",
+    },
+    {
+      title: "Mise en œuvre accompagnée",
+      body: "Sélection des outils IA adaptés aux besoins révélés, et accompagnement direct dans la réalisation des travaux — selon ce que le client souhaite déléguer ou garder en interne.",
+    },
+  ],
+  closing: "Toujours borné dans le temps, jamais pensé pour s'installer indéfiniment.",
+  cta: "Réserver le Diagnostic Orée",
+  link: "Voir les livrables détaillés",
 };
 
 /** Titres et descriptions de page, une entrée par route. */
@@ -31,6 +107,21 @@ export const meta = {
     title: "La méthode · Orée",
     description:
       "La méthode O·R·É·E : observer, relever, évaluer, engager. Trois jours dans votre pratique, qui aboutissent à un plan chiffré que vous approuvez ligne par ligne.",
+  },
+  about: {
+    title: "À propos · Orée Conseil",
+    description:
+      "Vingt-sept ans à l'intérieur d'organisations complexes. Le parcours d'Aminata Diabaté, les cadres appliqués, et pourquoi la pratique porte le nom d'Orée.",
+  },
+  why: {
+    title: "Pourquoi Orée · Le contexte québécois",
+    description:
+      "Les chiffres de l'ISQ et de la CPQ sur l'adoption de l'IA au Québec, et ce que coûte l'inaction quand l'écart se creuse.",
+  },
+  deliverables: {
+    title: "Les livrables du Diagnostic Orée",
+    description:
+      "Guide d'entretien, grille Orée et ses cinq dimensions, matrice de priorisation, rapport de restitution, carte diagnostic et tableau de suivi. Des livrables concrets, pas des rapports complexes.",
   },
   services: {
     title: "L'offre · Orée",
@@ -146,8 +237,8 @@ export const stats = {
 
 export const why = {
   eyebrow: "Pourquoi Orée",
-  titleTop: "Ce qui distingue",
-  titleBottom: "Cette pratique",
+  titleTop: "Pourquoi maintenant —",
+  titleBottom: "Le contexte québécois",
   paragraphs: [
     "Orée est une pratique-conseil indépendante en IA, pour les PME et les professions réglementées du Québec. Le travail commence dans vos bureaux, avec la façon dont le travail se fait vraiment, pas avec une démonstration de produit.",
     "Chaque mandat suit une seule méthode : observer le travail réel, relever les frictions qui le ralentissent, évaluer celles qui freinent vraiment la performance, et engager un plan que vous approuvez ligne par ligne.",
@@ -159,13 +250,14 @@ export const why = {
     "Données hébergées au Canada",
     "Un humain signe chaque étape",
   ],
-  cta: "Réserver un diagnostic",
+  cta: "Voir le contexte québécois",
 };
 
 export const services = {
-  eyebrow: "L'offre Orée",
-  titleTop: "Une offre resserrée,",
-  titleBottom: "Une méthode",
+  eyebrow: "L'offre",
+  titleTop: "Ce que je fais,",
+  titleBottom: "Pour qui",
+  cta: "Voir l'offre complète",
   leftLabel: "Ce que je fais",
   rightLabel: "Pour qui je le fais",
   /* Repris mot pour mot de la section « Pour qui » d'oree-conseil.ca.
@@ -213,7 +305,7 @@ export const practice = {
     { org: "Banque Nationale", sector: "Services financiers" },
     { org: "Université de Montréal", sector: "Secteur public / para-public" },
   ],
-  cta: "Lire la méthode",
+  cta: "À propos d'Aminata",
   // Bandeaux défilants : ce que couvre la pratique, pas un organigramme.
   rowOne: [
     { title: "Diagnostic Orée", note: "Trois jours, six à huit entretiens, un portrait honnête" },
@@ -446,17 +538,18 @@ export const footer = {
       label: "Pratique",
       links: [
         { label: "La méthode", href: "/approach" },
+        { label: "Les livrables", href: "/deliverables" },
         { label: "L'offre", href: "/services" },
-        { label: "À propos d'Aminata", href: "/approach#bio" },
-        { label: "Le coût de l'inaction", href: "/risks" },
+        { label: "À propos d'Aminata", href: "/about" },
       ],
     },
     {
       label: "Secteurs",
       links: [
-        { label: "PME, tous secteurs", href: "/sectors" },
-        { label: "Notaires", href: "/sectors/notaries" },
-        { label: "Cabinets d'avocats", href: "/sectors/law-firms" },
+        { label: "Pourquoi Orée", href: "/why" },
+        { label: "Le coût de l'inaction", href: "/risks" },
+        { label: "Tous les secteurs", href: "/sectors" },
+        { label: "Publications", href: "/insights" },
       ],
     },
     {

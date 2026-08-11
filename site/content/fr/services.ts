@@ -41,8 +41,10 @@ export const serviceList = {
     {
       n: "03",
       name: "Appui Orée",
+      /* Sa formulation d'origine en tête : le suivi mensuel est ce qui définit
+         le service dans son propre document, et il avait disparu. */
       summary:
-        "Un déploiement accompagné du plan que vous avez approuvé. Outils choisis, gabarits rédigés, résultats suivis, et la pratique vous est remise dès qu'elle tient sans nous.",
+        "Suivi mensuel sur la durée pour ancrer les changements dans les pratiques réelles des équipes, avec ajustements continus. Outils choisis, gabarits rédigés, et la pratique vous est remise dès qu'elle tient sans nous.",
       meta: [
         { label: "Format", value: "Déploiement accompagné" },
         { label: "Durée", value: "Jusqu'à ce que ça tienne" },

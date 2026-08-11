@@ -12,6 +12,7 @@ import { notFound } from "next/navigation";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
+import { Button } from "@/components/Button";
 import { Hero } from "@/components/Hero";
 import { MethodGlance } from "@/components/MethodGlance";
 import { Stats } from "@/components/Stats";
@@ -47,6 +48,11 @@ import { copy, localePath, type Locale } from "@/content/copy";
 
 type P = { locale: Locale };
 
+/**
+ * Home, following oree-conseil.ca: the tagline, the O·R·É·E block, who it is
+ * for, then out to the other pages. The biography and the Quebec figures used
+ * to sit here; they now have their own pages, as they did on her site.
+ */
 export function HomePage({ locale }: P) {
   return (
     <>
@@ -56,20 +62,17 @@ export function HomePage({ locale }: P) {
         <div id="method">
           <MethodGlance locale={locale} />
         </div>
-        <div id="bio">
-          <Team locale={locale} />
-        </div>
-        <div id="stats">
-          <Stats locale={locale} />
-        </div>
-        <CostOfInaction locale={locale} />
-        <WhyFirm locale={locale} />
         <div id="services">
           <PracticeAreas locale={locale} />
         </div>
+        {/* Each of these is the teaser for one of her pages, and each one
+            opens it: the founder block goes to À propos, the block below to
+            Pourquoi Orée. */}
+        <div id="bio">
+          <Team locale={locale} />
+        </div>
+        <WhyFirm locale={locale} />
         <CtaBand locale={locale} />
-        <Questions locale={locale} />
-        <Faq locale={locale} />
         <Frameworks locale={locale} />
         <Cta locale={locale} />
         <div id="insights">
@@ -81,19 +84,186 @@ export function HomePage({ locale }: P) {
   );
 }
 
+/** À propos: the full biography, the name, and the background list. */
+export function AboutPage({ locale }: P) {
+  const { aboutHero, cta } = copy[locale];
+  return (
+    <>
+      <Nav locale={locale} heroTone="light" />
+      <main>
+        <section className="px-[10px] pt-[10px]">
+          <div className="overflow-hidden rounded-[20px] bg-light px-6 pb-16 pt-32 sm:px-10 lg:px-[130px] lg:pb-[70px] lg:pt-[160px]">
+            <Reveal>
+              <p className="eyebrow text-olive-deep">{aboutHero.eyebrow}</p>
+            </Reveal>
+            <Reveal delay={0.06}>
+              <h1 className="h-display-tight mt-4 text-ink">{aboutHero.titleTop}</h1>
+              <h1 className="h-display-tight italic text-olive-deep">{aboutHero.titleBottom}</h1>
+            </Reveal>
+          </div>
+        </section>
+        {/* Her portrait and background lead the page, directly under the
+            title, rather than sitting below the prose. */}
+        <Team locale={locale} />
+        <div id="bio">
+          <Story locale={locale} />
+        </div>
+        <Cta locale={locale} title={cta.title} />
+      </main>
+      <Footer locale={locale} />
+    </>
+  );
+}
+
+/** Pourquoi Orée: the Quebec figures, then what inaction costs. */
+export function WhyPage({ locale }: P) {
+  const { whyHero, cta } = copy[locale];
+  return (
+    <>
+      <Nav locale={locale} heroTone="light" />
+      <main>
+        <section className="px-[10px] pt-[10px]">
+          <div className="overflow-hidden rounded-[20px] bg-light px-6 pb-16 pt-32 sm:px-10 lg:px-[130px] lg:pb-[70px] lg:pt-[160px]">
+            <Reveal>
+              <p className="eyebrow text-amber-ink">{whyHero.eyebrow}</p>
+            </Reveal>
+            <Reveal delay={0.06}>
+              <h1 className="h-display-tight mt-4 text-ink">{whyHero.titleTop}</h1>
+              <h1 className="h-display-tight italic text-olive-deep">{whyHero.titleBottom}</h1>
+            </Reveal>
+          </div>
+        </section>
+        <div id="stats">
+          <Stats locale={locale} />
+        </div>
+        <CostOfInaction locale={locale} />
+        <Questions locale={locale} />
+        <Cta locale={locale} title={cta.title} />
+      </main>
+      <Footer locale={locale} />
+    </>
+  );
+}
+
+/**
+ * Livrables: the diagnostic's named tools, grouped by the day that produces
+ * them. Same page the old site reached from both Méthode and Offre.
+ */
+export function DeliverablesPage({ locale }: P) {
+  const { deliverablesPage: d, cta } = copy[locale];
+  const deliverablesPage = d;
+
+  return (
+    <>
+      <Nav locale={locale} heroTone="light" />
+      <main>
+        <section className="px-[10px] pt-[10px]">
+          <div className="overflow-hidden rounded-[20px] bg-light px-6 pb-16 pt-32 sm:px-10 lg:px-[130px] lg:pb-[70px] lg:pt-[160px]">
+            <Reveal>
+              <p className="eyebrow text-olive-deep">{deliverablesPage.eyebrow}</p>
+            </Reveal>
+            <Reveal delay={0.06}>
+              <h1 className="h-display-tight mt-4 text-ink">{deliverablesPage.titleTop}</h1>
+              <h1 className="h-display-tight italic text-olive-deep">
+                {deliverablesPage.titleBottom}
+              </h1>
+            </Reveal>
+            <Reveal delay={0.12}>
+              <p className="refrain mt-8 max-w-[620px] text-[21px] leading-[1.4] text-ink">
+                {deliverablesPage.intro}
+              </p>
+            </Reveal>
+          </div>
+        </section>
+
+        {/* One card per day, the letters in the margin, the named tools as
+            tags. This is the shape her own deliverables page used. */}
+        <section className="px-[10px] pt-[10px]">
+          <div className="overflow-hidden rounded-[20px] bg-cream px-6 py-16 sm:px-10 lg:px-[130px] lg:py-[80px]">
+            <div className="mx-auto max-w-[820px] space-y-5">
+              {deliverablesPage.days.map((day, i) => (
+                <Reveal key={day.day} delay={0.06 * i}>
+                  <article className="grid gap-6 rounded-[16px] bg-light p-8 sm:grid-cols-[92px_minmax(0,1fr)] lg:p-10">
+                    <div className="text-center sm:text-left">
+                      <p className="eyebrow text-amber-ink">{day.day}</p>
+                      <p className="mt-2 font-display text-[28px] italic leading-none text-olive-deep">
+                        {day.letters}
+                      </p>
+                    </div>
+
+                    <div>
+                      <h2 className="h-row text-ink">{day.title}</h2>
+                      <p className="mt-3 text-[15px] leading-[23px] text-ecorce">{day.body}</p>
+
+                      <ul className="mt-5 flex flex-wrap gap-2">
+                        {day.tools.map((tool) => (
+                          <li
+                            key={tool}
+                            className="rounded-[6px] bg-mousse px-3 py-1.5 text-[13px] leading-[18px] text-olive-deep"
+                            style={{ fontFamily: "var(--font-mono)" }}
+                          >
+                            {tool}
+                          </li>
+                        ))}
+                      </ul>
+
+                      <p className="mt-5 text-[13px] leading-[20px] text-grey">{day.note}</p>
+                    </div>
+                  </article>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="px-[10px] pt-[10px]">
+          <div className="overflow-hidden rounded-[20px] bg-light px-6 py-16 sm:px-10 lg:px-[130px] lg:py-[80px]">
+            <Reveal>
+              <p className="refrain text-center text-[21px] leading-[1.4] text-sienne">
+                {deliverablesPage.ongoingLabel}
+              </p>
+            </Reveal>
+
+            <div className="mx-auto mt-10 grid max-w-[820px] gap-5 sm:grid-cols-3">
+              {deliverablesPage.ongoing.map((item, i) => (
+                <Reveal key={item.title} delay={0.06 * i}>
+                  <div className="h-full rounded-[12px] bg-mousse p-6">
+                    <p className="text-[15px] font-semibold leading-[21px] text-ink">{item.title}</p>
+                    <p className="mt-3 text-[13px] leading-[20px] text-ecorce">{item.body}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+
+            <Reveal delay={0.16}>
+              <p className="refrain mt-12 text-center text-[19px] leading-[1.45] text-sienne">
+                {deliverablesPage.closing}
+              </p>
+            </Reveal>
+          </div>
+        </section>
+
+        <Cta locale={locale} title={cta.title} />
+      </main>
+      <Footer locale={locale} />
+    </>
+  );
+}
+
+/**
+ * Méthode, as on her site: the four steps in long form, then out to the
+ * deliverables. The biography moved to /a-propos and the Quebec figures to
+ * /pourquoi-oree, which is where she had them.
+ */
 export function ApproachPage({ locale }: P) {
-  const { approachCta } = copy[locale];
+  const { approachCta, deliverablesPage } = copy[locale];
   return (
     <>
       <Nav locale={locale} />
       <main>
         <ApproachHero locale={locale} />
-        <div id="bio">
-          <Story locale={locale} />
-        </div>
-        <Stats locale={locale} />
         <Method locale={locale} />
-        <Team locale={locale} />
+        <DeliverablesLink locale={locale} label={deliverablesPage.link} />
         <Cta locale={locale} title={approachCta.title} />
       </main>
       <Footer locale={locale} />
@@ -101,16 +271,33 @@ export function ApproachPage({ locale }: P) {
   );
 }
 
+/** The "see the detailed deliverables" step her Méthode and Offre both had. */
+function DeliverablesLink({ locale, label }: P & { label: string }) {
+  return (
+    <section className="px-[10px] pt-[10px]">
+      <div className="rounded-[20px] bg-mousse px-6 py-10 sm:px-10 lg:px-[130px]">
+        <Reveal>
+          <Button variant="outline" href={localePath(locale, "/deliverables")}>
+            {label}
+          </Button>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/** Offre: the three services, then the FAQ, which is where her site kept it. */
 export function ServicesPage({ locale }: P) {
-  const { servicesCta } = copy[locale];
+  const { servicesCta, deliverablesPage } = copy[locale];
   return (
     <>
       <Nav locale={locale} />
       <main>
         <ServicesHero locale={locale} />
         <ServiceList locale={locale} />
+        <DeliverablesLink locale={locale} label={deliverablesPage.link} />
         <Included locale={locale} />
-        <Questions locale={locale} />
+        <Faq locale={locale} />
         <Cta locale={locale} title={servicesCta.title} />
       </main>
       <Footer locale={locale} />

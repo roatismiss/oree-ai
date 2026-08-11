@@ -47,7 +47,9 @@ export function WhyFirm({ locale }: { locale: Locale }) {
 
           <Reveal delay={0.1}>
             <div className="mt-12">
-              <Button variant="yellow" href={localePath(locale, "/contact")}>{why.cta}</Button>
+              {/* This block is the Pourquoi Orée teaser, so it opens that page
+                  rather than jumping straight to the booking form. */}
+              <Button variant="yellow" href={localePath(locale, "/why")}>{why.cta}</Button>
             </div>
           </Reveal>
         </div>

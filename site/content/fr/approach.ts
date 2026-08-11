@@ -22,7 +22,7 @@ export const story = {
      d'oree-conseil.ca. Les cadres nommés et les tirets cadratins sont la
      formulation de la cliente : conservés tels quels, parce que le détail est
      précisément ce qui fait la crédibilité. */
-  bioEyebrow: "À propos — pourquoi Aminata",
+  bioEyebrow: "En ses mots",
   bio: [
     "Vingt-sept ans à l'intérieur d'organisations complexes m'ont appris à reconnaître un changement de grande ampleur, peu importe sa forme. Au Fonds de solidarité FTQ, j'ai vécu de l'intérieur l'appropriation de l'IA — ses risques, ses résistances, ses angles morts. Chez Bell, Bombardier, CGI, la Banque Nationale et l'Université de Montréal, ce sont d'autres transformations majeures, toutes différentes les unes des autres, qui m'ont formée.",
     "Cette expérience de terrain s'appuie aussi sur des cadres reconnus, appliqués — pas seulement étudiés — comme analyste d'affaires principale et agente de changement lors de mandats-conseils pour CGI : le Lean Six Sigma et l'optimisation de processus, et la méthodologie ADKAR en gestion du changement. Cette pratique a nourri la conception d'O·R·É·E — une méthode volontairement minimaliste, pensée pour les organisations de plus petite taille.",

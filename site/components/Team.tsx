@@ -106,7 +106,9 @@ export function Team({ locale }: { locale: Locale }) {
               </div>
 
               <div className="mt-9">
-                <Button variant="yellow" href={localePath(locale, "/approach")}>{practice.cta}</Button>
+                {/* The founder block opens À propos, where the full biography
+                    and the background list live. */}
+                <Button variant="yellow" href={localePath(locale, "/about")}>{practice.cta}</Button>
               </div>
             </Reveal>
           </div>

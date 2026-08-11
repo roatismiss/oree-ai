@@ -40,8 +40,10 @@ export const serviceList = {
     {
       n: "03",
       name: "Orée Support",
+      /* Her own wording first: monthly follow-up is what defines the service in
+         her own document, and it had gone missing. */
       summary:
-        "A guided rollout of the plan you approved. Tools selected, templates written, results tracked, and the practice handed back to you once it holds without us.",
+        "Monthly follow-up over time to anchor changes into teams' actual practices, with ongoing adjustments. Tools selected, templates written, and the practice handed back to you once it holds without us.",
       meta: [
         { label: "Format", value: "Guided rollout" },
         { label: "Duration", value: "Until it holds" },

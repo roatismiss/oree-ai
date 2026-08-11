@@ -1,15 +1,17 @@
-"use client";
-
-import { useState } from "react";
 import { Reveal } from "./Reveal";
 import { copy, type Locale } from "@/content/copy";
 
-/** The FAQ mandated by the client brief. Plain disclosure accordion, one open
-    at a time, keyboard-native via <button>. */
+/**
+ * Collapsed accordion, plain type, a hairline between entries. Shared `name`
+ * makes the browser close the others when one opens, natively.
+ *
+ * Native <details> rather than React state: it is keyboard operable with no
+ * JavaScript, and the answers stay in the markup even while closed, so search
+ * engines and assistive technology see all of them. The version before this
+ * one rendered only the open item, which hid six answers from both.
+ */
 export function Faq({ locale }: { locale: Locale }) {
   const { faq } = copy[locale];
-
-  const [open, setOpen] = useState(0);
 
   return (
     <section className="px-[10px] pt-[10px]">
@@ -27,47 +29,33 @@ export function Faq({ locale }: { locale: Locale }) {
         </Reveal>
 
         <div className="mt-12 max-w-[820px] divide-y divide-hairline border-y border-hairline">
-          {faq.items.map((item, i) => {
-            const expanded = open === i;
-            return (
-              <div key={item.question}>
-                <button
-                  onClick={() => setOpen(expanded ? -1 : i)}
-                  aria-expanded={expanded}
-                  className="flex w-full items-center justify-between gap-6 py-6 text-left"
+          {faq.items.map((item) => (
+            <details key={item.question} name="faq" className="group py-6">
+              <summary className="flex cursor-pointer list-none items-baseline gap-3 [&::-webkit-details-marker]:hidden">
+                <span
+                  aria-hidden
+                  className="mt-[2px] shrink-0 text-[10px] text-olive-deep transition-transform duration-200 group-open:rotate-0 -rotate-90"
                 >
-                  <span className="h-row text-ink">{item.question}</span>
-                  <span
-                    aria-hidden
-                    className={`flex h-[26px] w-[26px] shrink-0 items-center justify-center rounded-full border border-hairline text-ink transition-transform duration-300 ${
-                      expanded ? "rotate-45" : ""
-                    }`}
-                  >
-                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                      <path d="M5 1v8M1 5h8" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
-                    </svg>
-                  </span>
-                </button>
+                  ▼
+                </span>
+                <span className="h-row text-ink">{item.question}</span>
+              </summary>
 
-                {expanded && (
-                  <div className="pb-7 pr-10">
-                    <p className="max-w-[640px] text-[15px] leading-[24px] text-grey">{item.answer}</p>
+              <p className="mt-4 max-w-[680px] pl-[22px] text-[15px] leading-[24px] text-grey">
+                {item.answer}
+              </p>
 
-                    {item.examples && (
-                      <div className="mt-6 grid gap-4 sm:grid-cols-3">
-                        {item.examples.map((ex) => (
-                          <div key={ex.title} className="rounded-[12px] bg-sand/60 p-5">
-                            <p className="h-row text-[18px] text-ink">{ex.title}</p>
-                            <p className="mt-2 text-[13px] leading-[19px] text-grey">{ex.note}</p>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
-            );
-          })}
+              {item.examples && (
+                <ul className="mt-4 max-w-[680px] space-y-2 pl-[22px]">
+                  {item.examples.map((ex) => (
+                    <li key={ex.title} className="text-[14px] leading-[22px] text-grey">
+                      <span className="text-ink">{ex.title}</span> — {ex.note}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </details>
+          ))}
         </div>
       </div>
     </section>

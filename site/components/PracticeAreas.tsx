@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Reveal } from "./Reveal";
 import { SplitHeading } from "./SplitHeading";
+import { Button } from "./Button";
 import { copy, localePath, type Locale } from "@/content/copy";
 
 function Row({ label, href }: { label: string; href: string }) {
@@ -76,6 +77,16 @@ export function PracticeAreas({ locale }: { locale: Locale }) {
               </li>
             ))}
           </ul>
+        </Reveal>
+
+        {/* The rows go to individual services; this opens the offering page
+            itself, so the section has a route to its own page. */}
+        <Reveal delay={0.14}>
+          <div className="mt-10">
+            <Button variant="outline" href={localePath(locale, "/services")}>
+              {services.cta}
+            </Button>
+          </div>
         </Reveal>
       </div>
     </section>

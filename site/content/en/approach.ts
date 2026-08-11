@@ -22,7 +22,7 @@ export const story = {
      "À propos" page. The named frameworks and the em dashes are the client's
      own wording, kept as written rather than trimmed to house style: the
      specifics are the credibility. */
-  bioEyebrow: "About — why Aminata",
+  bioEyebrow: "In her own words",
   bio: [
     "Twenty-seven years inside complex organizations taught me to recognize large-scale change in any form it takes. At Fonds de solidarité FTQ, I lived AI adoption from the inside — its risks, its resistance, its blind spots. At Bell, Bombardier, CGI, Banque Nationale, and Université de Montréal, it was other major transformations, each different from the last, that shaped me.",
     "That field experience also draws on established frameworks I've applied — not just studied — as a senior business analyst and change agent during consulting engagements with CGI: Lean Six Sigma and process optimization, and the ADKAR change-management model. That practice shaped the design of O·R·É·E — a method built to be deliberately minimal, tailored for smaller organizations.",
