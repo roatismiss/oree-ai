@@ -243,8 +243,9 @@ export const ctaBand = {
  * d'Orée dépend du type de pratique qui écrit, et le message de confirmation
  * est celui de l'ancien site.
  *
- * Aucun serveur ne reçoit encore l'envoi : le message est composé dans le
- * logiciel de courriel du visiteur. Voir components/ContactForm.tsx.
+ * L'envoi part vers /api/contact, qui relaie le message dans la boîte de
+ * réception d'Aminata. Si le relais échoue, le formulaire propose le logiciel
+ * de courriel du visiteur : voir components/ContactForm.tsx.
  */
 export const contactForm = {
   eyebrow: "Écrire un message",
@@ -257,12 +258,20 @@ export const contactForm = {
   },
   optional: "facultatif",
   submit: "Envoyer",
+  sending: "Envoi en cours…",
   subject: "Diagnostic Orée",
   confirmation: {
     title: "Merci — votre message a été envoyé. Nous répondons sous peu.",
-    fallback:
-      "Si votre logiciel de courriel ne s'est pas ouvert, écrivez directement à aminata.diabate@oreeconseil.ca. Dans un cas comme dans l'autre, vous aurez une réponse en un jour ouvrable.",
+    body:
+      "Il est arrivé directement dans la boîte de réception d'Aminata. Vous aurez une réponse en un jour ouvrable, à l'adresse que vous venez d'inscrire.",
     again: "Envoyer un autre message",
+  },
+  failure: {
+    title: "L'envoi n'a pas abouti.",
+    body:
+      "Rien n'est perdu : votre message est toujours là. Ouvrez-le dans votre logiciel de courriel, ou réessayez dans un instant.",
+    mailto: "Ouvrir dans mon courriel",
+    retry: "Réessayer",
   },
 };
 
@@ -465,6 +474,16 @@ export const footer = {
   wordmark: "Orée Conseil",
   refrain: "« L'IA rédige. L'humain décide. »",
   refrainGloss: "AI drafts. The human decides.",
+  /* La seule présence sociale de la pratique. Nommée plutôt que réduite à un
+     pictogramme, pour que le lien dise où il mène avant d'être cliqué. */
+  social: {
+    label: "Suivre la pratique",
+    linkedin: {
+      name: "LinkedIn",
+      href: "https://www.linkedin.com/in/aminata2023/",
+      title: "Aminata Diabaté sur LinkedIn",
+    },
+  },
   legal: "© 2026 Orée Conseil · Montréal · Cantons-de-l'Est, Québec",
   links: ["Confidentialité", "Avis Loi 25"],
 };

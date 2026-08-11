@@ -31,6 +31,31 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://oreeconseil.ca"),
   title: copy.en.meta.site.title,
   description: copy.en.meta.site.description,
+  /* Explicit card so WhatsApp, LinkedIn and Messenger render the wordmark
+     rather than scraping whichever image happens to load first. */
+  openGraph: {
+    type: "website",
+    locale: "en_CA",
+    alternateLocale: "fr_CA",
+    url: "/en",
+    siteName: "Orée Conseil",
+    title: copy.en.meta.site.title,
+    description: copy.en.meta.site.description,
+    images: [
+      {
+        url: "/share-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Orée Conseil",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: copy.en.meta.site.title,
+    description: copy.en.meta.site.description,
+    images: ["/share-image.jpg"],
+  },
 };
 
 /* Root layout for the English tree.

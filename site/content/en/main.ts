@@ -240,9 +240,9 @@ export const ctaBand = {
  * The enquiry form. "Organization" is back because Orée's answer depends on
  * the kind of practice asking, and the confirmation wording is the old site's.
  *
- * There is no server to post to yet, so submitting composes the message in the
- * visitor's mail client. See components/ContactForm.tsx: swapping in a real
- * endpoint is a change to one function.
+ * Submitting posts to /api/contact, which relays the message to Aminata's
+ * inbox. If the relay fails, the form offers the visitor's own mail client
+ * instead. See components/ContactForm.tsx.
  */
 export const contactForm = {
   eyebrow: "Send a message",
@@ -255,12 +255,20 @@ export const contactForm = {
   },
   optional: "optional",
   submit: "Send",
+  sending: "Sending…",
   subject: "Orée Diagnostic",
   confirmation: {
     title: "Thank you — your message has been sent. We'll be in touch shortly.",
-    fallback:
-      "If your mail application did not open, write to aminata.diabate@oreeconseil.ca directly. Either way you will hear back within one business day.",
+    body:
+      "It went straight to Aminata's inbox. You will hear back within one business day, at the address you just gave us.",
     again: "Send another message",
+  },
+  failure: {
+    title: "The message didn't go through.",
+    body:
+      "Nothing is lost — what you wrote is still here. Open it in your own mail application, or try again in a moment.",
+    mailto: "Open in my mail app",
+    retry: "Try again",
   },
 };
 
@@ -462,6 +470,16 @@ export const footer = {
   wordmark: "Orée Conseil",
   refrain: "« L'IA rédige. L'humain décide. »",
   refrainGloss: "AI drafts. The human decides.",
+  /* The practice's only social presence. Named rather than left as a bare
+     glyph, so the link says where it goes before it is clicked. */
+  social: {
+    label: "Follow the practice",
+    linkedin: {
+      name: "LinkedIn",
+      href: "https://www.linkedin.com/in/aminata2023/",
+      title: "Aminata Diabaté on LinkedIn",
+    },
+  },
   legal: "© 2026 Orée Conseil · Montréal · Eastern Townships, Québec",
   links: ["Privacy", "Law 25 notice"],
 };
