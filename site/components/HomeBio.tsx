@@ -12,7 +12,7 @@ function LinkedInMark() {
 }
 
 export function HomeBio({ locale }: { locale: Locale }) {
-  const { team, footer, ui } = copy[locale];
+  const { practice, footer, ui } = copy[locale];
   const { linkedin } = footer.social;
 
   return (
@@ -35,14 +35,14 @@ export function HomeBio({ locale }: { locale: Locale }) {
 
           <div>
             <Reveal>
-              <p className="eyebrow text-grey">{team.eyebrow}</p>
+              <p className="eyebrow text-grey">{practice.eyebrow}</p>
             </Reveal>
 
             <Reveal delay={0.06}>
               <div className="flex items-start justify-between">
                 <div>
-                  <h2 className="h-display mt-6 text-ink">{team.titleTop}</h2>
-                  <h2 className="h-display text-ink">{team.titleBottom}</h2>
+                  <h2 className="h-display mt-6 text-ink">{practice.titleTop}</h2>
+                  <h2 className="h-display text-ink">{practice.titleBottom}</h2>
                 </div>
                 <a
                   href={linkedin.href}
@@ -59,23 +59,23 @@ export function HomeBio({ locale }: { locale: Locale }) {
 
             <Reveal delay={0.1}>
               <div className="mt-8 rounded-[14px] bg-mousse p-8">
-                <p className="h-row text-ink">{team.name}</p>
-                <p className="mt-2 text-[14px] leading-[20px] text-grey">{team.role}</p>
+                <p className="h-row text-ink">{practice.name}</p>
+                <p className="mt-2 text-[14px] leading-[20px] text-grey">{practice.role}</p>
               </div>
             </Reveal>
 
             <Reveal delay={0.14}>
-              <p className="mt-8 text-[16px] leading-[24px] text-ink">{team.body}</p>
+              <p className="mt-8 text-[16px] leading-[24px] text-ink">{practice.body}</p>
             </Reveal>
 
             <Reveal delay={0.18}>
               <div className="mt-8">
-                <p className="eyebrow text-olive-deep">{team.backgroundLabel}</p>
+                <p className="eyebrow text-olive-deep">{practice.backgroundLabel}</p>
                 <p className="mt-3 text-[14px] leading-[20px] italic text-grey">
-                  {team.backgroundNote}
+                  {practice.backgroundNote}
                 </p>
                 <ul className="mt-4 space-y-2">
-                  {team.background.map((b) => (
+                  {practice.background.map((b) => (
                     <li key={b.org} className="flex justify-between border-b border-hairline pb-2">
                       <span className="text-[14px] text-ink">{b.org}</span>
                       <span className="text-[13px] text-grey">{b.sector}</span>
