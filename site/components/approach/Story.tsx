@@ -1,8 +1,18 @@
 import { Reveal } from "../Reveal";
 import { copy, type Locale } from "@/content/copy";
 
+/* LinkedIn icon for the bio section */
+function LinkedInMark() {
+  return (
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z" />
+    </svg>
+  );
+}
+
 export function Story({ locale }: { locale: Locale }) {
-  const { story } = copy[locale];
+  const { story, footer } = copy[locale];
+  const { linkedin } = footer.social;
 
   return (
     <section className="px-[10px] pt-[10px]">
@@ -41,7 +51,19 @@ export function Story({ locale }: { locale: Locale }) {
 
             {/* The full-length biography, in Aminata's own voice. */}
             <Reveal delay={0.14}>
-              <p className="eyebrow mt-12 text-olive-deep">{story.bioEyebrow}</p>
+              <div className="flex items-center justify-between">
+                <p className="eyebrow mt-12 text-olive-deep">{story.bioEyebrow}</p>
+                <a
+                  href={linkedin.href}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  aria-label={linkedin.title}
+                  title={linkedin.title}
+                  className="mt-12 flex h-9 w-9 items-center justify-center rounded-full border border-hairline text-ink transition-colors duration-300 hover:border-olive-deep hover:text-olive-deep"
+                >
+                  <LinkedInMark />
+                </a>
+              </div>
               <div className="mt-5 space-y-6 text-[16px] leading-[24px] text-ink">
                 {story.bio.map((p) => (
                   <p key={p.slice(0, 24)}>{p}</p>
