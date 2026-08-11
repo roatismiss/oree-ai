@@ -57,13 +57,13 @@ export function HomePage({ locale }: P) {
         <div id="method">
           <MethodGlance locale={locale} />
         </div>
+        <div id="bio">
+          <HomeBio locale={locale} />
+        </div>
         <div id="stats">
           <Stats locale={locale} />
         </div>
         <CostOfInaction locale={locale} />
-        <div id="bio">
-          <HomeBio locale={locale} />
-        </div>
         <WhyFirm locale={locale} />
         <div id="services">
           <PracticeAreas locale={locale} />
