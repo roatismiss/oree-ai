@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "./Button";
-import { hero } from "@/content/en";
+import { copy, localePath, type Locale } from "@/content/copy";
 
 const rise = {
   initial: { opacity: 0, y: 40 },
@@ -13,7 +13,9 @@ const ease = [0.16, 1, 0.3, 1] as const;
 
 /* Light, typographic hero: no photography, per the client's wish for a soft,
    people-first look that reads as a small individual practice. */
-export function Hero() {
+export function Hero({ locale }: { locale: Locale }) {
+  const { hero } = copy[locale];
+
   return (
     <section className="px-[10px] pt-[10px]">
       <div className="relative flex min-h-[480px] flex-col justify-center overflow-hidden rounded-[20px] bg-light px-6 py-24 sm:px-12 lg:min-h-[620px] lg:px-[130px] lg:py-[80px]">
@@ -51,7 +53,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.32, ease }}
             className="mt-9 flex flex-wrap items-center gap-6"
           >
-            <Button variant="dark" href="/contact">{hero.cta}</Button>
+            <Button variant="dark" href={localePath(locale, "/contact")}>{hero.cta}</Button>
             <span className="refrain text-[17px] text-olive-deep">{hero.refrain}</span>
           </motion.div>
         </div>

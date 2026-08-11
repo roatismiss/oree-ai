@@ -27,7 +27,7 @@ Calm, credentialed, independent. An advisor's voice, not a vendor's. The refrain
 1. Practice what you preach: every AI element on the site shows a human checkpoint, mirroring the method being sold.
 2. Proof before promise: demos, method steps, and concrete numbers (3 days, Law 25, data in Canada) beat adjectives.
 3. One profession at a time: copy speaks the vocabulary, obligations and fears of a specific profession, never "businesses" in general.
-4. English first: EN is the primary locale of the built site; FR (Quebec) mirrors it as the second locale behind the nav toggle. French copy follows OQLF conventions (guillemets, espace insecable before deux-points only).
+4. French first: per the Site Launch Plan (10 August 2026), FR (Quebec) is the default locale and sits at the root URLs; EN mirrors it under /en behind the nav toggle. This supersedes the original English-first brief, because the audience is Quebec. French copy follows OQLF conventions (guillemets, espace insecable before deux-points only), and wherever oree-conseil.ca already carried Aminata's own French, that wording is reused verbatim rather than retranslated.
 5. Editorial calm: the Oree identity (serif, cream, olive, amber, mono overlines) is already committed; preserve it rather than re-inventing per page.
 
 ## Accessibility & Inclusion

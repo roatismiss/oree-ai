@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { Reveal } from "../Reveal";
-import { articles } from "@/content/insights";
+import { copy, localePath, type Locale } from "@/content/copy";
 
-export function ArticleGrid() {
+export function ArticleGrid({ locale }: { locale: Locale }) {
+  const { articles } = copy[locale];
+
   return (
     <section className="px-[10px] pt-[10px]">
       <div className="rounded-[20px] bg-sand px-6 py-16 sm:px-10 lg:px-[130px] lg:py-[90px]">
@@ -10,7 +12,7 @@ export function ArticleGrid() {
           {articles.map((a, i) => (
             <Reveal key={a.slug} delay={0.07 * i}>
               <Link
-                href={`/insights/${a.slug}`}
+                href={localePath(locale, `/insights/${a.slug}`)}
                 className="group flex h-full flex-col overflow-hidden rounded-[14px] bg-light transition-transform duration-300 hover:-translate-y-1"
               >
                 <div className="flex flex-1 flex-col p-7">

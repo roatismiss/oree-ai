@@ -1,5 +1,6 @@
 import { Reveal } from "../Reveal";
-import type { Article, ArticleBlock } from "@/content/insights";
+import { copy, type Locale } from "@/content/copy";
+import type { Article, ArticleBlock } from "@/content/en/insights";
 
 function Block({ block }: { block: ArticleBlock }) {
   switch (block.type) {
@@ -39,7 +40,9 @@ function Block({ block }: { block: ArticleBlock }) {
   }
 }
 
-export function ArticleBody({ article }: { article: Article }) {
+export function ArticleBody({ article, locale }: { article: Article; locale: Locale }) {
+  const { ui } = copy[locale];
+
   return (
     <section className="px-[10px] pt-[10px]">
       <div className="rounded-[20px] border border-hairline bg-light px-6 py-16 sm:px-10 lg:py-[90px]">
@@ -54,7 +57,7 @@ export function ArticleBody({ article }: { article: Article }) {
 
           <Reveal y={18}>
             <div className="mt-14 rounded-[16px] border border-hairline bg-cream p-7">
-              <h2 className="h-row text-ink">Sources</h2>
+              <h2 className="h-row text-ink">{ui.sources}</h2>
               <ol className="mt-5 space-y-3">
                 {article.sources.map((s, i) => (
                   <li key={s.url} className="flex gap-3 text-[14px] leading-[21px]">

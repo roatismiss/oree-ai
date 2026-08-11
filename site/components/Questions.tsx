@@ -5,9 +5,11 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Reveal } from "./Reveal";
 import { SplitHeading } from "./SplitHeading";
-import { questions } from "@/content/en";
+import { copy, type Locale } from "@/content/copy";
 
-export function Questions() {
+export function Questions({ locale }: { locale: Locale }) {
+  const { questions, ui } = copy[locale];
+
   const [index, setIndex] = useState(0);
   const max = questions.items.length - 2;
 
@@ -24,7 +26,7 @@ export function Questions() {
         <div className="mt-6 flex justify-end gap-2 px-6 sm:px-10 lg:px-[130px]">
           <button
             onClick={() => setIndex((i) => Math.max(0, i - 1))}
-            aria-label="Previous question"
+            aria-label={ui.previousQuestion}
             className="flex h-10 w-10 items-center justify-center rounded-full bg-sand/70 text-ink transition-opacity hover:opacity-70 disabled:opacity-30"
             disabled={index === 0}
           >
@@ -34,7 +36,7 @@ export function Questions() {
           </button>
           <button
             onClick={() => setIndex((i) => Math.min(max, i + 1))}
-            aria-label="Next question"
+            aria-label={ui.nextQuestion}
             className="flex h-10 w-10 items-center justify-center rounded-full bg-sand/70 text-ink transition-opacity hover:opacity-70 disabled:opacity-30"
             disabled={index === max}
           >

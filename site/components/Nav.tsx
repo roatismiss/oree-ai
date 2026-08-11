@@ -3,7 +3,22 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { nav } from "@/content/en";
+import { usePathname } from "next/navigation";
+import { copy, localePath, otherLocale, type Locale } from "@/content/copy";
+
+/**
+ * The same page in the other language.
+ *
+ * French lives at the root and English under /en, so switching is a matter of
+ * adding or removing that one segment. A visitor reading /services/diagnostic
+ * lands on /en/services/diagnostic, not back at the home page.
+ */
+function useLocaleSwap(locale: Locale) {
+  const pathname = usePathname() ?? "/";
+  const target = otherLocale[locale];
+  const bare = locale === "en" ? pathname.replace(/^\/en(?=\/|$)/, "") || "/" : pathname;
+  return { target, href: localePath(target, bare) };
+}
 
 /** Orée Conseil wordmark: three vertical bars (middle khaki, taller) plus caps
     italic serif, CONSEIL tracked out beneath, matching the supplied logo. */
@@ -32,9 +47,17 @@ function Wordmark({ tone = "light" }: { tone?: "light" | "ink" }) {
   );
 }
 
-const allLinks = [...nav.links];
+export function Nav({
+  locale,
+  heroTone = "light",
+}: {
+  locale: Locale;
+  heroTone?: "dark" | "light";
+}) {
+  const { nav, ui } = copy[locale];
+  const allLinks = nav.links;
+  const swap = useLocaleSwap(locale);
 
-export function Nav({ heroTone = "light" }: { heroTone?: "dark" | "light" }) {
   // On pages with a dark hero the floating wordmark sits on it at rest and on
   // ivory once scrolled, so it swaps tone. Pages with a light hero (home) keep
   // the ink wordmark throughout.
@@ -87,7 +110,7 @@ export function Nav({ heroTone = "light" }: { heroTone?: "dark" | "light" }) {
         transition={{ duration: 0.6, delay: 0.1 }}
         className="pointer-events-none fixed left-8 top-9 z-50 hidden lg:block"
       >
-        <Link href="/" className="pointer-events-auto">
+        <Link href={localePath(locale, "/")} className="pointer-events-auto">
           <Wordmark tone={onDark ? "light" : "ink"} />
         </Link>
       </motion.div>
@@ -103,7 +126,7 @@ export function Nav({ heroTone = "light" }: { heroTone?: "dark" | "light" }) {
             {allLinks.map((l) => (
               <Link
                 key={l.label}
-                href={l.href}
+                href={localePath(locale, l.href)}
                 className="text-[14px] uppercase leading-[22px] tracking-[-0.1px] text-ink transition-opacity hover:opacity-60"
               >
                 {l.label}
@@ -111,16 +134,29 @@ export function Nav({ heroTone = "light" }: { heroTone?: "dark" | "light" }) {
             ))}
           </div>
 
+          {/* Language toggle. The current locale is stated, the other is the
+              link, and it keeps you on the page you were reading. */}
           <div className="hidden items-center gap-1 rounded-full bg-sand/70 px-4 py-3.5 lg:flex">
-            <span className="text-[13px] font-medium uppercase tracking-[0.08em] text-ink">EN</span>
-            <span className="text-[13px] text-ink/35">/</span>
-            <button className="text-[13px] uppercase tracking-[0.08em] text-ink/50 transition-opacity hover:opacity-80">
-              FR
-            </button>
+            <span
+              aria-current="true"
+              className="text-[13px] font-medium uppercase tracking-[0.08em] text-ink"
+            >
+              {locale}
+            </span>
+            <span aria-hidden className="text-[13px] text-ink/35">
+              /
+            </span>
+            <Link
+              href={swap.href}
+              hrefLang={swap.target}
+              className="text-[13px] uppercase tracking-[0.08em] text-ink/50 transition-opacity hover:opacity-80"
+            >
+              {swap.target}
+            </Link>
           </div>
 
           <Link
-            href="/contact"
+            href={localePath(locale, "/contact")}
             className="hidden items-center gap-2 rounded-full bg-ink-deep px-6 py-3.5 transition-transform duration-300 hover:-translate-y-0.5 lg:flex"
           >
             <span className="btn-label text-light">{nav.call}</span>
@@ -128,7 +164,7 @@ export function Nav({ heroTone = "light" }: { heroTone?: "dark" | "light" }) {
 
           <button
             onClick={() => setOpen(true)}
-            aria-label="Open menu"
+            aria-label={ui.openMenu}
             aria-expanded={open}
             className="flex h-[52px] w-[52px] items-center justify-center rounded-full bg-white shadow-sm lg:hidden"
           >
@@ -154,7 +190,7 @@ export function Nav({ heroTone = "light" }: { heroTone?: "dark" | "light" }) {
               <Wordmark tone="light" />
               <button
                 onClick={() => setOpen(false)}
-                aria-label="Close menu"
+                aria-label={ui.closeMenu}
                 className="flex h-[46px] w-[46px] items-center justify-center rounded-full bg-white/10"
               >
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
@@ -177,7 +213,7 @@ export function Nav({ heroTone = "light" }: { heroTone?: "dark" | "light" }) {
                   transition={{ duration: 0.4, delay: 0.05 * i, ease: [0.16, 1, 0.3, 1] }}
                 >
                   <Link
-                    href={l.href}
+                    href={localePath(locale, l.href)}
                     onClick={() => setOpen(false)}
                     className="block border-b border-light/12 py-5 text-[30px] uppercase leading-none text-light"
                     style={{ fontFamily: "var(--font-display)", fontWeight: 300 }}
@@ -190,20 +226,30 @@ export function Nav({ heroTone = "light" }: { heroTone?: "dark" | "light" }) {
 
             <div className="mt-10 flex items-center gap-3">
               <Link
-                href="/contact"
+                href={localePath(locale, "/contact")}
                 onClick={() => setOpen(false)}
                 className="rounded-full bg-light px-7 py-4"
               >
                 <span className="btn-label text-ink">{nav.call}</span>
               </Link>
               <div className="flex items-center gap-1 rounded-full bg-white/10 px-5 py-4">
-                <span className="text-[13px] font-medium uppercase tracking-[0.08em] text-light">
-                  EN
+                <span
+                  aria-current="true"
+                  className="text-[13px] font-medium uppercase tracking-[0.08em] text-light"
+                >
+                  {locale}
                 </span>
-                <span className="text-[13px] text-light/35">/</span>
-                <button className="text-[13px] uppercase tracking-[0.08em] text-light/50">
-                  FR
-                </button>
+                <span aria-hidden className="text-[13px] text-light/35">
+                  /
+                </span>
+                <Link
+                  href={swap.href}
+                  hrefLang={swap.target}
+                  onClick={() => setOpen(false)}
+                  className="text-[13px] uppercase tracking-[0.08em] text-light/50"
+                >
+                  {swap.target}
+                </Link>
               </div>
             </div>
           </motion.div>

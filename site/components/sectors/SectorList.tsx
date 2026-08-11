@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { Reveal } from "../Reveal";
-import { sectorList } from "@/content/sectors";
+import { copy, localePath, type Locale } from "@/content/copy";
 
-export function SectorList() {
+export function SectorList({ locale }: { locale: Locale }) {
+  const { sectorList } = copy[locale];
+
   return (
     <section className="px-[10px] pt-[10px]">
       <div className="overflow-hidden rounded-[20px] bg-sand px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[90px]">
@@ -17,7 +19,7 @@ export function SectorList() {
           {sectorList.items.map((s, i) => (
             <Reveal key={s.name} delay={0.05 * i}>
               <Link
-                href={`/sectors/${s.slug}`}
+                href={localePath(locale, `/sectors/${s.slug}`)}
                 className="block rounded-[16px] bg-light p-7 transition-transform duration-300 hover:-translate-y-1 lg:p-9"
               >
                 <div>

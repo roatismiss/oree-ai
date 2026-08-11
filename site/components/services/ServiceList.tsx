@@ -1,13 +1,14 @@
 import Link from "next/link";
 import { Reveal } from "../Reveal";
-import { serviceList } from "@/content/services";
-import { serviceDetails } from "@/content/service-details";
+import { copy, localePath, type Locale } from "@/content/copy";
 
-/** Card names are the join key to the detail pages. */
-const slugFor = (name: string) =>
-  serviceDetails.find((d) => d.name === name)?.slug ?? null;
+export function ServiceList({ locale }: { locale: Locale }) {
+  const { serviceList, serviceDetails, ui } = copy[locale];
 
-export function ServiceList() {
+  /** Card names are the join key to the detail pages, per locale. */
+  const slugFor = (name: string) =>
+    serviceDetails.find((d) => d.name === name)?.slug ?? null;
+
   return (
     <section className="px-[10px] pt-[10px]">
       <div className="overflow-hidden rounded-[20px] bg-sand px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[90px]">
@@ -44,10 +45,10 @@ export function ServiceList() {
 
                     {slugFor(s.name) && (
                       <Link
-                        href={`/services/${slugFor(s.name)}`}
+                        href={localePath(locale, `/services/${slugFor(s.name)}`)}
                         className="group mt-7 inline-flex items-center gap-3 text-[15px] font-semibold uppercase tracking-[0.04em] text-ink transition-opacity hover:opacity-70"
                       >
-                        Read the detail
+                        {ui.readDetail}
                         <span className="flex h-[22px] w-[22px] items-center justify-center rounded-full border border-ink/40 transition-transform duration-300 group-hover:translate-x-0.5">
                           <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden>
                             <path

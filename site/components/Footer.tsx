@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { Reveal } from "./Reveal";
-import { footer } from "@/content/en";
+import { copy, localePath, type Locale } from "@/content/copy";
 
-export function Footer() {
+export function Footer({ locale }: { locale: Locale }) {
+  const { footer } = copy[locale];
+
   return (
     <footer className="relative overflow-hidden bg-light px-6 pt-20 sm:px-10 lg:px-[130px] lg:pt-[80px]">
       <div className="relative">
@@ -17,7 +19,7 @@ export function Footer() {
                     {col.links.map((l) => (
                       <li key={l.label}>
                         <Link
-                          href={l.href}
+                          href={localePath(locale, l.href)}
                           className="h-row block text-ink transition-opacity hover:opacity-60"
                         >
                           {l.label}
@@ -46,7 +48,7 @@ export function Footer() {
           <p>{footer.legal}</p>
           <div className="flex gap-8">
             {footer.links.map((l) => (
-              <Link key={l} href="/contact" className="transition-opacity hover:opacity-60">
+              <Link key={l} href={localePath(locale, "/contact")} className="transition-opacity hover:opacity-60">
                 {l}
               </Link>
             ))}

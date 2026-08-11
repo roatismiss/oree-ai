@@ -1,8 +1,10 @@
 import { Reveal } from "./Reveal";
-import { stats } from "@/content/en";
+import { copy, type Locale } from "@/content/copy";
 
 /* Why now: the four sourced Quebec figures, in a clean quiet grid. */
-export function Stats() {
+export function Stats({ locale }: { locale: Locale }) {
+  const { stats } = copy[locale];
+
   return (
     <section className="px-[10px] pt-[10px]">
       <div className="overflow-hidden rounded-[20px] bg-cream px-6 py-16 sm:px-10 lg:px-[120px] lg:py-[80px]">

@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { Reveal } from "./Reveal";
 import { Button } from "./Button";
-import { insights } from "@/content/en";
-import { articles } from "@/content/insights";
+import { copy, localePath, type Locale } from "@/content/copy";
 
-export function Blog() {
+export function Blog({ locale }: { locale: Locale }) {
+  const { insights, articles } = copy[locale];
+
   return (
     <section id="insights" className="px-[10px] pt-[10px]">
       <div className="overflow-hidden rounded-[20px] bg-sand px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[100px]">
@@ -17,7 +18,7 @@ export function Blog() {
             <h2 className="h-display text-ink">{insights.title}</h2>
           </Reveal>
           <Reveal delay={0.1}>
-            <Button variant="dark" href="/insights">
+            <Button variant="dark" href={localePath(locale, "/insights")}>
               {insights.cta}
             </Button>
           </Reveal>
@@ -27,7 +28,7 @@ export function Blog() {
           {articles.map((a, i) => (
             <Reveal key={a.slug} delay={0.07 * i}>
               <Link
-                href={`/insights/${a.slug}`}
+                href={localePath(locale, `/insights/${a.slug}`)}
                 className="flex h-full flex-col rounded-[14px] bg-light transition-transform duration-300 hover:-translate-y-1"
               >
                 <div className="flex flex-1 flex-col p-7">

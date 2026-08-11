@@ -1,7 +1,9 @@
 import { Reveal } from "./Reveal";
-import { frameworks } from "@/content/en";
+import { copy, type Locale } from "@/content/copy";
 
-export function Frameworks() {
+export function Frameworks({ locale }: { locale: Locale }) {
+  const { frameworks } = copy[locale];
+
   // Repeat the list so the marquee reads as continuous at 1440px.
   const strip = [...frameworks.items, ...frameworks.items, ...frameworks.items];
 

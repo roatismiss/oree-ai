@@ -1,12 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { insightsHero } from "@/content/insights";
+import { copy, type Locale } from "@/content/copy";
 
 const rise = { initial: { opacity: 0, y: 40 }, animate: { opacity: 1, y: 0 } };
 const ease = [0.16, 1, 0.3, 1] as const;
 
-export function InsightsHero() {
+export function InsightsHero({ locale }: { locale: Locale }) {
+  const { insightsHero } = copy[locale];
+
   return (
     <section className="px-[10px] pt-[10px]">
       <div className="relative flex min-h-[340px] flex-col justify-center overflow-hidden rounded-[20px] bg-light px-6 py-24 sm:px-12 lg:min-h-[420px] lg:px-[130px] lg:py-[90px]">

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Reveal } from "./Reveal";
 import { Button } from "./Button";
-import { practice } from "@/content/en";
+import { copy, localePath, type Locale } from "@/content/copy";
 
 type Item = { title: string; note: string };
 
@@ -26,7 +26,9 @@ function Marquee({ items, dir }: { items: Item[]; dir: "left" | "right" }) {
   );
 }
 
-export function Team() {
+export function Team({ locale }: { locale: Locale }) {
+  const { practice, ui } = copy[locale];
+
   return (
     <section className="px-[10px] pt-[10px]">
       <div className="overflow-hidden rounded-[20px] bg-sand py-20 lg:py-[100px]">
@@ -40,7 +42,7 @@ export function Team() {
               <div className="overflow-hidden rounded-[20px]">
                 <Image
                   src="/img/aminata-diabate.jpg"
-                  alt="Aminata Diabaté, Founder and Principal Consultant of Orée Conseil"
+                  alt={ui.portraitAlt}
                   width={1142}
                   height={1280}
                   className="h-auto w-full object-cover"
@@ -58,13 +60,29 @@ export function Team() {
                 {practice.body}
               </p>
 
-              {/* Career background, never presented as a client list. */}
-              <div className="mt-7 max-w-[520px] rounded-[14px] bg-mousse px-6 py-5">
-                <p className="text-[14px] leading-[22px] text-ink">{practice.backgroundLine}</p>
+              {/* Career background, never presented as a client list. The
+                  sector label and the clarifying note both carry meaning: they
+                  are what stop the list being misread. */}
+              <div className="mt-7 max-w-[520px] rounded-[14px] bg-mousse px-6 py-6">
+                <p className="eyebrow text-olive-deep">{practice.backgroundLabel}</p>
+                <ul className="mt-4 divide-y divide-olive-deep/15">
+                  {practice.background.map((b) => (
+                    <li
+                      key={b.org}
+                      className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 py-2.5"
+                    >
+                      <span className="text-[14px] leading-[20px] text-ink">{b.org}</span>
+                      <span className="text-[13px] leading-[20px] text-grey">{b.sector}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-4 text-[13px] leading-[19px] text-grey">
+                  {practice.backgroundNote}
+                </p>
               </div>
 
               <div className="mt-9">
-                <Button variant="yellow" href="/approach">{practice.cta}</Button>
+                <Button variant="yellow" href={localePath(locale, "/approach")}>{practice.cta}</Button>
               </div>
             </Reveal>
           </div>

@@ -1,7 +1,9 @@
 import { Reveal } from "../Reveal";
-import { method } from "@/content/approach";
+import { copy, type Locale } from "@/content/copy";
 
-export function Method() {
+export function Method({ locale }: { locale: Locale }) {
+  const { method } = copy[locale];
+
   return (
     <section className="px-[10px] pt-[10px]">
       <div className="relative overflow-hidden rounded-[20px] bg-craie px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[80px]">

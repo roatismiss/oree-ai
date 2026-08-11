@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Reveal } from "./Reveal";
 import { SplitHeading } from "./SplitHeading";
-import { services } from "@/content/en";
+import { copy, localePath, type Locale } from "@/content/copy";
 
 function Row({ label, href }: { label: string; href: string }) {
   return (
@@ -25,7 +25,9 @@ function Row({ label, href }: { label: string; href: string }) {
   );
 }
 
-export function PracticeAreas() {
+export function PracticeAreas({ locale }: { locale: Locale }) {
+  const { services } = copy[locale];
+
   return (
     <section className="px-[10px] pt-[10px]">
       <div className="overflow-hidden rounded-[20px] bg-craie px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[80px]">
@@ -43,7 +45,7 @@ export function PracticeAreas() {
             <div className="space-y-4">
               {services.left.map((b, i) => (
                 <Reveal key={b.href} delay={0.05 * i}>
-                  <Row label={b.label} href={b.href} />
+                  <Row label={b.label} href={localePath(locale, b.href)} />
                 </Reveal>
               ))}
             </div>
@@ -56,13 +58,25 @@ export function PracticeAreas() {
             <div className="space-y-4">
               {services.right.map((b, i) => (
                 <Reveal key={b.href} delay={0.05 * i}>
-                  <Row label={b.label} href={b.href} />
+                  <Row label={b.label} href={localePath(locale, b.href)} />
                 </Reveal>
               ))}
             </div>
           </div>
         </div>
 
+        {/* Who it's for, in the old site's own words. Sits under the two
+            columns so the audience statement frames both. */}
+        <Reveal delay={0.1}>
+          <ul className="mt-12 grid gap-4 border-t border-hairline pt-8 sm:grid-cols-3">
+            {services.audience.map((a) => (
+              <li key={a} className="flex items-start gap-3 text-[15px] leading-[22px] text-ink">
+                <span className="mt-[9px] block h-[5px] w-[5px] shrink-0 rounded-full bg-olive-deep" aria-hidden />
+                {a}
+              </li>
+            ))}
+          </ul>
+        </Reveal>
       </div>
     </section>
   );

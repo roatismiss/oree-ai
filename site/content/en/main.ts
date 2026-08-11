@@ -1,0 +1,467 @@
+/**
+ * All site copy in one place so the French (Quebec) locale can mirror it later.
+ * Voice: advisor, not vendor. Specific nouns and verbs, no buzzwords, no em dashes.
+ * Source of truth: the Orée Conseil web content brief (July 30, 2026).
+ */
+
+export const nav = {
+  links: [
+    { label: "Approach", href: "/approach" },
+    { label: "Services", href: "/services" },
+    { label: "Sectors", href: "/sectors" },
+    { label: "Insights", href: "/insights" },
+  ],
+  more: "Demos",
+  call: "Book a call",
+};
+
+/** Page titles and descriptions, one entry per route. */
+export const meta = {
+  site: {
+    title: "Orée Conseil · AI consulting for Quebec SMEs and regulated practices",
+    description:
+      "Orée helps Quebec SMEs and regulated professional practices take ownership of AI by first diagnosing what actually slows the work down. L'IA rédige. L'humain décide.",
+  },
+  approach: {
+    title: "The approach · Orée",
+    description:
+      "The O·R·É·E method: observe, uncover, evaluate, engage. Three days inside your practice, ending in a costed plan you approve line by line.",
+  },
+  services: {
+    title: "Services · Orée",
+    description:
+      "Orée Diagnostic, Orée Training, Orée Support and the Law 25 Radar. A deliberately small offer, one method, and a costed plan you keep.",
+  },
+  sectors: {
+    title: "Sectors · Orée",
+    description:
+      "AI governance for notaries, law firms, CHRPs, investment firms and nonprofits in Quebec. Each sector's obligations, and where the method starts.",
+  },
+  insights: {
+    title: "Insights · Orée",
+    description:
+      "Sourced articles on AI and the obligations of regulated practice in Quebec: Barreau guidance, Law 25 registers, and the notariat's digital shift.",
+  },
+  risks: {
+    title: "The cost of inaction · Orée Conseil",
+    description:
+      "The real risk isn't acting on AI too soon, it's acting too late. Four moments in economic history where the gap between adopting a technology and reorganizing around it decided who survived.",
+  },
+  contact: {
+    title: "Contact · Orée Conseil",
+    description:
+      "Book an Orée diagnostic. Aminata Diabaté, Founder and Principal Consultant. Montréal · Eastern Townships, Québec.",
+  },
+};
+
+/**
+ * Interface chrome: section headings, back links and accessible labels that
+ * were previously hardcoded in the components. They belong here so the French
+ * locale is not left with English buttons.
+ */
+export const ui = {
+  readDetail: "Read the detail",
+  allServices: "All services",
+  allSectors: "All sectors",
+  situation: "The situation",
+  whatItAnswers: "What it answers",
+  whereMandateStarts: "Where a mandate starts",
+  startingPoints: "Starting points",
+  whatChanges: "What changes",
+  howItRuns: "How it runs",
+  theProcess: "The process",
+  whatYouKeep: "What you keep",
+  sources: "Sources",
+  openMenu: "Open menu",
+  closeMenu: "Close menu",
+  previousQuestion: "Previous question",
+  nextQuestion: "Next question",
+  portraitAlt: "Aminata Diabaté, Founder and Principal Consultant of Orée Conseil",
+};
+
+export const hero = {
+  eyebrow: "AI consulting · Quebec SMEs and regulated practices",
+  titleTop: "Artificial intelligence, built around",
+  titleMid: "how your team actually works.",
+  titleBottom: "Not the other way around.",
+  body:
+    "Orée helps Quebec SMEs and regulated professional practices take ownership of artificial intelligence. Not by selling tools, but by first diagnosing what is actually slowing the work down. A four-step method, a bounded mandate, and recommendations you can act on the following week.",
+  cta: "Book a diagnostic",
+  ctaSecondary: "Try the demos",
+  refrain: "« L'IA rédige. L'humain décide. »",
+  refrainGloss: "AI drafts. The human decides.",
+};
+
+/**
+ * The O·R·É·E mnemonic, restored to the homepage from oree-conseil.ca where it
+ * sat directly under the hero. The four verbs carry the brand, so they stay
+ * prominent here and the long-form treatment lives on /approach.
+ */
+export const methodGlance = {
+  mnemonic: "O·R·É·E",
+  title: "The method, at a glance",
+  steps: [
+    { letter: "O", fr: "Observer", en: "Observe", body: "Immersion in the real work." },
+    { letter: "R", fr: "Relever", en: "Uncover", body: "Document friction, without filters." },
+    { letter: "É", fr: "Évaluer", en: "Evaluate", body: "Prioritize what really holds back." },
+    { letter: "E", fr: "Engager", en: "Engage", body: "Concrete, actionable recommendations." },
+  ],
+  cta: "Learn more about the method",
+};
+
+/** Why now: the Quebec context. Sourced figures only, per the client brief. */
+export const stats = {
+  eyebrow: "Why now · The Quebec context",
+  titleTop: "Adopted faster than",
+  titleBottom: "The work is rethought",
+  items: [
+    {
+      figure: "12.7%",
+      caption:
+        "of Quebec businesses already use AI in their operations. Twice as many as a year ago.",
+      source: "ISQ, Q2 2025",
+    },
+    {
+      figure: "73%",
+      caption:
+        "cannot clearly name where AI could help them, before they even think about a tool.",
+      source: "CPQ, Dec. 2024",
+    },
+    {
+      figure: "1 in 3",
+      caption:
+        "of businesses that adopted AI had to rebuild their workflows after the fact.",
+      source: "ISQ, 2025",
+    },
+    {
+      figure: "2×",
+      caption:
+        "large enterprises adopt AI at twice the rate of the smallest, 26.1% versus 12.2%. A starting gap, not a finish line.",
+      source: "ISQ, Q2 2025",
+    },
+  ],
+  note: "The Quebec paradox: AI is being adopted faster than the work around it is being rethought.",
+};
+
+export const why = {
+  eyebrow: "Why Orée",
+  titleTop: "What sets this",
+  titleBottom: "Practice apart",
+  paragraphs: [
+    "Orée is an independent AI consulting practice for Quebec SMEs and regulated professional practices. The work starts inside your office, with the way work is actually done, not with a product demonstration.",
+    "Every mandate follows one method: observe the real work, uncover the frictions that slow it down, evaluate which ones actually hold back performance, and engage a plan you approve line by line.",
+    "We do not sell software and we take no commission from those who do. What you get is a costed plan you can carry out with us or without us.",
+  ],
+  cards: [
+    "Independent of every vendor",
+    "Fixed fee, quoted on request",
+    "Data hosted in Canada",
+    "A human signs every step",
+  ],
+  cta: "Book a diagnostic",
+};
+
+export const services = {
+  eyebrow: "The Orée offer",
+  titleTop: "A focused offer,",
+  titleBottom: "One method",
+  leftLabel: "What I do",
+  rightLabel: "Who I do it for",
+  /* Verbatim from oree-conseil.ca's "Who it's for". "Facts, not impressions"
+     is brand wording and is not to be paraphrased. */
+  audience: [
+    "SMEs and businesses, across all sectors",
+    "Regulated professions and organizations",
+    "Leadership teams who want facts, not impressions",
+  ],
+  left: [
+    { label: "Orée Diagnostic", href: "/services/diagnostic" },
+    { label: "Orée Training", href: "/services/training" },
+    { label: "Orée Support", href: "/services/support" },
+    { label: "Law 25 Radar", href: "/services/law-25-radar" },
+  ],
+  right: [
+    { label: "SMEs and businesses, all sectors", href: "/sectors" },
+    { label: "Notaries · Vision 2030", href: "/sectors/notaries" },
+    { label: "Law firms · Barreau duties", href: "/sectors/law-firms" },
+    { label: "CHRPs and HR advisers", href: "/sectors/hr-advisers" },
+    { label: "Investment firms", href: "/sectors/investment-firms" },
+    { label: "Nonprofits · Funder duties", href: "/sectors/nonprofits" },
+  ],
+};
+
+export const practice = {
+  eyebrow: "The practice",
+  titleTop: "One practitioner,",
+  titleBottom: "Twenty-seven years",
+  name: "Aminata Diabaté",
+  role: "Founder and Principal Consultant · Orée Conseil",
+  body:
+    "Orée is the practice of Aminata Diabaté, who has spent twenty-seven years inside Quebec's most complex organizations. You work with her directly. No account managers, no handoffs, no junior consultant learning your file on your time.",
+  /* Restored from oree-conseil.ca: each organization carries its sector, and
+     the clarification below it is not optional. Without it the list reads as a
+     client list, which it is not. Wording is the old site's, verbatim. */
+  backgroundLabel: "Background",
+  backgroundNote:
+    "Organizations Aminata worked at before founding Orée Conseil — not clients.",
+  background: [
+    { org: "Fonds de solidarité FTQ", sector: "Financial institution" },
+    { org: "Bell", sector: "Telecommunications" },
+    { org: "Bombardier · CGI", sector: "Industry and consulting services" },
+    { org: "Banque Nationale", sector: "Financial services" },
+    { org: "Université de Montréal", sector: "Public / para-public sector" },
+  ],
+  cta: "Read the approach",
+  // Marquee rows: what the practice covers, not a staff roster.
+  rowOne: [
+    { title: "Orée Diagnostic", note: "Three days, six to eight interviews, one honest picture" },
+    { title: "Direct with Aminata", note: "No handoffs, no junior consultants" },
+    { title: "Orée Training", note: "Built from your own diagnostic findings" },
+    { title: "Orée Support", note: "Monthly follow-up until it holds without us" },
+    { title: "Law 25, inside every mandate", note: "Consents, registers, obligations checked" },
+  ],
+  rowTwo: [
+    { title: "The document librarian", note: "Every answer cites its clause" },
+    { title: "The drafting assistant", note: "Facts in, first draft out, you sign" },
+    { title: "The triage clerk", note: "Sorts, and escalates when unsure" },
+    { title: "Sample data only", note: "Nothing you type is ever stored" },
+  ],
+};
+
+export const ctaBand = {
+  titleTop: "Your frictions are not waiting.",
+  titleBottom: "Neither should your plan.",
+  body:
+    "Three days inside your organization: six to eight targeted interviews, an optional group workshop, and an executive debrief. An honest picture of human-AI friction, delivered within two weeks. Fixed fee, quoted on request.",
+  cta: "Book a diagnostic",
+};
+
+/**
+ * The enquiry form. "Organization" is back because Orée's answer depends on
+ * the kind of practice asking, and the confirmation wording is the old site's.
+ *
+ * There is no server to post to yet, so submitting composes the message in the
+ * visitor's mail client. See components/ContactForm.tsx: swapping in a real
+ * endpoint is a change to one function.
+ */
+export const contactForm = {
+  eyebrow: "Send a message",
+  fields: {
+    name: "Name",
+    organization: "Organization",
+    email: "Email",
+    phone: "Phone",
+    message: "Message",
+  },
+  optional: "optional",
+  submit: "Send",
+  subject: "Orée Diagnostic",
+  confirmation: {
+    title: "Thank you — your message has been sent. We'll be in touch shortly.",
+    fallback:
+      "If your mail application did not open, write to aminata.diabate@oreeconseil.ca directly. Either way you will hear back within one business day.",
+    again: "Send another message",
+  },
+};
+
+/**
+ * Not testimonials. Orée is pre-launch, so inventing named clients and
+ * photographs would be fabricated social proof. These are the real objections
+ * each audience raises, attributed to the audience rather than a person.
+ */
+export const questions = {
+  eyebrow: "What you are asking",
+  titleTop: "The questions",
+  titleBottom: "Behind the hesitation",
+  items: [
+    {
+      who: "SMEs",
+      context: "All sectors",
+      quote:
+        "\"We know AI should help us somewhere. We just cannot say where, and we cannot afford a false start.\"",
+    },
+    {
+      who: "Notaries",
+      context: "Vision 2030",
+      quote:
+        "\"Can I put a client file anywhere near an AI tool without breaching my professional secrecy obligations?\"",
+    },
+    {
+      who: "Law firms",
+      context: "Barreau duties",
+      quote:
+        "\"If the draft is wrong and it goes out under my signature, where does the liability actually land?\"",
+    },
+    {
+      who: "CHRPs",
+      context: "Order guidelines",
+      quote:
+        "\"My team is already using these tools quietly. How do I govern that instead of pretending it is not happening?\"",
+    },
+    {
+      who: "Investment firms",
+      context: "Sensitive data",
+      quote:
+        "\"Where does the data physically sit, who can read it, and what can I show an examiner when they ask?\"",
+    },
+  ],
+};
+
+/** The FAQ mandated by the client brief, operational friction first. */
+export const faq: {
+  eyebrow: string;
+  titleTop: string;
+  titleBottom: string;
+  items: {
+    question: string;
+    answer: string;
+    examples?: { title: string; note: string }[];
+  }[];
+} = {
+  eyebrow: "Frequently asked",
+  titleTop: "Honest answers,",
+  titleBottom: "Before any mandate",
+  items: [
+    {
+      question: "What is an operational friction?",
+      answer:
+        "A point in everyday work where things slow down, get duplicated, or fall through the cracks. Not because people are doing a bad job, but because the process around them was never redesigned for today's volume or pace. It becomes invisible over time: people learn to live with it, work around it, and stop naming it.",
+      examples: [
+        {
+          title: "Double data entry",
+          note: "The same information retyped by hand across systems that do not talk to each other.",
+        },
+        {
+          title: "Approvals lost in email",
+          note: "Documents circulating for sign-off with no clear step and no tracking.",
+        },
+        {
+          title: "Which version is the real one",
+          note: "Multiple copies of the same document in circulation, with no certainty which one is current.",
+        },
+      ],
+    },
+    {
+      question: "Why a diagnostic before acting?",
+      answer:
+        "Because a blind investment costs more than an honest, timely diagnostic.",
+    },
+    {
+      question: "Why only three days?",
+      answer:
+        "A bounded mandate forces prioritization. Three well-chosen priorities beat a thirty-page audit.",
+    },
+    {
+      question: "Why an independent consultant?",
+      answer:
+        "No tools to sell: every recommendation comes from the ground, never from a vendor relationship.",
+    },
+    /* Baseline definitions restored from the old site's FAQ. The figures on
+       this site are cited to the ISQ and the CPQ, so a reader who does not
+       already know those acronyms should not have to look them up. */
+    {
+      question: "What does \"adoption rate\" mean?",
+      answer:
+        "The share of businesses already using artificial intelligence in their day-to-day operations, regardless of how extensively, from occasional use of a tool to full integration.",
+    },
+    {
+      question: "What are the ISQ and the CPQ?",
+      answer:
+        "The ISQ (Institut de la statistique du Québec) is Quebec's official government agency for economic and social statistics. The CPQ (Conseil du patronat du Québec) is the province's leading employers' association. Both publish regular studies on AI adoption in business, cited throughout this site.",
+    },
+    {
+      question: "What is meant by SME?",
+      answer:
+        "An SME (small or medium-sized enterprise) generally has fewer than 500 employees, the vast majority of organizations in Quebec. This is Orée's primary audience, especially smaller structures with no dedicated team or AI experimentation budget.",
+    },
+  ],
+};
+
+/**
+ * Replaces the template's award badges. Those were real German legal awards
+ * and would read as credentials Orée does not hold. These are the frameworks
+ * the practice works against, stated as scope rather than endorsement.
+ */
+export const frameworks = {
+  eyebrow: "Scope of practice",
+  titleTop: "Built around",
+  titleBottom: "Your duties",
+  body:
+    "Orée does not certify or accredit anyone. The practice is built around the obligations you already carry, so that what you adopt survives a review by the people entitled to conduct one.",
+  items: [
+    "Law 25",
+    "Vision 2030",
+    "Barreau du Québec duties",
+    "Chambre des notaires",
+    "CHRP ethics, 2027",
+    "PIPEDA",
+    "Canadian data residency",
+    "Professional secrecy",
+  ],
+};
+
+export const cta = {
+  title: "Book your Orée diagnostic",
+  body:
+    "One call to confirm the scope. Three days inside your organization. An honest picture of what slows the work down, whether or not you continue with us.",
+  primary: "Book a diagnostic",
+  secondary: "Try the demos",
+};
+
+export const insights = {
+  eyebrow: "Insights",
+  title: "From the practice",
+  cta: "Read all articles",
+};
+
+export const contact = {
+  eyebrow: "Contact",
+  title: "Book your Orée diagnostic",
+  body:
+    "One conversation to confirm the scope, no commitment attached. Write to Aminata directly and you will hear back within one business day.",
+  emailLabel: "Write to",
+  email: "aminata.diabate@oreeconseil.ca",
+  locationLabel: "Based in",
+  location: "Montréal · Eastern Townships, Québec",
+  languagesLabel: "Working languages",
+  languages: "French and English",
+  cta: "Write to Aminata",
+};
+
+export const footer = {
+  columns: [
+    {
+      label: "Practice",
+      links: [
+        { label: "The approach", href: "/approach" },
+        { label: "Services", href: "/services" },
+        { label: "About Aminata", href: "/approach#bio" },
+        { label: "The cost of inaction", href: "/risks" },
+      ],
+    },
+    {
+      label: "Sectors",
+      links: [
+        { label: "SMEs, all sectors", href: "/sectors" },
+        { label: "Notaries", href: "/sectors/notaries" },
+        { label: "Law firms", href: "/sectors/law-firms" },
+      ],
+    },
+    {
+      label: "Say hello",
+      links: [
+        {
+          label: "aminata.diabate@oreeconseil.ca",
+          href: "mailto:aminata.diabate@oreeconseil.ca",
+        },
+        { label: "Montréal · Eastern Townships, Québec", href: "/contact" },
+        { label: "Bilingual EN · FR", href: "/contact" },
+      ],
+    },
+  ],
+  wordmark: "Orée Conseil",
+  refrain: "« L'IA rédige. L'humain décide. »",
+  refrainGloss: "AI drafts. The human decides.",
+  legal: "© 2026 Orée Conseil · Montréal · Eastern Townships, Québec",
+  links: ["Privacy", "Law 25 notice"],
+};

@@ -2,11 +2,13 @@
 
 import { useState } from "react";
 import { Reveal } from "./Reveal";
-import { faq } from "@/content/en";
+import { copy, type Locale } from "@/content/copy";
 
 /** The FAQ mandated by the client brief. Plain disclosure accordion, one open
     at a time, keyboard-native via <button>. */
-export function Faq() {
+export function Faq({ locale }: { locale: Locale }) {
+  const { faq } = copy[locale];
+
   const [open, setOpen] = useState(0);
 
   return (
