@@ -1,4 +1,5 @@
 import { Reveal } from "../Reveal";
+import { SectionMark } from "../SectionMark";
 import { copy, type Locale } from "@/content/copy";
 
 export function Method({ locale }: { locale: Locale }) {
@@ -6,15 +7,16 @@ export function Method({ locale }: { locale: Locale }) {
 
   return (
     <section className="px-[10px] pt-[10px]">
-      <div className="relative overflow-hidden rounded-[20px] bg-craie px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[80px]">
+      <div className="panel-wash relative overflow-hidden rounded-[20px] bg-craie px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[80px]">
         <div className="relative">
+          <Reveal>
+            <SectionMark index="01" label={method.eyebrow} tone="amber" className="mb-10" />
+          </Reveal>
+
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start">
             <div>
-              <Reveal>
-                <p className="eyebrow text-amber-ink">{method.eyebrow}</p>
-              </Reveal>
               <Reveal delay={0.06}>
-                <h2 className="h-display mt-4 text-ink">{method.title}</h2>
+                <h2 className="h-display text-ink">{method.title}</h2>
               </Reveal>
             </div>
 
@@ -23,20 +25,34 @@ export function Method({ locale }: { locale: Locale }) {
             </Reveal>
           </div>
 
+          {/* Observer · Relever · Évaluer · Engager — the four initials are the
+              practice's name, and the step list never showed them, so the one
+              page devoted to the method kept its mnemonic a secret. The letter
+              is taken from the step's own French verb rather than stored again
+              beside it, which keeps the two from ever drifting apart. */}
           <ol className="mt-14">
             {method.steps.map((s, i) => (
               <Reveal key={s.n} delay={0.06 * i}>
-                <li className="border-t border-hairline py-8 last:border-b">
-                  <div className="flex items-baseline justify-between gap-8">
+                <li className="grid gap-4 border-t border-hairline py-10 sm:grid-cols-[104px_minmax(0,1fr)] sm:gap-8 lg:gap-14 [&:last-child]:border-b">
+                  <div className="flex items-baseline gap-5 sm:block">
+                    <p className="eyebrow text-amber">{s.n}</p>
+                    <p
+                      aria-hidden
+                      className="font-display text-[52px] italic leading-none text-olive-deep sm:mt-4 lg:text-[68px]"
+                    >
+                      {s.fr.charAt(0)}
+                    </p>
+                  </div>
+
+                  <div>
                     <h3 className="h-row text-ink">
                       {s.fr}
                       <span className="ml-3 text-grey">{s.en}</span>
                     </h3>
-                    <span className="h-row shrink-0 text-olive-deep">{s.n}</span>
+                    <p className="mt-3 max-w-[720px] text-[15px] leading-[22px] text-ecorce">
+                      {s.body}
+                    </p>
                   </div>
-                  <p className="mt-3 max-w-[720px] text-[15px] leading-[22px] text-ecorce">
-                    {s.body}
-                  </p>
                 </li>
               </Reveal>
             ))}

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Reveal } from "./Reveal";
@@ -64,7 +63,15 @@ export function Questions({ locale }: { locale: Locale }) {
                   <p className="h-row text-[20px] text-ink-dark">{q.who}</p>
                   <p className="mt-1.5 text-[14px] leading-[22px] text-grey">{q.context}</p>
                   <p className="h-quote mt-6 text-ink/85">{q.quote}</p>
-                  <Image src="/img/icon-quote.png" alt="" width={28} height={28} className="mt-8 opacity-25" />
+                  {/* Was a grey PNG quote glyph from the template. A French
+                      guillemet set in Cormorant is the same mark in the
+                      brand's own face, and needs no image. */}
+                  <p
+                    aria-hidden
+                    className="mt-auto pt-8 font-display text-[34px] leading-none text-olive-deep/30"
+                  >
+                    »
+                  </p>
                 </div>
               ))}
             </motion.div>

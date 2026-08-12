@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { TreeLine } from "../TreeLine";
 import { copy, localePath, type Locale } from "@/content/copy";
 
 const rise = { initial: { opacity: 0, y: 40 }, animate: { opacity: 1, y: 0 } };
@@ -23,6 +24,9 @@ export function ArticleHero({
   return (
     <section className="px-[10px] pt-[10px]">
       <div className="relative flex min-h-[320px] flex-col justify-end overflow-hidden rounded-[20px] bg-light px-6 pb-16 pt-32 sm:px-12 lg:min-h-[380px] lg:px-[130px] lg:pb-[70px]">
+        <div className="hero-horizon absolute inset-0" aria-hidden />
+        <TreeLine className="pointer-events-none absolute inset-x-0 bottom-0 h-[34%] w-full" />
+
         <div className="relative max-w-[860px]">
           <motion.p {...rise} transition={{ duration: 0.7, ease }} className="eyebrow text-amber-ink">
             <Link

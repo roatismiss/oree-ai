@@ -1,5 +1,6 @@
 import { Reveal } from "./Reveal";
 import { Button } from "./Button";
+import { SectionMark } from "./SectionMark";
 import { copy, localePath, type Locale } from "@/content/copy";
 
 /* The O·R·É·E mnemonic in the position it held on oree-conseil.ca: directly
@@ -11,13 +12,14 @@ export function MethodGlance({ locale }: { locale: Locale }) {
   return (
     <section className="px-[10px] pt-[10px]">
       <div className="panel-wash overflow-hidden rounded-[20px] bg-craie px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[80px]">
-        <div className="flex flex-wrap items-end justify-between gap-6">
+        <Reveal>
+          <SectionMark index="01" label={methodGlance.mnemonic} tone="amber" />
+        </Reveal>
+
+        <div className="mt-8 flex flex-wrap items-end justify-between gap-6">
           <div>
-            <Reveal>
-              <p className="eyebrow text-amber-ink">{methodGlance.mnemonic}</p>
-            </Reveal>
             <Reveal delay={0.06}>
-              <h2 className="h-display mt-3 text-ink">{methodGlance.title}</h2>
+              <h2 className="h-display text-ink">{methodGlance.title}</h2>
             </Reveal>
           </div>
         </div>

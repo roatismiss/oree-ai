@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Reveal } from "../Reveal";
+import { SectionMark } from "../SectionMark";
 import { copy, localePath, type Locale } from "@/content/copy";
 
 export function ServiceList({ locale }: { locale: Locale }) {
@@ -11,12 +12,12 @@ export function ServiceList({ locale }: { locale: Locale }) {
 
   return (
     <section className="px-[10px] pt-[10px]">
-      <div className="overflow-hidden rounded-[20px] bg-sand px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[90px]">
+      <div className="panel-wash overflow-hidden rounded-[20px] bg-sand px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[90px]">
         <Reveal>
-          <p className="eyebrow text-grey">{serviceList.eyebrow}</p>
+          <SectionMark index="02" label={serviceList.eyebrow} tone="ink" />
         </Reveal>
         <Reveal delay={0.06}>
-          <h2 className="h-display mt-3 text-ink">{serviceList.title}</h2>
+          <h2 className="h-display mt-8 text-ink">{serviceList.title}</h2>
         </Reveal>
 
         <div className="mt-14 space-y-5">
@@ -32,7 +33,7 @@ export function ServiceList({ locale }: { locale: Locale }) {
                   <div>
                     <p className="text-[15px] leading-[23px] text-grey">{s.summary}</p>
 
-                    <dl className="mt-8 grid grid-cols-1 gap-5 border-t border-ink/10 pt-6 sm:grid-cols-3">
+                    <dl className="mt-8 grid grid-cols-1 gap-5 border-t border-hairline pt-6 sm:grid-cols-3">
                       {s.meta.map((m) => (
                         <div key={m.label}>
                           <dt className="text-[13px] leading-[18px] text-grey">{m.label}</dt>

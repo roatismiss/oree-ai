@@ -109,7 +109,7 @@ export const sectorDetails: SectorDetail[] = [
     name: "Notaries",
     eyebrow: "Sector · Vision 2030",
     titleTop: "For Quebec",
-    titleBottom: "Notaries",
+    titleBottom: "notaries",
     lede:
       "Here is how the method would apply to a notarial practice. Vision 2030 has set a direction, and the profession will increasingly be asked to adapt — a real need, provided nothing comes near the authentic act itself.",
     situation: [
@@ -181,7 +181,7 @@ export const sectorDetails: SectorDetail[] = [
     name: "Law firms",
     eyebrow: "Sector · Barreau duties",
     titleTop: "For Quebec",
-    titleBottom: "Law firms",
+    titleBottom: "law firms",
     lede:
       "Here is how the method would apply to a law firm. Duties to the Barreau leave no room for improvisation — exactly the kind of constraint where observing before equipping can make a real difference, without ever putting the lawyer's signature at stake.",
     situation: [
@@ -253,7 +253,7 @@ export const sectorDetails: SectorDetail[] = [
     name: "CHRPs and HR advisers",
     eyebrow: "Sector · Order guidelines",
     titleTop: "For CHRPs",
-    titleBottom: "And HR teams",
+    titleBottom: "and HR teams",
     lede:
       "Here is how the method would apply to an HR team. Your teams are probably using these tools already, quietly — a real need for guardrails, without ever monitoring or dictating, only naming what is already happening and setting clear limits.",
     situation: [
@@ -325,7 +325,7 @@ export const sectorDetails: SectorDetail[] = [
     name: "Investment firms",
     eyebrow: "Sector · Examiner readiness",
     titleTop: "For investment",
-    titleBottom: "Firms",
+    titleBottom: "firms",
     lede:
       "Here is how the method would apply to an investment firm. The question of data residency and traceability comes up sooner or later — a real need for documentary rigour, without slowing your operations down or staying longer than necessary.",
     situation: [
@@ -397,7 +397,7 @@ export const sectorDetails: SectorDetail[] = [
     name: "Nonprofits",
     eyebrow: "Sector · Funder and governance duties",
     titleTop: "For Quebec",
-    titleBottom: "Nonprofits",
+    titleBottom: "nonprofits",
     lede:
       "The mission comes first, but the paperwork behind it is what quietly consumes the team. The question is not whether AI can help, it's what a small organization can adopt without risking the trust it runs on.",
     situation: [

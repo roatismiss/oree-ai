@@ -6,13 +6,21 @@
 
 /* The oree-conseil.ca menu, as it was: Method, About, Why Orée, Offering.
    Home is carried by the logo and Contact by the button, as on her site.
-   Sectors and Insights, which she did not have, stay in the footer. */
+   Sectors joins them. Her old site had no such page, but since she commissioned
+   a sixth sheet and fixed the display order it is a section in its own right —
+   and the home page now points at the individual sheets rather than the
+   overview, which left that page with no entry point outside the footer.
+   Offering says what the practice does, Sectors says who for: the two columns
+   of the home page, in the same order.
+
+   Insights stays in the footer. */
 export const nav = {
   links: [
     { label: "Method", href: "/approach" },
     { label: "About", href: "/about" },
     { label: "Why Orée", href: "/why" },
     { label: "Offering", href: "/services" },
+    { label: "Sectors", href: "/sectors" },
   ],
   more: "Demos",
   call: "Book the Diagnostic",
@@ -161,6 +169,7 @@ export const ui = {
   theProcess: "The process",
   whatYouKeep: "What you keep",
   sources: "Sources",
+  home: "Orée Conseil — back to home",
   openMenu: "Open menu",
   closeMenu: "Close menu",
   previousQuestion: "Previous question",

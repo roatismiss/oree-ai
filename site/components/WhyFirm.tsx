@@ -1,15 +1,9 @@
-import Image from "next/image";
 import { Reveal } from "./Reveal";
+import { SectionMark } from "./SectionMark";
 import { SplitHeading } from "./SplitHeading";
 import { Button } from "./Button";
+import { marks } from "./Marks";
 import { copy, localePath, type Locale } from "@/content/copy";
-
-const icons = [
-  "/img/icon-card-1.png",
-  "/img/icon-card-2.png",
-  "/img/icon-card-3.png",
-  "/img/icon-card-4.png",
-];
 
 export function WhyFirm({ locale }: { locale: Locale }) {
   const { why } = copy[locale];
@@ -19,7 +13,7 @@ export function WhyFirm({ locale }: { locale: Locale }) {
       <div className="panel-wash relative overflow-hidden rounded-[20px] bg-sand px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[80px]">
         <div className="relative">
           <Reveal>
-            <p className="eyebrow text-olive-deep">{why.eyebrow}</p>
+            <SectionMark index="04" label={why.eyebrow} />
           </Reveal>
 
           <SplitHeading top={why.titleTop} bottom={why.titleBottom} className="mt-4 text-ink" />
@@ -33,16 +27,19 @@ export function WhyFirm({ locale }: { locale: Locale }) {
           </Reveal>
 
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {why.cards.map((label, i) => (
-              <Reveal key={label} delay={0.06 * i}>
-                <div className="h-full rounded-[14px] bg-light/85 p-6">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-sand/70">
-                    <Image src={icons[i]} alt="" width={18} height={18} />
-                  </span>
-                  <p className="h-row mt-12 text-ink">{label}</p>
-                </div>
-              </Reveal>
-            ))}
+            {why.cards.map((label, i) => {
+              const Mark = marks[i % marks.length];
+              return (
+                <Reveal key={label} delay={0.06 * i}>
+                  <div className="h-full rounded-[14px] bg-light/85 p-6">
+                    <span className="flex h-11 w-11 items-center justify-center rounded-full bg-mousse text-olive-deep">
+                      <Mark />
+                    </span>
+                    <p className="h-row mt-12 text-ink">{label}</p>
+                  </div>
+                </Reveal>
+              );
+            })}
           </div>
 
           <Reveal delay={0.1}>

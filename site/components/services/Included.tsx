@@ -1,4 +1,5 @@
 import { Reveal } from "../Reveal";
+import { SectionMark } from "../SectionMark";
 import { copy, type Locale } from "@/content/copy";
 
 export function Included({ locale }: { locale: Locale }) {
@@ -6,7 +7,13 @@ export function Included({ locale }: { locale: Locale }) {
 
   return (
     <section className="px-[10px] pt-[10px]">
-      <div className="overflow-hidden rounded-[20px] bg-craie px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[80px]">
+      <div className="panel-wash overflow-hidden rounded-[20px] bg-craie px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[80px]">
+        <Reveal>
+          {/* No label: the section's own heading is the next thing on the page,
+              so a caption here would only say it twice. */}
+          <SectionMark index="03" tone="amber" className="mb-10" />
+        </Reveal>
+
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-end">
           <Reveal>
             <h2 className="h-display text-ink">{included.title}</h2>

@@ -1,4 +1,5 @@
 import { Reveal } from "./Reveal";
+import { TreeLine } from "./TreeLine";
 import { copy, type Locale } from "@/content/copy";
 
 /**
@@ -21,8 +22,15 @@ export function Refrain({ locale }: { locale: Locale }) {
   const { hero } = copy[locale];
 
   return (
-    <section className="panel-wash-dark mt-[10px] bg-ink px-6 py-24 sm:px-10 lg:py-[150px]">
-      <div className="mx-auto max-w-[900px] text-center">
+    <section className="panel-wash-dark relative mt-[10px] overflow-hidden bg-ink px-6 py-24 sm:px-10 lg:py-[150px]">
+      {/* The same silhouette as the hero, at the other end of the day. It ties
+          the dark band back to the name instead of leaving it a black box. */}
+      <TreeLine
+        tone="basalte"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-[45%] w-full"
+      />
+
+      <div className="relative mx-auto max-w-[900px] text-center">
         {/* The three bars are the practice's mark, already used beside the
             refrain on the contact page. Tilleul is the palette's accent for
             dark panels and had nowhere to appear until there was one. */}

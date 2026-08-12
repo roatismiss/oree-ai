@@ -109,8 +109,7 @@ export const serviceDetails: ServiceDetail[] = [
       },
     ],
     pricing: {
-      eyebrow: "Ce que ça coûte",
-      title: "Deux tarifs, confirmés après l'appel",
+      eyebrow: "Tarifs",
       tiers: [
         {
           label: "PME et professions réglementées",

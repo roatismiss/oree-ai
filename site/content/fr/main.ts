@@ -11,14 +11,23 @@
 
 /* Le menu d'oree-conseil.ca, à l'identique : Méthode, À propos, Pourquoi Orée,
    Offre. Accueil est porté par le logo et Contact par le bouton, comme sur son
-   site. Secteurs et Publications, qui n'existaient pas chez elle, restent
-   accessibles depuis le pied de page. */
+   site.
+
+   Secteurs s'y ajoute. Son ancien site n'avait pas la page, mais depuis qu'elle
+   a commandé une sixième fiche et fixé l'ordre d'affichage, c'est une section à
+   part entière — et la page d'accueil pointe désormais vers les fiches plutôt
+   que vers la vue d'ensemble, qui n'avait donc plus de porte d'entrée hors du
+   pied de page. Offre dit ce que fait la pratique, Secteurs dit pour qui : les
+   deux colonnes de la page d'accueil, dans le même ordre.
+
+   Publications reste au pied de page. */
 export const nav = {
   links: [
     { label: "Méthode", href: "/approach" },
     { label: "À propos", href: "/about" },
     { label: "Pourquoi Orée", href: "/why" },
     { label: "Offre", href: "/services" },
+    { label: "Secteurs", href: "/sectors" },
   ],
   more: "Démos",
   call: "Réserver le Diagnostic",
@@ -168,6 +177,7 @@ export const ui = {
   theProcess: "Le déroulement",
   whatYouKeep: "Ce que vous gardez",
   sources: "Sources",
+  home: "Orée Conseil — retour à l'accueil",
   openMenu: "Ouvrir le menu",
   closeMenu: "Fermer le menu",
   previousQuestion: "Question précédente",

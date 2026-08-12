@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Reveal } from "./Reveal";
+import { SectionMark } from "./SectionMark";
 import { SplitHeading } from "./SplitHeading";
 import { Button } from "./Button";
 import { copy, localePath, type Locale } from "@/content/copy";
@@ -33,7 +34,7 @@ export function PracticeAreas({ locale }: { locale: Locale }) {
     <section className="px-[10px] pt-[10px]">
       <div className="panel-wash overflow-hidden rounded-[20px] bg-craie px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[80px]">
         <Reveal>
-          <p className="eyebrow text-amber-ink">{services.eyebrow}</p>
+          <SectionMark index="02" label={services.eyebrow} tone="amber" />
         </Reveal>
 
         <SplitHeading top={services.titleTop} bottom={services.titleBottom} className="mt-2 text-ink" />

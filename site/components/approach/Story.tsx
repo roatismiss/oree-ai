@@ -16,7 +16,7 @@ export function Story({ locale }: { locale: Locale }) {
 
   return (
     <section className="px-[10px] pt-[10px]">
-      <div className="overflow-hidden rounded-[20px] bg-light px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[90px]">
+      <div className="panel-wash overflow-hidden rounded-[20px] bg-light px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[90px]">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
             <Reveal>

@@ -31,7 +31,7 @@ export function Frameworks({ locale }: { locale: Locale }) {
               {strip.map((item, i) => (
                 <span
                   key={`${item}-${i}`}
-                  className="h-row mr-4 shrink-0 whitespace-nowrap rounded-full border border-ink/15 bg-cream/60 px-7 py-3 text-ink"
+                  className="h-row mr-4 shrink-0 whitespace-nowrap rounded-full border border-hairline bg-cream/60 px-7 py-3 text-ink"
                 >
                   {item}
                 </span>

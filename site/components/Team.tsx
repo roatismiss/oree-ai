@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Reveal } from "./Reveal";
+import { SectionMark } from "./SectionMark";
 import { Button } from "./Button";
 import { copy, localePath, type Locale } from "@/content/copy";
 
@@ -44,7 +45,7 @@ export function Team({ locale }: { locale: Locale }) {
       <div className="panel-wash overflow-hidden rounded-[20px] bg-sand py-20 lg:py-[100px]">
         <div className="px-6 sm:px-10 lg:px-[130px]">
           <Reveal>
-            <p className="eyebrow text-olive-deep">{practice.eyebrow}</p>
+            <SectionMark index="03" label={practice.eyebrow} />
           </Reveal>
 
           <div className="mt-8 grid gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.4fr)] lg:items-start">

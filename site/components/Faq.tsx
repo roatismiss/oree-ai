@@ -1,4 +1,5 @@
 import { Reveal } from "./Reveal";
+import { SectionMark } from "./SectionMark";
 import { copy, type Locale } from "@/content/copy";
 
 /**
@@ -17,11 +18,11 @@ export function Faq({ locale }: { locale: Locale }) {
     <section className="px-[10px] pt-[10px]">
       <div className="panel-wash overflow-hidden rounded-[20px] bg-light px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[100px]">
         <Reveal>
-          <p className="eyebrow text-olive-deep">{faq.eyebrow}</p>
+          <SectionMark index="04" label={faq.eyebrow} />
         </Reveal>
 
         <Reveal delay={0.06}>
-          <h2 className="h-display-tight mt-4 text-ink">
+          <h2 className="h-display-tight mt-8 text-ink">
             {faq.titleTop}
             <br />
             {faq.titleBottom}

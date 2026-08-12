@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { TreeLine } from "../TreeLine";
 
 const rise = { initial: { opacity: 0, y: 40 }, animate: { opacity: 1, y: 0 } };
 const ease = [0.16, 1, 0.3, 1] as const;
@@ -24,6 +25,11 @@ export function DetailHero({
   return (
     <section className="px-[10px] pt-[10px]">
       <div className="relative flex min-h-[360px] flex-col justify-center overflow-hidden rounded-[20px] bg-light px-6 py-24 sm:px-12 lg:min-h-[440px] lg:px-[130px] lg:py-[90px]">
+        {/* The nine detail pages are where most search traffic lands, so they
+            get the same opening as the pages that link to them. */}
+        <div className="hero-horizon absolute inset-0" aria-hidden />
+        <TreeLine className="pointer-events-none absolute inset-x-0 bottom-0 h-[36%] w-full" />
+
         <div className="relative max-w-[820px]">
           <motion.div {...rise} transition={{ duration: 0.7, ease }}>
             <Link

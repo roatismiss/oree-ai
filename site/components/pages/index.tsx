@@ -97,7 +97,7 @@ export function AboutPage({ locale }: P) {
       <Nav locale={locale} heroTone="light" />
       <main>
         <section className="px-[10px] pt-[10px]">
-          <div className="overflow-hidden rounded-[20px] bg-light px-6 pb-16 pt-32 sm:px-10 lg:px-[130px] lg:pb-[70px] lg:pt-[160px]">
+          <div className="hero-horizon overflow-hidden rounded-[20px] bg-light px-6 pb-16 pt-32 sm:px-10 lg:px-[130px] lg:pb-[70px] lg:pt-[160px]">
             <Reveal>
               <p className="eyebrow text-olive-deep">{aboutHero.eyebrow}</p>
             </Reveal>
@@ -128,7 +128,7 @@ export function WhyPage({ locale }: P) {
       <Nav locale={locale} heroTone="light" />
       <main>
         <section className="px-[10px] pt-[10px]">
-          <div className="overflow-hidden rounded-[20px] bg-light px-6 pb-16 pt-32 sm:px-10 lg:px-[130px] lg:pb-[70px] lg:pt-[160px]">
+          <div className="hero-horizon overflow-hidden rounded-[20px] bg-light px-6 pb-16 pt-32 sm:px-10 lg:px-[130px] lg:pb-[70px] lg:pt-[160px]">
             <Reveal>
               <p className="eyebrow text-amber-ink">{whyHero.eyebrow}</p>
             </Reveal>
@@ -163,7 +163,7 @@ export function DeliverablesPage({ locale }: P) {
       <Nav locale={locale} heroTone="light" />
       <main>
         <section className="px-[10px] pt-[10px]">
-          <div className="overflow-hidden rounded-[20px] bg-light px-6 pb-16 pt-32 sm:px-10 lg:px-[130px] lg:pb-[70px] lg:pt-[160px]">
+          <div className="hero-horizon overflow-hidden rounded-[20px] bg-light px-6 pb-16 pt-32 sm:px-10 lg:px-[130px] lg:pb-[70px] lg:pt-[160px]">
             <Reveal>
               <p className="eyebrow text-olive-deep">{deliverablesPage.eyebrow}</p>
             </Reveal>
@@ -184,7 +184,7 @@ export function DeliverablesPage({ locale }: P) {
         {/* One card per day, the letters in the margin, the named tools as
             tags. This is the shape her own deliverables page used. */}
         <section className="px-[10px] pt-[10px]">
-          <div className="overflow-hidden rounded-[20px] bg-cream px-6 py-16 sm:px-10 lg:px-[130px] lg:py-[80px]">
+          <div className="panel-wash overflow-hidden rounded-[20px] bg-cream px-6 py-16 sm:px-10 lg:px-[130px] lg:py-[80px]">
             <div className="mx-auto max-w-[820px] space-y-5">
               {deliverablesPage.days.map((day, i) => (
                 <Reveal key={day.day} delay={0.06 * i}>
@@ -222,7 +222,7 @@ export function DeliverablesPage({ locale }: P) {
         </section>
 
         <section className="px-[10px] pt-[10px]">
-          <div className="overflow-hidden rounded-[20px] bg-light px-6 py-16 sm:px-10 lg:px-[130px] lg:py-[80px]">
+          <div className="panel-wash overflow-hidden rounded-[20px] bg-light px-6 py-16 sm:px-10 lg:px-[130px] lg:py-[80px]">
             <Reveal>
               <p className="refrain text-center text-[21px] leading-[1.4] text-sienne">
                 {deliverablesPage.ongoingLabel}
@@ -280,7 +280,7 @@ export function ApproachPage({ locale }: P) {
 function DeliverablesLink({ locale, label }: P & { label: string }) {
   return (
     <section className="px-[10px] pt-[10px]">
-      <div className="rounded-[20px] bg-mousse px-6 py-10 sm:px-10 lg:px-[130px]">
+      <div className="panel-wash rounded-[20px] bg-mousse px-6 py-10 sm:px-10 lg:px-[130px]">
         <Reveal>
           <Button variant="outline" href={localePath(locale, "/deliverables")}>
             {label}
@@ -352,15 +352,12 @@ function Pricing({
 }) {
   return (
     <section className="px-[10px] pt-[10px]">
-      <div className="overflow-hidden rounded-[20px] bg-mousse px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[90px]">
+      <div className="panel-wash overflow-hidden rounded-[20px] bg-mousse px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[90px]">
         <Reveal>
           <p className="eyebrow text-olive-deep">{pricing.eyebrow}</p>
         </Reveal>
-        <Reveal delay={0.06}>
-          <h2 className="h-display-tight mt-3 text-ink">{pricing.title}</h2>
-        </Reveal>
 
-        <div className="mt-12 grid gap-5 lg:grid-cols-2">
+        <div className="mt-10 grid gap-5 lg:grid-cols-2">
           {pricing.tiers.map((tier, i) => (
             <Reveal key={tier.label} delay={0.06 * i}>
               <div className="h-full rounded-[14px] bg-light p-8">
@@ -475,7 +472,7 @@ export function RisksPage({ locale }: P) {
       <Nav locale={locale} heroTone="light" />
       <main>
         <section className="px-[10px] pt-[10px]">
-          <div className="overflow-hidden rounded-[20px] bg-light px-6 pb-20 pt-32 sm:px-10 lg:px-[130px] lg:pb-[90px] lg:pt-[160px]">
+          <div className="hero-horizon overflow-hidden rounded-[20px] bg-light px-6 pb-20 pt-32 sm:px-10 lg:px-[130px] lg:pb-[90px] lg:pt-[160px]">
             <Reveal>
               <p className="eyebrow text-amber-ink">{risksHero.eyebrow}</p>
             </Reveal>
@@ -494,7 +491,7 @@ export function RisksPage({ locale }: P) {
         </section>
 
         <section className="px-[10px] pt-[10px]">
-          <div className="overflow-hidden rounded-[20px] bg-craie px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[80px]">
+          <div className="panel-wash overflow-hidden rounded-[20px] bg-craie px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[80px]">
             <div className="grid gap-x-12 gap-y-8 sm:grid-cols-2">
               {risksReasons.map((r, i) => (
                 <Reveal key={r.title} delay={0.06 * i}>
@@ -515,7 +512,7 @@ export function RisksPage({ locale }: P) {
         </section>
 
         <section className="px-[10px] pt-[10px]">
-          <div className="overflow-hidden rounded-[20px] bg-cream px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[80px]">
+          <div className="panel-wash overflow-hidden rounded-[20px] bg-cream px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[80px]">
             <Reveal>
               <h2 className="h-display max-w-[900px] text-ink">{risksCases.title}</h2>
             </Reveal>
@@ -559,7 +556,7 @@ export function ContactPage({ locale }: P) {
       <Nav locale={locale} heroTone="light" />
       <main>
         <section className="px-[10px] pt-[10px]">
-          <div className="overflow-hidden rounded-[20px] bg-light px-6 pb-20 pt-32 sm:px-10 lg:px-[130px] lg:pb-[100px] lg:pt-[160px]">
+          <div className="hero-horizon overflow-hidden rounded-[20px] bg-light px-6 pb-20 pt-32 sm:px-10 lg:px-[130px] lg:pb-[100px] lg:pt-[160px]">
             <Reveal>
               <p className="eyebrow text-olive-deep">{contact.eyebrow}</p>
             </Reveal>

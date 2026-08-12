@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "./Button";
+import { TreeLine } from "./TreeLine";
 import { copy, localePath, type Locale } from "@/content/copy";
 
 const rise = {
@@ -22,6 +23,9 @@ export function Hero({ locale }: { locale: Locale }) {
     <section className="px-[10px] pt-[10px]">
       <div className="relative flex min-h-[480px] flex-col justify-center overflow-hidden rounded-[20px] bg-light px-6 py-24 sm:px-12 lg:min-h-[620px] lg:px-[130px] lg:py-[80px]">
         <div className="hero-horizon absolute inset-0" aria-hidden />
+        {/* The practice is named for this line. It sits under the type rather
+            than beside it, so the hero stays typographic. */}
+        <TreeLine className="pointer-events-none absolute inset-x-0 bottom-0 h-[38%] w-full lg:h-[45%]" />
 
         <div className="relative">
           <motion.p {...rise} transition={{ duration: 0.7, ease }} className="eyebrow text-amber-ink">

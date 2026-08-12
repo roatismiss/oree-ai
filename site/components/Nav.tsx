@@ -27,18 +27,18 @@ function Wordmark({ tone = "light" }: { tone?: "light" | "ink" }) {
   const color = tone === "light" ? "text-light" : "text-ink";
   const bar = tone === "light" ? "bg-yellow" : "bg-olive-deep";
   return (
-    <span className={`flex items-center gap-2.5 ${color}`}>
+    <span className={`flex items-center gap-2 sm:gap-2.5 ${color}`}>
       <span className="flex items-end gap-[3px]" aria-hidden>
-        <span className="block h-[14px] w-[3px] bg-current opacity-60" />
-        <span className={`block h-[20px] w-[3px] ${bar}`} />
-        <span className="block h-[14px] w-[3px] bg-current opacity-60" />
+        <span className="block h-[12px] w-[2.5px] bg-current opacity-60 sm:h-[14px] sm:w-[3px]" />
+        <span className={`block h-[17px] w-[2.5px] sm:h-[20px] sm:w-[3px] ${bar}`} />
+        <span className="block h-[12px] w-[2.5px] bg-current opacity-60 sm:h-[14px] sm:w-[3px]" />
       </span>
       <span className="flex flex-col">
-        <span className="font-display text-[22px] font-semibold italic leading-none tracking-[0.06em] transition-colors duration-300">
+        <span className="font-display text-[19px] font-semibold italic leading-none tracking-[0.06em] transition-colors duration-300 sm:text-[22px]">
           ORÉE
         </span>
         <span
-          className="mt-[3px] text-[8px] font-medium uppercase leading-none tracking-[0.5em] opacity-70"
+          className="mt-[3px] text-[7px] font-medium uppercase leading-none tracking-[0.42em] opacity-70 sm:text-[8px] sm:tracking-[0.5em]"
           style={{ fontFamily: "var(--font-mono)" }}
         >
           Conseil
@@ -109,9 +109,13 @@ export function Nav({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className="pointer-events-none fixed left-8 top-9 z-50 hidden lg:block"
+        className="pointer-events-none fixed left-5 top-[23px] z-50 sm:top-[26px] lg:left-8 lg:top-9"
       >
-        <Link href={localePath(locale, "/")} className="pointer-events-auto">
+        <Link
+          href={localePath(locale, "/")}
+          aria-label={ui.home}
+          className="pointer-events-auto inline-block"
+        >
           <Wordmark tone={onDark ? "light" : "ink"} />
         </Link>
       </motion.div>
@@ -188,7 +192,13 @@ export function Nav({
             className="fixed inset-0 z-[60] bg-ink-deep px-6 py-6 lg:hidden"
           >
             <div className="flex items-center justify-between">
-              <Wordmark tone="light" />
+              <Link
+                href={localePath(locale, "/")}
+                onClick={() => setOpen(false)}
+                aria-label={ui.home}
+              >
+                <Wordmark tone="light" />
+              </Link>
               <button
                 onClick={() => setOpen(false)}
                 aria-label={ui.closeMenu}

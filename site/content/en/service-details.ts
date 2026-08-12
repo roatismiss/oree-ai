@@ -36,7 +36,6 @@ export type ServiceDetail = {
    */
   pricing?: {
     eyebrow: string;
-    title: string;
     tiers: { label: string; body: string }[];
   };
   /** Honest scope limit. Says what the service is not. */
@@ -148,8 +147,7 @@ export const serviceDetails: ServiceDetail[] = [
       },
     ],
     pricing: {
-      eyebrow: "What it costs",
-      title: "Two rates, confirmed after the call",
+      eyebrow: "Fees",
       tiers: [
         {
           label: "SMEs and regulated professions",

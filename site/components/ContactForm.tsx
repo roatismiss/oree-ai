@@ -79,7 +79,7 @@ function Field({
                   ? "organization"
                   : "off"
         }
-        className="mt-3 w-full border-b border-ink/25 bg-transparent pb-2 text-[15px] text-ink outline-none transition-colors placeholder:text-ink/35 focus:border-olive-deep disabled:opacity-50"
+        className="mt-3 w-full border-b border-hairline bg-transparent pb-2 text-[15px] text-ink outline-none transition-colors placeholder:text-ink/35 focus:border-olive-deep disabled:opacity-50"
       />
     </label>
   );
@@ -134,7 +134,7 @@ export function ContactForm({ locale }: { locale: Locale }) {
     return (
       <div
         role="alert"
-        className="rounded-[14px] border border-ink/20 bg-light/70 px-7 py-8"
+        className="rounded-[14px] border border-hairline bg-light/70 px-7 py-8"
       >
         <p className="h-row max-w-[560px] text-ink">{contactForm.failure.title}</p>
         <p className="mt-4 max-w-[560px] text-[14px] leading-[21px] text-grey">
@@ -199,7 +199,7 @@ export function ContactForm({ locale }: { locale: Locale }) {
           rows={3}
           required
           disabled={sending}
-          className="mt-3 w-full resize-y border-b border-ink/25 bg-transparent pb-2 text-[15px] leading-[23px] text-ink outline-none transition-colors focus:border-olive-deep disabled:opacity-50"
+          className="mt-3 w-full resize-y border-b border-hairline bg-transparent pb-2 text-[15px] leading-[23px] text-ink outline-none transition-colors focus:border-olive-deep disabled:opacity-50"
         />
       </label>
 

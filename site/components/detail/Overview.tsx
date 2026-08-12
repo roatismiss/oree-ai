@@ -1,31 +1,29 @@
-import Image from "next/image";
 import { Reveal } from "../Reveal";
 
-const icons = [
-  "/img/icon-card-1.png",
-  "/img/icon-card-2.png",
-  "/img/icon-card-3.png",
-  "/img/icon-card-4.png",
-];
-
 /**
- * Matches the Framer service-details overview: prose on the left with a
- * supporting object on the right, then a row of fact cards beneath.
+ * Prose on the left, then a row of fact cards beneath.
+ *
+ * The fact cards used to open with one of the template's four grey glyphs,
+ * cycled by position — so a fact about data residency might be introduced by a
+ * huddle of people, and the same glyph would reappear three cards later meaning
+ * something else. A number says what the mark could not: which fact this is,
+ * out of how many. It also puts these cards in the same counting system as the
+ * section rules elsewhere.
+ *
+ * The optional `object` image is gone with them; no caller ever passed one.
  */
 export function Overview({
   eyebrow,
   paragraphs,
   facts,
-  object,
 }: {
   eyebrow: string;
   paragraphs: string[];
   facts: { label: string; value: string }[];
-  object?: string;
 }) {
   return (
     <section className="px-[10px] pt-[10px]">
-      <div className="overflow-hidden rounded-[20px] bg-sand px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[90px]">
+      <div className="panel-wash overflow-hidden rounded-[20px] bg-sand px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[90px]">
         <Reveal>
           <p className="eyebrow text-grey">{eyebrow}</p>
         </Reveal>
@@ -39,26 +37,18 @@ export function Overview({
             </div>
           </Reveal>
 
-          {object && (
-            <Reveal delay={0.1}>
-              <Image
-                src={object}
-                alt=""
-                width={420}
-                height={300}
-                className="mx-auto h-[220px] w-auto object-contain lg:h-[280px]"
-              />
-            </Reveal>
-          )}
         </div>
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {facts.map((f, i) => (
             <Reveal key={f.label} delay={0.05 * i}>
               <div className="h-full rounded-[14px] bg-light p-7">
-                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-cream">
-                  <Image src={icons[i % icons.length]} alt="" width={18} height={18} />
-                </span>
+                <div className="flex items-center gap-4">
+                  <span className="eyebrow text-amber">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="h-px min-w-0 flex-1 bg-hairline" aria-hidden />
+                </div>
                 <p className="mt-10 text-[13px] uppercase tracking-[0.04em] text-grey">
                   {f.label}
                 </p>
