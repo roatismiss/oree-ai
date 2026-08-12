@@ -7,6 +7,7 @@ import type { ServiceDetail } from "../en/service-details";
 
 export const serviceDetails: ServiceDetail[] = [
   {
+    key: "diagnostic",
     slug: "diagnostic",
     n: "01",
     name: "Diagnostic Orée",
@@ -130,7 +131,8 @@ export const serviceDetails: ServiceDetail[] = [
      et avait disparu lors de la construction du site A. Réintégrée selon le
      plan de lancement : elle fait partie de l'offre officielle. */
   {
-    slug: "training",
+    key: "training",
+    slug: "formation",
     n: "02",
     name: "Formation Orée",
     eyebrow: "Service 02 · Monter les équipes en compétence",
@@ -201,7 +203,8 @@ export const serviceDetails: ServiceDetail[] = [
   },
 
   {
-    slug: "support",
+    key: "support",
+    slug: "appui",
     n: "03",
     name: "Appui Orée",
     eyebrow: "Service 03 · Le déploiement",
@@ -271,7 +274,8 @@ export const serviceDetails: ServiceDetail[] = [
   },
 
   {
-    slug: "law-25-radar",
+    key: "law-25-radar",
+    slug: "radar-loi-25",
     n: "04",
     name: "Radar Loi 25",
     eyebrow: "Service 04 · La veille",

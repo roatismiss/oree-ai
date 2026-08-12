@@ -4,21 +4,35 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
-import { canonicalPath, copy, localePath, otherLocale, type Locale } from "@/content/copy";
+import {
+  canonicalParts,
+  copy,
+  detailSlugFor,
+  localePath,
+  otherLocale,
+  type Locale,
+} from "@/content/copy";
 
 /**
  * The same page in the other language.
  *
  * French lives at the root and English under /en, so switching is a matter of
- * adding or removing that one segment. A visitor reading /services/diagnostic
- * lands on /en/services/diagnostic, not back at the home page.
+ * adding or removing that one segment. A visitor reading /offre/diagnostic
+ * lands on /en/offering/diagnostic, not back at the home page.
+ *
+ * Sector, service and article detail pages carry a per-locale slug (French
+ * URLs use French words), so the tail cannot simply be carried over the way
+ * the rest of the site's paths can — it has to go through the slug map for
+ * whichever section it belongs to.
  */
 function useLocaleSwap(locale: Locale) {
   const pathname = usePathname() ?? "/";
   const target = otherLocale[locale];
-  // The two locales no longer share a path: /methode is /en/method. Go back to
-  // the canonical key first, then out to the other locale's own wording.
-  return { target, href: localePath(target, canonicalPath(locale, pathname)) };
+  const { head, rest } = canonicalParts(locale, pathname);
+  const translatedRest =
+    rest.length === 1 ? [detailSlugFor(head, locale, target, rest[0])] : rest;
+  const canonical = `/${[head, ...translatedRest].filter(Boolean).join("/")}`;
+  return { target, href: localePath(target, canonical) };
 }
 
 /** Orée Conseil wordmark: three vertical bars (middle khaki, taller) plus caps

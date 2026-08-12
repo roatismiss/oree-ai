@@ -23,7 +23,8 @@ export const insightsIndexCta = {
 
 export const articles: Article[] = [
   {
-    slug: "ai-law-firm-client-data",
+    key: "ai-law-firm-client-data",
+    slug: "ia-cabinet-avocats-donnees-clients",
     title: "Comment un cabinet peut utiliser l'IA sans exposer les données de ses clients",
     date: "14 juil. 2026",
     excerpt:
@@ -102,7 +103,8 @@ export const articles: Article[] = [
   },
 
   {
-    slug: "what-vision-2030-asks-of-notaries",
+    key: "what-vision-2030-asks-of-notaries",
+    slug: "vision-2030-notaires",
     title: "Ce que Vision 2030 demande aux notaires, en clair",
     date: "30 juin 2026",
     excerpt:
@@ -171,7 +173,8 @@ export const articles: Article[] = [
   },
 
   {
-    slug: "law-25-missing-registers",
+    key: "law-25-missing-registers",
+    slug: "loi-25-registres-manquants",
     title: "Loi 25 : les registres qui manquent à la plupart des pratiques",
     date: "12 juin 2026",
     excerpt:

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SectorDetailPage } from "@/components/pages";
-import { alternates, copy } from "@/content/copy";
+import { copy, detailAlternates } from "@/content/copy";
 
 export function generateStaticParams() {
   return copy.fr.sectorDetails.map((item) => ({ slug: item.slug }));
@@ -17,7 +17,7 @@ export async function generateMetadata({
   return {
     title: `${item.name} · Orée`,
     description: item.lede,
-    alternates: alternates("fr", `/sectors/${slug}`),
+    alternates: detailAlternates("fr", "sectors", slug),
   };
 }
 

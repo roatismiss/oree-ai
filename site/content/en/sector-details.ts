@@ -6,6 +6,8 @@
  */
 
 export type SectorDetail = {
+  /** Stable id shared by the fr/en pair, for cross-locale slug lookup. */
+  key: string;
   slug: string;
   name: string;
   eyebrow: string;
@@ -35,6 +37,7 @@ export const sectorDetails: SectorDetail[] = [
      largest part of the target audience had only a generic link to the sectors
      overview. */
   {
+    key: "small-business",
     slug: "small-business",
     name: "Small businesses",
     eyebrow: "Sector · Prioritization and limited resources",
@@ -105,6 +108,7 @@ export const sectorDetails: SectorDetail[] = [
   },
 
   {
+    key: "notaries",
     slug: "notaries",
     name: "Notaries",
     eyebrow: "Sector · Vision 2030",
@@ -177,6 +181,7 @@ export const sectorDetails: SectorDetail[] = [
   },
 
   {
+    key: "law-firms",
     slug: "law-firms",
     name: "Law firms",
     eyebrow: "Sector · Barreau duties",
@@ -249,6 +254,7 @@ export const sectorDetails: SectorDetail[] = [
   },
 
   {
+    key: "hr-advisers",
     slug: "hr-advisers",
     name: "CHRPs and HR advisers",
     eyebrow: "Sector · Order guidelines",
@@ -321,6 +327,7 @@ export const sectorDetails: SectorDetail[] = [
   },
 
   {
+    key: "investment-firms",
     slug: "investment-firms",
     name: "Investment firms",
     eyebrow: "Sector · Examiner readiness",
@@ -393,6 +400,7 @@ export const sectorDetails: SectorDetail[] = [
   },
 
   {
+    key: "nonprofits",
     slug: "nonprofits",
     name: "Nonprofits",
     eyebrow: "Sector · Funder and governance duties",

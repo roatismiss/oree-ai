@@ -20,37 +20,37 @@ export const sectorList = {
   items: [
     {
       name: "Petites entreprises",
-      slug: "small-business",
+      slug: "petites-entreprises",
       summary:
         "Vous n'avez ni le temps ni le budget pour vous tromper d'outil. Un terrain où la question n'est pas si l'IA peut aider, mais par où commencer avec ce que vous avez déjà.",
     },
     {
       name: "OBNL",
-      slug: "nonprofits",
+      slug: "obnl",
       summary:
         "La mission passe en premier, mais c'est la paperasse derrière elle qui use discrètement l'équipe. Un terrain où une petite équipe peut gagner beaucoup, sans jamais bousculer ce qui compte vraiment.",
     },
     {
       name: "Notaires",
-      slug: "notaries",
+      slug: "notaires",
       summary:
         "Vision 2030 a donné une direction, et la profession sera de plus en plus appelée à s'adapter. Un terrain où je vois un vrai besoin, à condition que rien ne s'approche de l'acte authentique lui-même.",
     },
     {
       name: "Cabinets d'avocats",
-      slug: "law-firms",
+      slug: "cabinets-avocats",
       summary:
         "Les devoirs envers le Barreau ne laissent aucune place à l'improvisation. Observer avant d'équiper peut faire une vraie différence, sans jamais mettre la signature de l'avocat en jeu.",
     },
     {
       name: "CRHA et conseillers RH",
-      slug: "hr-advisers",
+      slug: "crha-rh",
       summary:
         "Vos équipes utilisent probablement déjà ces outils, discrètement. Un terrain où je vois un vrai besoin d'encadrement, sans jamais surveiller ni dicter.",
     },
     {
       name: "Firmes de placement",
-      slug: "investment-firms",
+      slug: "firmes-placement",
       summary:
         "La question de la résidence des données et de la traçabilité revient tôt ou tard. Un terrain où je vois un vrai besoin de rigueur documentaire, sans ralentir vos opérations.",
     },

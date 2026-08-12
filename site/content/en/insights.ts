@@ -13,6 +13,8 @@ export type ArticleBlock =
   | { type: "note"; text: string };
 
 export type Article = {
+  /** Stable id shared by the fr/en pair, for cross-locale slug lookup. */
+  key: string;
   slug: string;
   title: string;
   date: string;
@@ -36,6 +38,7 @@ export const insightsIndexCta = {
 
 export const articles: Article[] = [
   {
+    key: "ai-law-firm-client-data",
     slug: "ai-law-firm-client-data",
     title: "How a law firm can use AI without risking client data",
     date: "Jul 14, 2026",
@@ -115,6 +118,7 @@ export const articles: Article[] = [
   },
 
   {
+    key: "what-vision-2030-asks-of-notaries",
     slug: "what-vision-2030-asks-of-notaries",
     title: "What Vision 2030 asks of notaries, in plain terms",
     date: "Jun 30, 2026",
@@ -184,6 +188,7 @@ export const articles: Article[] = [
   },
 
   {
+    key: "law-25-missing-registers",
     slug: "law-25-missing-registers",
     title: "Law 25: the registers most practices are missing",
     date: "Jun 12, 2026",

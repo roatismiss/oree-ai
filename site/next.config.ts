@@ -19,13 +19,15 @@ const legacyRedirects = [
 ];
 
 /* The English slugs Site A carried while it was on the preview URL. They were
-   live and may have been shared, so they keep working rather than 404. */
+   live and may have been shared, so they keep working rather than 404.
+   Sector/service/article slugs redirect one by one rather than through a
+   `:slug` wildcard, because French URLs now use French words for the tail
+   too (/secteurs/notaires, not /secteurs/notaries) — a passthrough would
+   send every renamed slug to a 404. */
 const renamedRoutes = [
   { source: "/approach", destination: "/methode" },
   { source: "/services", destination: "/offre" },
-  { source: "/services/:slug", destination: "/offre/:slug" },
   { source: "/sectors", destination: "/secteurs" },
-  { source: "/sectors/:slug", destination: "/secteurs/:slug" },
   { source: "/insights", destination: "/publications" },
   { source: "/insights/:slug", destination: "/publications/:slug" },
   { source: "/risks", destination: "/risques" },
@@ -34,9 +36,46 @@ const renamedRoutes = [
   { source: "/en/services/:slug", destination: "/en/offering/:slug" },
 ];
 
+/* French routes briefly carried English slugs on sector, service and article
+   detail pages before they were translated. Each one gets its own 301 to the
+   French slug rather than a 404. */
+const frSlugRenames = [
+  { source: "/services/diagnostic", destination: "/offre/diagnostic" },
+  { source: "/sectors/small-business", destination: "/secteurs/petites-entreprises" },
+  { source: "/sectors/notaries", destination: "/secteurs/notaires" },
+  { source: "/sectors/law-firms", destination: "/secteurs/cabinets-avocats" },
+  { source: "/sectors/hr-advisers", destination: "/secteurs/crha-rh" },
+  { source: "/sectors/investment-firms", destination: "/secteurs/firmes-placement" },
+  { source: "/sectors/nonprofits", destination: "/secteurs/obnl" },
+  { source: "/secteurs/small-business", destination: "/secteurs/petites-entreprises" },
+  { source: "/secteurs/notaries", destination: "/secteurs/notaires" },
+  { source: "/secteurs/law-firms", destination: "/secteurs/cabinets-avocats" },
+  { source: "/secteurs/hr-advisers", destination: "/secteurs/crha-rh" },
+  { source: "/secteurs/investment-firms", destination: "/secteurs/firmes-placement" },
+  { source: "/secteurs/nonprofits", destination: "/secteurs/obnl" },
+  { source: "/services/training", destination: "/offre/formation" },
+  { source: "/services/support", destination: "/offre/appui" },
+  { source: "/services/law-25-radar", destination: "/offre/radar-loi-25" },
+  { source: "/offre/training", destination: "/offre/formation" },
+  { source: "/offre/support", destination: "/offre/appui" },
+  { source: "/offre/law-25-radar", destination: "/offre/radar-loi-25" },
+  {
+    source: "/publications/ai-law-firm-client-data",
+    destination: "/publications/ia-cabinet-avocats-donnees-clients",
+  },
+  {
+    source: "/publications/what-vision-2030-asks-of-notaries",
+    destination: "/publications/vision-2030-notaires",
+  },
+  {
+    source: "/publications/law-25-missing-registers",
+    destination: "/publications/loi-25-registres-manquants",
+  },
+];
+
 const nextConfig: NextConfig = {
   async redirects() {
-    return [...legacyRedirects, ...renamedRoutes].map((r) => ({
+    return [...legacyRedirects, ...renamedRoutes, ...frSlugRenames].map((r) => ({
       ...r,
       statusCode: 301,
     }));

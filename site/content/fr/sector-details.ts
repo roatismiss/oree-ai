@@ -14,7 +14,8 @@ export const sectorDetails: SectorDetail[] = [
      le trou : la plus grande partie du public visé avait pour seule adresse un
      lien générique vers la page Secteurs. */
   {
-    slug: "small-business",
+    key: "small-business",
+    slug: "petites-entreprises",
     name: "Petites entreprises",
     eyebrow: "Secteur · Priorisation et ressources limitées",
     titleTop: "Pour les petites entreprises",
@@ -84,7 +85,8 @@ export const sectorDetails: SectorDetail[] = [
   },
 
   {
-    slug: "notaries",
+    key: "notaries",
+    slug: "notaires",
     name: "Notaires",
     eyebrow: "Secteur · Vision 2030",
     titleTop: "Pour les notaires",
@@ -156,7 +158,8 @@ export const sectorDetails: SectorDetail[] = [
   },
 
   {
-    slug: "law-firms",
+    key: "law-firms",
+    slug: "cabinets-avocats",
     name: "Cabinets d'avocats",
     eyebrow: "Secteur · Devoirs du Barreau",
     titleTop: "Pour les cabinets",
@@ -228,7 +231,8 @@ export const sectorDetails: SectorDetail[] = [
   },
 
   {
-    slug: "hr-advisers",
+    key: "hr-advisers",
+    slug: "crha-rh",
     name: "CRHA et conseillers RH",
     eyebrow: "Secteur · Lignes directrices de l'ordre",
     titleTop: "Pour les CRHA",
@@ -300,7 +304,8 @@ export const sectorDetails: SectorDetail[] = [
   },
 
   {
-    slug: "investment-firms",
+    key: "investment-firms",
+    slug: "firmes-placement",
     name: "Firmes de placement",
     eyebrow: "Secteur · Prêt pour l'inspection",
     titleTop: "Pour les firmes",
@@ -372,7 +377,8 @@ export const sectorDetails: SectorDetail[] = [
   },
 
   {
-    slug: "nonprofits",
+    key: "nonprofits",
+    slug: "obnl",
     name: "OBNL",
     eyebrow: "Secteur · Obligations envers les bailleurs et gouvernance",
     titleTop: "Pour les OBNL",

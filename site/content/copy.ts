@@ -107,6 +107,21 @@ export function canonicalPath(locale: Locale, pathname: string) {
   return `/${segments.join("/")}${hash}`;
 }
 
+/**
+ * Same as `canonicalPath`, but returns the head key and the remaining
+ * segments separately rather than joined. `useLocaleSwap` needs the tail on
+ * its own so it can run it through a per-item slug map instead of assuming
+ * the tail is locale-invariant, which sector/service/article slugs no longer
+ * are.
+ */
+export function canonicalParts(locale: Locale, pathname: string) {
+  const stripped =
+    locale === "en" ? pathname.replace(/^\/en(?=\/|$)/, "") || "/" : pathname;
+  const { head, rest } = split(stripped);
+  const key = Object.keys(SEGMENTS).find((k) => SEGMENTS[k][locale] === head);
+  return { head: key ?? head, rest };
+}
+
 /** The same page in the other language, for the nav toggle. */
 export const otherLocale: Record<Locale, Locale> = { fr: "en", en: "fr" };
 
@@ -122,6 +137,72 @@ export function alternates(locale: Locale, path: string) {
       fr: localePath("fr", path),
       en: localePath("en", path),
       "x-default": localePath("fr", path),
+    },
+  };
+}
+
+/**
+ * Sector, service and article pages carry their own slug per locale (French
+ * URLs use French words: /secteurs/notaires, not /secteurs/notaries). `key`
+ * is the stable id every fr/en pair shares; these maps let anything holding
+ * one locale's slug find the other's, for the language toggle and for
+ * hreflang alternates on detail pages.
+ */
+type SlugPair = Record<Locale, string>;
+
+function buildSlugMap(
+  frItems: { key: string; slug: string }[],
+  enItems: { key: string; slug: string }[]
+): Record<string, SlugPair> {
+  const enByKey = new Map(enItems.map((i) => [i.key, i.slug]));
+  const map: Record<string, SlugPair> = {};
+  for (const f of frItems) {
+    const en = enByKey.get(f.key);
+    if (en) map[f.key] = { fr: f.slug, en };
+  }
+  return map;
+}
+
+const detailSlugMaps: Record<string, Record<string, SlugPair>> = {
+  sectors: buildSlugMap(fr.sectorDetails, en.sectorDetails),
+  services: buildSlugMap(fr.serviceDetails, en.serviceDetails),
+  insights: buildSlugMap(fr.articles, en.articles),
+};
+
+/**
+ * Given a detail page's canonical section (`sectors`, `services`,
+ * `insights`) and its slug in `fromLocale`, returns the matching slug in
+ * `toLocale`. Sections outside the three detail collections, and any slug
+ * that fails to match (should not happen for a live page), fall back to the
+ * same slug — the previous locale-invariant behaviour.
+ */
+export function detailSlugFor(
+  head: string,
+  fromLocale: Locale,
+  toLocale: Locale,
+  slug: string
+) {
+  const map = detailSlugMaps[head];
+  if (!map) return slug;
+  for (const pair of Object.values(map)) {
+    if (pair[fromLocale] === slug) return pair[toLocale];
+  }
+  return slug;
+}
+
+/** `alternates`, but for a detail page whose tail is a per-locale slug. */
+export function detailAlternates(locale: Locale, head: string, slug: string) {
+  const target = otherLocale[locale];
+  const otherSlug = detailSlugFor(head, locale, target, slug);
+  const path = (loc: Locale, s: string) => localePath(loc, `/${head}/${s}`);
+  const frSlug = locale === "fr" ? slug : otherSlug;
+  const enSlug = locale === "en" ? slug : otherSlug;
+  return {
+    canonical: path(locale, slug),
+    languages: {
+      fr: path("fr", frSlug),
+      en: path("en", enSlug),
+      "x-default": path("fr", frSlug),
     },
   };
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ServiceDetailPage } from "@/components/pages";
-import { alternates, copy } from "@/content/copy";
+import { copy, detailAlternates } from "@/content/copy";
 
 export function generateStaticParams() {
   return copy.fr.serviceDetails.map((item) => ({ slug: item.slug }));
@@ -17,7 +17,7 @@ export async function generateMetadata({
   return {
     title: `${item.name} · Orée`,
     description: item.lede,
-    alternates: alternates("fr", `/services/${slug}`),
+    alternates: detailAlternates("fr", "services", slug),
   };
 }
 

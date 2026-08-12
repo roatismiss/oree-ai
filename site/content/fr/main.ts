@@ -280,17 +280,17 @@ export const services = {
   ],
   left: [
     { label: "Diagnostic Orée", href: "/services/diagnostic" },
-    { label: "Formation Orée", href: "/services/training" },
-    { label: "Appui Orée", href: "/services/support" },
-    { label: "Radar Loi 25", href: "/services/law-25-radar" },
+    { label: "Formation Orée", href: "/services/formation" },
+    { label: "Appui Orée", href: "/services/appui" },
+    { label: "Radar Loi 25", href: "/services/radar-loi-25" },
   ],
   right: [
-    { label: "Petites entreprises du Québec", href: "/sectors/small-business" },
-    { label: "OBNL · Reddition aux bailleurs", href: "/sectors/nonprofits" },
-    { label: "Notaires · Vision 2030", href: "/sectors/notaries" },
-    { label: "Cabinets d'avocats · devoirs du Barreau", href: "/sectors/law-firms" },
-    { label: "CRHA et conseillers RH", href: "/sectors/hr-advisers" },
-    { label: "Firmes de placement", href: "/sectors/investment-firms" },
+    { label: "Petites entreprises du Québec", href: "/sectors/petites-entreprises" },
+    { label: "OBNL · Reddition aux bailleurs", href: "/sectors/obnl" },
+    { label: "Notaires · Vision 2030", href: "/sectors/notaires" },
+    { label: "Cabinets d'avocats · devoirs du Barreau", href: "/sectors/cabinets-avocats" },
+    { label: "CRHA et conseillers RH", href: "/sectors/crha-rh" },
+    { label: "Firmes de placement", href: "/sectors/firmes-placement" },
   ],
 };
 

@@ -10,6 +10,8 @@
  */
 
 export type ServiceDetail = {
+  /** Stable id shared by the fr/en pair, for cross-locale slug lookup. */
+  key: string;
   slug: string;
   n: string;
   name: string;
@@ -45,6 +47,7 @@ export type ServiceDetail = {
 
 export const serviceDetails: ServiceDetail[] = [
   {
+    key: "diagnostic",
     slug: "diagnostic",
     n: "01",
     name: "Orée Diagnostic",
@@ -168,6 +171,7 @@ export const serviceDetails: ServiceDetail[] = [
      Site A was built. Reinstated here per the launch plan: it is part of the
      official offer, not an add-on to the diagnostic. */
   {
+    key: "training",
     slug: "training",
     n: "02",
     name: "Orée Training",
@@ -239,6 +243,7 @@ export const serviceDetails: ServiceDetail[] = [
   },
 
   {
+    key: "support",
     slug: "support",
     n: "03",
     name: "Orée Support",
@@ -309,6 +314,7 @@ export const serviceDetails: ServiceDetail[] = [
   },
 
   {
+    key: "law-25-radar",
     slug: "law-25-radar",
     n: "04",
     name: "Law 25 Radar",
