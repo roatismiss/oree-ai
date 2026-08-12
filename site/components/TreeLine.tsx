@@ -35,13 +35,17 @@ export function TreeLine({
   return (
     <svg
       viewBox="0 0 1440 240"
-      /* `meet`, not `slice`. Slicing scales the drawing until it covers the
-         box, so on a narrow viewport the silhouette was blown up until the
-         conifers read as a coarse green sawtooth rather than as a distant
-         stand of trees. Meeting the box fits the full 1440 of the drawing to
-         the available width and lets it sit shorter, which is what keeps it a
-         horizon on a phone. */
-      preserveAspectRatio="xMidYMax meet"
+      /* `none`, not `meet` or `slice`. The band's height is fixed by padding
+         while its width tracks the viewport, so neither ratio-preserving mode
+         holds up across sizes: `slice` blew the conifers up into a coarse
+         crop on a narrow phone, and `meet` — the first fix — shrank the whole
+         drawing to fit the height instead and centred it, leaving bare panel
+         showing on both sides on a wide desktop (the gap the client saw on
+         the Refrain band). This is a silhouette standing in for atmosphere,
+         not a mark that needs to keep its proportions, so stretching each
+         axis independently to fill the box exactly removes the gap and the
+         crop at every width at once. */
+      preserveAspectRatio="none"
       className={className}
       style={style}
       aria-hidden
