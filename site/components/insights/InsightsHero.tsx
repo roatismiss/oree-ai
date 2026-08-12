@@ -25,14 +25,6 @@ export function InsightsHero({ locale }: { locale: Locale }) {
             {insightsHero.titleTop}
           </motion.h1>
 
-          <motion.h1
-            {...rise}
-            transition={{ duration: 0.8, delay: 0.16, ease }}
-            className="h-display italic text-olive-deep"
-          >
-            {insightsHero.titleBottom}
-          </motion.h1>
-
           <motion.p
             {...rise}
             transition={{ duration: 0.8, delay: 0.24, ease }}

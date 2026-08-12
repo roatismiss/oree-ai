@@ -41,7 +41,7 @@ export function Team({ locale }: { locale: Locale }) {
 
   return (
     <section className="px-[10px] pt-[10px]">
-      <div className="overflow-hidden rounded-[20px] bg-sand py-20 lg:py-[100px]">
+      <div className="panel-wash overflow-hidden rounded-[20px] bg-sand py-20 lg:py-[100px]">
         <div className="px-6 sm:px-10 lg:px-[130px]">
           <Reveal>
             <p className="eyebrow text-olive-deep">{practice.eyebrow}</p>
@@ -83,27 +83,6 @@ export function Team({ locale }: { locale: Locale }) {
               <p className="mt-8 max-w-[520px] text-[16px] leading-[23px] text-ink">
                 {practice.body}
               </p>
-
-              {/* Career background, never presented as a client list. The
-                  sector label and the clarifying note both carry meaning: they
-                  are what stop the list being misread. */}
-              <div className="mt-7 max-w-[520px] rounded-[14px] bg-mousse px-6 py-6">
-                <p className="eyebrow text-olive-deep">{practice.backgroundLabel}</p>
-                <ul className="mt-4 divide-y divide-olive-deep/15">
-                  {practice.background.map((b) => (
-                    <li
-                      key={b.org}
-                      className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 py-2.5"
-                    >
-                      <span className="text-[14px] leading-[20px] text-ink">{b.org}</span>
-                      <span className="text-[13px] leading-[20px] text-grey">{b.sector}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="mt-4 text-[13px] leading-[19px] text-grey">
-                  {practice.backgroundNote}
-                </p>
-              </div>
 
               <div className="mt-9">
                 {/* The founder block opens À propos, where the full biography

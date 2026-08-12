@@ -2,77 +2,57 @@
 
 export const sectorsHero = {
   eyebrow: "Avec qui Orée travaille",
-  titleTop: "Cinq secteurs.",
+  titleTop: "Six secteurs.",
   titleBottom: "Une méthode.",
-  /* « Secteurs » plutôt que « professions » depuis l'ajout des OBNL : un
-     organisme n'est pas une profession. */
+  /* Formulation de la cliente : quatre de ces secteurs sont des hypothèses, pas
+     des mandats livrés. L'intro le dit franchement plutôt que de laisser la
+     page se lire comme une liste de clients. */
   body:
-    "Chacun d'eux porte des obligations qui rendent coûteuse une adoption négligente de l'IA. C'est précisément pour ça que la méthode commence par les obligations plutôt que par les outils.",
+    "Voici les secteurs vers lesquels Orée choisit de tendre — pas parce qu'ils sont déjà tous des clients, mais parce que ce sont des milieux qui ont un vrai besoin d'une adoption prudente de l'IA, et où la méthode peut apporter beaucoup sans jamais être envahissante. Voici comment elle s'appliquerait dans chacun.",
 };
 
+/* Une liste de texte, pas des cartes : le traitement en boîtes avec étiquettes
+   laissait croire à des mandats déjà réalisés. L'ordre est celui demandé par la
+   cliente — le plus large et le moins risqué en tête, le seul secteur avec un
+   vrai client ensuite, puis les quatre professions réglementées. */
 export const sectorList = {
-  eyebrow: "Par profession",
-  title: "Où la méthode se pose",
+  title: "Voici où la méthode se prête",
   items: [
     {
-      name: "Notaires",
-      slug: "notaries",
-      image: "/img/sector-1.png",
+      name: "Petites entreprises",
+      slug: "small-business",
       summary:
-        "Vision 2030 a donné une direction et la profession est invitée à bouger. La question n'est plus s'il faut adopter, mais comment adopter sans toucher à ce qui doit rester intouché.",
-      meta: [
-        { label: "Cadre", value: "Vision 2030" },
-        { label: "Pression", value: "Projet pilote automne 2026" },
-        { label: "Où l'on commence", value: "Production des actes" },
-      ],
-    },
-    {
-      name: "Cabinets d'avocats",
-      slug: "law-firms",
-      image: "/img/sector-2.png",
-      summary:
-        "Vos devoirs envers le Barreau ne plient pas devant un nouvel outil. Nous cartographions les tâches de rédaction et d'ouverture de dossier qui peuvent être déléguées, et nous consignons qui signe avant que quoi que ce soit quitte le cabinet.",
-      meta: [
-        { label: "Cadre", value: "Devoirs du Barreau" },
-        { label: "Pression", value: "Sécurité des données clients" },
-        { label: "Où l'on commence", value: "Ouverture de dossier et rédaction" },
-      ],
-    },
-    {
-      name: "CRHA et conseillers RH",
-      slug: "hr-advisers",
-      image: "/img/sector-3.png",
-      summary:
-        "Vos équipes utilisent presque certainement déjà ces outils, discrètement et sans trace. Encadrer cet usage est plus utile que l'interdire, et l'exigence déontologique de 2027 s'en vient de toute façon.",
-      meta: [
-        { label: "Cadre", value: "Lignes directrices de l'ordre" },
-        { label: "Pression", value: "Formation en déontologie 2027" },
-        { label: "Où l'on commence", value: "Les outils déjà en usage" },
-      ],
-    },
-    {
-      name: "Firmes de placement",
-      slug: "investment-firms",
-      image: "/img/sector-4.png",
-      summary:
-        "La première question d'un inspecteur porte sur l'endroit où sont les données et sur qui peut les lire. Nous y répondons sur papier avant tout déploiement, pour que la réponse existe au moment où elle est demandée.",
-      meta: [
-        { label: "Cadre", value: "Loi 25 et LPRPDE" },
-        { label: "Pression", value: "Prêt pour l'inspection" },
-        { label: "Où l'on commence", value: "Résidence des données" },
-      ],
+        "Vous n'avez ni le temps ni le budget pour vous tromper d'outil. Un terrain où la question n'est pas si l'IA peut aider, mais par où commencer avec ce que vous avez déjà.",
     },
     {
       name: "OBNL",
       slug: "nonprofits",
-      image: "/img/sector-1.png",
       summary:
-        "La mission passe en premier, mais c'est la paperasse derrière elle qui use discrètement l'équipe. La question n'est pas si l'IA peut aider, c'est ce qu'un petit organisme peut adopter sans risquer la confiance sur laquelle il repose.",
-      meta: [
-        { label: "Cadre", value: "Reddition aux bailleurs" },
-        { label: "Enjeu central", value: "Données des donateurs" },
-        { label: "Où l'on commence", value: "Rapports de subvention" },
-      ],
+        "La mission passe en premier, mais c'est la paperasse derrière elle qui use discrètement l'équipe. Un terrain où une petite équipe peut gagner beaucoup, sans jamais bousculer ce qui compte vraiment.",
+    },
+    {
+      name: "Notaires",
+      slug: "notaries",
+      summary:
+        "Vision 2030 a donné une direction, et la profession sera de plus en plus appelée à s'adapter. Un terrain où je vois un vrai besoin, à condition que rien ne s'approche de l'acte authentique lui-même.",
+    },
+    {
+      name: "Cabinets d'avocats",
+      slug: "law-firms",
+      summary:
+        "Les devoirs envers le Barreau ne laissent aucune place à l'improvisation. Observer avant d'équiper peut faire une vraie différence, sans jamais mettre la signature de l'avocat en jeu.",
+    },
+    {
+      name: "CRHA et conseillers RH",
+      slug: "hr-advisers",
+      summary:
+        "Vos équipes utilisent probablement déjà ces outils, discrètement. Un terrain où je vois un vrai besoin d'encadrement, sans jamais surveiller ni dicter.",
+    },
+    {
+      name: "Firmes de placement",
+      slug: "investment-firms",
+      summary:
+        "La question de la résidence des données et de la traçabilité revient tôt ou tard. Un terrain où je vois un vrai besoin de rigueur documentaire, sans ralentir vos opérations.",
     },
   ],
 };

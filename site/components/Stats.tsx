@@ -7,7 +7,7 @@ export function Stats({ locale }: { locale: Locale }) {
 
   return (
     <section className="px-[10px] pt-[10px]">
-      <div className="overflow-hidden rounded-[20px] bg-cream px-6 py-16 sm:px-10 lg:px-[120px] lg:py-[80px]">
+      <div className="panel-wash overflow-hidden rounded-[20px] bg-cream px-6 py-16 sm:px-10 lg:px-[120px] lg:py-[80px]">
         <Reveal>
           <p className="eyebrow text-amber-ink">{stats.eyebrow}</p>
         </Reveal>
@@ -16,7 +16,12 @@ export function Stats({ locale }: { locale: Locale }) {
           {stats.items.map((s, i) => (
             <Reveal key={s.figure} delay={0.06 * i}>
               <div className="flex h-full flex-col rounded-[14px] bg-light p-7">
-                <span className="h-stat text-olive-deep">{s.figure}</span>
+                {/* Argile, the palette's figure colour ("chiffres clés, jalons,
+                    points d'attention"). These four were khaki like everything
+                    else, so the one place the page states a number read no
+                    louder than its own labels. Counts as this page's single
+                    terracotta zone. */}
+                <span className="h-stat text-amber">{s.figure}</span>
                 <p className="mt-4 text-[14px] leading-[20px] text-ink">{s.caption}</p>
                 <p className="eyebrow mt-auto pt-5 text-grey">{s.source}</p>
               </div>

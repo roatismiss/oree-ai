@@ -45,11 +45,71 @@ html[data-splash-seen] [data-splash] {
   display: none;
 }
 
+/* Jost at 300 for running text, 500 for emphasis — the brand reference is
+   explicit ("graisse légère (300) pour le corps, médium (500) pour les mises en
+   relief"). The font was loading at 400 only, which is why the page read heavy
+   and generic; the weights are declared in both root layouts. */
 body {
   background: var(--color-cream);
   color: var(--color-ink);
   font-family: var(--font-body);
+  font-weight: 300;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Paper grain over the whole page. The palette is seventeen flat fills, so an
+   unbroken ivory runs the length of the document with nothing for the eye to
+   catch on. Two tiles rather than one: a coarse pass at 0.55 for the fibre of
+   the sheet and a fine pass at 1.1 for its tooth, which together read as stock
+   rather than as the single-frequency speckle a lone turbulence gives. Inline
+   SVG, so it costs no request, and `pointer-events: none` keeps it out of every
+   interaction. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0.13;
+  mix-blend-mode: multiply;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='c'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='5' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23c)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23f)'/%3E%3C/svg%3E");
+  background-size: 220px 220px, 140px 140px;
+}
+
+/* Panels are single flat fills, which is the other half of why the page looks
+   printed by a machine. A light wash from the top-left and a warm shade at the
+   bottom-right give a surface a direction without introducing a colour that is
+   not in the palette. Works on white and on the tinted panels alike. The shade
+   is Basalte rather than neutral grey, so a panel darkens toward the ink family
+   and never toward soot. */
+.panel-wash {
+  background-image:
+    radial-gradient(120% 95% at 0% 0%, rgb(255 255 255 / 0.75), rgb(255 255 255 / 0) 62%),
+    radial-gradient(105% 85% at 100% 100%, rgb(62 58 54 / 0.1), rgb(62 58 54 / 0) 58%);
+}
+
+/* The hero's backdrop. "Orée" is the edge of the woods, and the palette is
+   named for what grows there — écorce, mousse, tilleul, galet, lin — but the
+   page carried no trace of it. This is that reading held to atmosphere rather
+   than scenery: khaki masses low and to the sides, light falling from the top
+   right, everything else left as ivory. It stays inside the client's wish for
+   no photography in the hero, and a generated image layered over it needs no
+   change here. */
+.hero-horizon {
+  background-image:
+    radial-gradient(95% 62% at 10% 114%, rgb(74 83 35 / 0.3), transparent 72%),
+    radial-gradient(78% 52% at 82% 108%, rgb(126 133 81 / 0.26), transparent 70%),
+    radial-gradient(120% 70% at 50% 128%, rgb(181 188 124 / 0.22), transparent 62%),
+    radial-gradient(58% 50% at 94% -12%, rgb(237 240 217 / 0.95), transparent 74%);
+}
+
+/* The same treatment for the Basalte panels, inverted. */
+.panel-wash-dark {
+  background-image:
+    radial-gradient(110% 90% at 0% 0%, rgb(245 241 233 / 0.07), rgb(245 241 233 / 0) 60%),
+    radial-gradient(100% 80% at 100% 100%, rgb(0 0 0 / 0.2), rgb(0 0 0 / 0) 55%);
 }
 
 /* Display headings — the template's uppercase display treatment, kept as the

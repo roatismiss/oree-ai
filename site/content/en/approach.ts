@@ -2,8 +2,8 @@
 
 export const approachHero = {
   eyebrow: "The approach",
-  titleTop: "Three days inside",
-  titleBottom: "Your practice",
+  titleTop: "Three days,",
+  titleBottom: "with you",
   body:
     "The work starts with your dossiers, not with a product demonstration. You end with a costed plan you approve line by line, and you can carry it out with us or without us.",
 };
@@ -18,14 +18,13 @@ export const story = {
     "Orée was founded on a straightforward observation: the professions with the most to gain from AI are the ones least able to adopt it carelessly. A notary cannot experiment with a client file. A law firm cannot explain away a draft that went out wrong.",
     "So the practice was built the other way around. Obligations first, tools second. Every recommendation has to survive a review by the people entitled to conduct one, and every automation ends where a human signature begins.",
   ],
-  /* The full-length biography, restored verbatim from oree-conseil.ca's
-     "À propos" page. The named frameworks and the em dashes are the client's
-     own wording, kept as written rather than trimmed to house style: the
-     specifics are the credibility. */
+  /* The full-length biography, in the client's own wording. No employer is
+     named: the sectors and the applied frameworks carry the credibility, and
+     nothing can be misread as a client list. */
   bioEyebrow: "In her own words",
   bio: [
-    "Twenty-seven years inside complex organizations taught me to recognize large-scale change in any form it takes. At Fonds de solidarité FTQ, I lived AI adoption from the inside — its risks, its resistance, its blind spots. At Bell, Bombardier, CGI, Banque Nationale, and Université de Montréal, it was other major transformations, each different from the last, that shaped me.",
-    "That field experience also draws on established frameworks I've applied — not just studied — as a senior business analyst and change agent during consulting engagements with CGI: Lean Six Sigma and process optimization, and the ADKAR change-management model. That practice shaped the design of O·R·É·E — a method built to be deliberately minimal, tailored for smaller organizations.",
+    "Twenty-seven years inside complex organizations taught me to recognize large-scale change in any form it takes. Inside a major financial institution, I lived AI adoption from the inside — its risks, its resistance, its blind spots — led a records-management mandate for the compliance department in the thick of Law 25 obligations, and ran a supplier-contract optimization project using Lean. At a large industrial player, I spent four years as a change-management consultant, applying the Prosci/ADKAR methodology on a major mandate. In telecommunications, in consulting services, and in Quebec's public and para-public sector, it was other transformations that shaped me.",
+    "This practice is grounded in a degree in economics and political science from Université de Montréal, and in established frameworks applied in the field: the ADKAR change-management methodology, a solid Lean Six Sigma foundation, and two professional certifications — Business Relationship Management Professional (BRMP) and Management of Portfolio (MoP), Foundation and Practitioner. It is that double experience, lived in the field and structured by method, that shaped the design of O·R·É·E.",
   ],
   nameLabel: "The name",
   nameMetaphor:
@@ -36,7 +35,7 @@ export const method = {
   eyebrow: "How the mandate runs",
   title: "The O·R·É·E method",
   intro:
-    "Four movements across three days on site. Each one produces something you keep, whether or not the mandate continues.",
+    "Four movements across three days, on site or remotely. Each one produces something you keep, whether or not the mandate continues.",
   steps: [
     {
       n: "01",

@@ -1,5 +1,5 @@
 /**
- * Copie de la page Offre. Aucun prix : la grille tarifaire d'Orée ne s'invente
+ * Copie de la page Offre. Aucun prix : la grille tarifaire d'Orée ne s'invente
  * pas ici. Les descriptions des trois services reprennent celles de la page
  * « Offre » d'oree-conseil.ca.
  */
@@ -9,7 +9,7 @@ export const servicesHero = {
   titleTop: "Ce qu'un mandat",
   titleBottom: "Laisse derrière",
   body:
-    "Une offre volontairement resserrée, une seule méthode. Chaque mandat se termine par quelque chose d'écrit, que vous gardez et pouvez appliquer, que le travail se poursuive avec nous ou non. Le diagnostic est le point de départ de tout engagement.",
+    "Une offre ciblée, une seule méthode. Chaque mandat se termine par quelque chose d'écrit, que vous gardez et pouvez appliquer, que le travail se poursuive avec nous ou non. Le diagnostic est le point de départ de tout engagement.",
 };
 
 export const serviceList = {
@@ -20,9 +20,9 @@ export const serviceList = {
       n: "01",
       name: "Diagnostic Orée",
       summary:
-        "Trois jours dans vos bureaux. Nous observons le travail tel qu'il se fait vraiment, cartographions les tâches que l'IA peut porter et celles qu'elle ne peut pas, et confrontons chaque candidate aux obligations que vous détenez déjà.",
+        "Trois jours consacrés à votre organisation — sur place ou à distance, selon ce qui convient le mieux. Nous observons le travail tel qu'il se fait vraiment, cartographions les tâches que l'IA peut porter et celles qu'elle ne peut pas, et confrontons chaque candidate aux obligations que vous détenez déjà.",
       meta: [
-        { label: "Format", value: "Sur place" },
+        { label: "Format", value: "Sur place ou à distance" },
         { label: "Durée", value: "Trois jours" },
         { label: "Vous en ressortez avec", value: "Un plan d'action chiffré" },
       ],
@@ -41,7 +41,7 @@ export const serviceList = {
     {
       n: "03",
       name: "Appui Orée",
-      /* Sa formulation d'origine en tête : le suivi mensuel est ce qui définit
+      /* Sa formulation d'origine en tête : le suivi mensuel est ce qui définit
          le service dans son propre document, et il avait disparu. */
       summary:
         "Suivi mensuel sur la durée pour ancrer les changements dans les pratiques réelles des équipes, avec ajustements continus. Outils choisis, gabarits rédigés, et la pratique vous est remise dès qu'elle tient sans nous.",
@@ -55,7 +55,7 @@ export const serviceList = {
       n: "04",
       name: "Radar Loi 25",
       summary:
-        "Une veille continue sur les obligations qui bougent : consentements, registres de traitement, incidents. Vous savez où vous en êtes avant que quiconque ait l'occasion de le demander.",
+        "Une veille continue sur les obligations qui bougent : consentements, registres de traitement, incidents. Vous savez où vous en êtes avant que quiconque ait l'occasion de le demander.",
       meta: [
         { label: "Format", value: "Veille continue" },
         { label: "Portée", value: "Consentements, registres, incidents" },

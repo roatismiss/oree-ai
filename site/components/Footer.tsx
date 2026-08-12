@@ -17,7 +17,11 @@ export function Footer({ locale }: { locale: Locale }) {
   const { linkedin } = footer.social;
 
   return (
-    <footer className="relative overflow-hidden bg-light px-6 pt-20 sm:px-10 lg:px-[130px] lg:pt-[80px]">
+    /* Basalte, per the palette reference: "la craie sur basalte — bandeaux,
+       pieds de page" is one of the three verified pairings, and it was the one
+       the site never used, which left the ink family as text colour only and
+       the page ivory from top to bottom. The foot is where the brief puts it. */
+    <footer className="panel-wash-dark relative mt-[10px] overflow-hidden bg-ink px-6 pt-20 sm:px-10 lg:px-[130px] lg:pt-[80px]">
       <div className="relative">
         {/* The contact column holds the email address, a 30-character token
             with no spaces that cannot wrap. At equal thirds it overflowed into
@@ -37,7 +41,10 @@ export function Footer({ locale }: { locale: Locale }) {
                     right ? "xl:flex-row-reverse xl:text-right" : ""
                   }`}
                 >
-                  <p className="eyebrow mt-1 shrink-0 text-olive-deep">{col.label}</p>
+                  {/* Tilleul is the palette's accent for dark panels; on the
+                      old ivory foot these labels were Kaki profond, which
+                      disappears against Basalte. */}
+                  <p className="eyebrow mt-1 shrink-0 text-yellow">{col.label}</p>
                   <ul className="min-w-0 space-y-2">
                     {col.links.map((l) => (
                       <li key={l.label}>
@@ -49,7 +56,7 @@ export function Footer({ locale }: { locale: Locale }) {
                             line and never has to break mid-word. */}
                         <Link
                           href={localePath(locale, l.href)}
-                          className={`block text-ink transition-opacity hover:opacity-60 ${
+                          className={`block text-craie transition-opacity hover:opacity-60 ${
                             right
                               ? "font-display text-[15px] font-medium uppercase leading-[25px] tracking-[0.01em] [overflow-wrap:anywhere]"
                               : "h-row"
@@ -68,16 +75,19 @@ export function Footer({ locale }: { locale: Locale }) {
 
         <Reveal>
           <div className="mt-16 text-center">
-            <p className="refrain text-[20px] leading-[28px] text-olive-deep">{footer.refrain}</p>
-            <p className="eyebrow mt-3 text-grey">{footer.refrainGloss}</p>
+            <p className="refrain text-[20px] leading-[28px] text-yellow">{footer.refrain}</p>
+            <p className="eyebrow mt-3 text-galet">{footer.refrainGloss}</p>
           </div>
         </Reveal>
 
         <div className="relative mt-10 flex items-end justify-center">
-          <h2 className="h-wordmark text-center text-ink">{footer.wordmark}</h2>
+          <h2 className="h-wordmark text-center text-craie">{footer.wordmark}</h2>
         </div>
 
-        <div className="relative mt-8 flex flex-col gap-4 border-t border-hairline py-8 text-[12px] font-medium uppercase leading-[18px] tracking-[0.06em] text-grey sm:flex-row sm:items-center sm:justify-between">
+        {/* Grès is the rule colour on ivory and vanishes on Basalte, so the
+            rules on this panel are Craie held back instead — still never black,
+            which is the standing instruction in the palette reference. */}
+        <div className="relative mt-8 flex flex-col gap-4 border-t border-craie/20 py-8 text-[12px] font-medium uppercase leading-[18px] tracking-[0.06em] text-galet sm:flex-row sm:items-center sm:justify-between">
           <p>{footer.legal}</p>
           <div className="flex items-center gap-8">
             {/* External, so it opens in its own tab and carries its own label
@@ -88,7 +98,7 @@ export function Footer({ locale }: { locale: Locale }) {
               rel="noreferrer noopener"
               aria-label={linkedin.title}
               title={linkedin.title}
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-hairline text-ink transition-colors duration-300 hover:border-olive-deep hover:text-olive-deep"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-craie/25 text-craie transition-colors duration-300 hover:border-yellow hover:text-yellow"
             >
               <LinkedInMark />
             </a>

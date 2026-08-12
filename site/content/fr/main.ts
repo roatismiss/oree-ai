@@ -1,15 +1,15 @@
 /**
  * Copie française (Québec). Locale par défaut du site.
  *
- * Règle de travail : partout où oree-conseil.ca portait déjà le texte
+ * Règle de travail : partout où oree-conseil.ca portait déjà le texte
  * d'Aminata, c'est son français qui est repris tel quel, sans le réécrire.
- * Le reste est rédigé dans la même voix : conseillère, pas fournisseuse.
+ * Le reste est rédigé dans la même voix : conseillère, pas fournisseuse.
  *
- * Conventions OQLF : guillemets français, espace insécable ( ) avant le
+ * Conventions OQLF : guillemets français, espace insécable ( ) avant le
  * deux-points et avant le symbole pour cent.
  */
 
-/* Le menu d'oree-conseil.ca, à l'identique : Méthode, À propos, Pourquoi Orée,
+/* Le menu d'oree-conseil.ca, à l'identique : Méthode, À propos, Pourquoi Orée,
    Offre. Accueil est porté par le logo et Contact par le bouton, comme sur son
    site. Secteurs et Publications, qui n'existaient pas chez elle, restent
    accessibles depuis le pied de page. */
@@ -26,7 +26,7 @@ export const nav = {
 
 /**
  * En-têtes des pages reprises telles quelles d'oree-conseil.ca. La cliente a
- * demandé la même structure que son ancien site : les titres sont donc les
+ * demandé la même structure que son ancien site : les titres sont donc les
  * siens, mot pour mot.
  */
 export const aboutHero = {
@@ -71,7 +71,7 @@ export const deliverablesPage = {
       day: "Jour 3",
       letters: "E",
       title: "Engager",
-      body: "Restitution exécutive : constats, priorités, recommandations d'action.",
+      body: "Restitution exécutive : constats, priorités, recommandations d'action.",
       tools: ["Rapport de restitution"],
       note: "Portrait des constats, trois priorités d'action argumentées, plan avec échéancier — remis et modifiable.",
     },
@@ -106,7 +106,7 @@ export const meta = {
   approach: {
     title: "La méthode · Orée",
     description:
-      "La méthode O·R·É·E : observer, relever, évaluer, engager. Trois jours dans votre pratique, qui aboutissent à un plan chiffré que vous approuvez ligne par ligne.",
+      "La méthode O·R·É·E : observer, relever, évaluer, engager. Trois jours consacrés à votre organisation, sur place ou à distance, qui aboutissent à un plan chiffré que vous approuvez ligne par ligne.",
   },
   about: {
     title: "À propos · Orée Conseil",
@@ -126,17 +126,17 @@ export const meta = {
   services: {
     title: "L'offre · Orée",
     description:
-      "Diagnostic Orée, Formation Orée, Appui Orée et le Radar Loi 25. Une offre volontairement resserrée, une méthode, et un plan chiffré que vous gardez.",
+      "Diagnostic Orée, Formation Orée, Appui Orée et le Radar Loi 25. Une offre ciblée, une méthode, et un plan chiffré que vous gardez.",
   },
   sectors: {
     title: "Secteurs · Orée",
     description:
-      "Gouvernance de l'IA pour les notaires, les cabinets d'avocats, les CRHA, les firmes de placement et les OBNL du Québec. Les obligations de chaque secteur, et par où la méthode commence.",
+      "Gouvernance de l'IA pour les petites entreprises, les OBNL, les notaires, les cabinets d'avocats, les CRHA et les firmes de placement du Québec. Les obligations de chaque secteur, et par où la méthode commence.",
   },
   insights: {
     title: "Publications · Orée",
     description:
-      "Des articles sourcés sur l'IA et les obligations de la pratique réglementée au Québec : orientations du Barreau, registres de la Loi 25, et le virage numérique du notariat.",
+      "Des articles sourcés sur l'IA et les obligations de la pratique réglementée au Québec : orientations du Barreau, registres de la Loi 25, et le virage numérique du notariat.",
   },
   risks: {
     title: "Le coût de l'inaction · Orée Conseil",
@@ -151,7 +151,7 @@ export const meta = {
 };
 
 /**
- * Habillage d'interface : titres de section, liens de retour et libellés
+ * Habillage d'interface : titres de section, liens de retour et libellés
  * d'accessibilité qui étaient codés en dur dans les composants. Ils vivent ici
  * pour que la version française ne se retrouve pas avec des boutons anglais.
  */
@@ -201,7 +201,7 @@ export const methodGlance = {
   cta: "En savoir plus sur la méthode",
 };
 
-/** Pourquoi maintenant : le contexte québécois. Chiffres sourcés uniquement. */
+/** Pourquoi maintenant : le contexte québécois. Chiffres sourcés uniquement. */
 export const stats = {
   eyebrow: "Pourquoi maintenant · Le contexte québécois",
   titleTop: "Adoptée plus vite que",
@@ -240,7 +240,7 @@ export const why = {
   titleTop: "Pourquoi maintenant —",
   titleBottom: "Le contexte québécois",
   paragraphs: [
-    "Orée est une pratique-conseil indépendante en IA, pour les PME et les professions réglementées du Québec. Le travail commence dans vos bureaux, avec la façon dont le travail se fait vraiment, pas avec une démonstration de produit.",
+    "Orée est une pratique-conseil indépendante en IA, pour les PME et les professions réglementées du Québec. Le travail commence chez vous, sur place ou à distance, avec la façon dont le travail se fait vraiment, pas avec une démonstration de produit.",
     "Chaque mandat suit une seule méthode : observer le travail réel, relever les frictions qui le ralentissent, évaluer celles qui freinent vraiment la performance, et engager un plan que vous approuvez ligne par ligne.",
     "Nous ne vendons aucun logiciel et ne touchons aucune commission de ceux qui en vendent. Ce que vous obtenez, c'est un plan chiffré que vous pouvez réaliser avec nous ou sans nous.",
   ],
@@ -255,13 +255,13 @@ export const why = {
 
 export const services = {
   eyebrow: "L'offre",
-  titleTop: "Ce que je fais,",
-  titleBottom: "Pour qui",
+  titleTop: "Une offre ciblée,",
+  titleBottom: "une méthode",
   cta: "Voir l'offre complète",
   leftLabel: "Ce que je fais",
   rightLabel: "Pour qui je le fais",
   /* Repris mot pour mot de la section « Pour qui » d'oree-conseil.ca.
-     « des faits, pas des impressions » est une formule de marque : elle ne se
+     « des faits, pas des impressions » est une formule de marque : elle ne se
      paraphrase pas. */
   audience: [
     "PME et entreprises, tous secteurs",
@@ -275,12 +275,12 @@ export const services = {
     { label: "Radar Loi 25", href: "/services/law-25-radar" },
   ],
   right: [
-    { label: "PME et entreprises, tous secteurs", href: "/sectors" },
+    { label: "Petites entreprises du Québec", href: "/sectors/small-business" },
+    { label: "OBNL · Reddition aux bailleurs", href: "/sectors/nonprofits" },
     { label: "Notaires · Vision 2030", href: "/sectors/notaries" },
     { label: "Cabinets d'avocats · devoirs du Barreau", href: "/sectors/law-firms" },
     { label: "CRHA et conseillers RH", href: "/sectors/hr-advisers" },
     { label: "Firmes de placement", href: "/sectors/investment-firms" },
-    { label: "OBNL · Reddition aux bailleurs", href: "/sectors/nonprofits" },
   ],
 };
 
@@ -290,23 +290,12 @@ export const practice = {
   titleBottom: "Vingt-sept ans",
   name: "Aminata Diabaté",
   role: "Fondatrice et consultante principale · Orée Conseil",
+  /* Aucun employeur nommé, à la demande de la cliente : les secteurs portent la
+     crédibilité, et rien ne peut être relu comme une liste de clients. */
   body:
-    "Orée, c'est la pratique d'Aminata Diabaté, qui a passé vingt-sept ans à l'intérieur des organisations les plus complexes du Québec. Vous travaillez directement avec elle. Pas de gestionnaire de compte, pas de transfert de dossier, pas de consultant junior qui apprend votre dossier à vos frais.",
-  /* Repris d'oree-conseil.ca : chaque organisation porte son secteur, et la
-     précision qui suit n'est pas optionnelle. Sans elle, la liste se lit comme
-     une liste de clients, ce qu'elle n'est pas. Formulation de l'ancien site. */
-  backgroundLabel: "Parcours",
-  backgroundNote:
-    "Organisations où Aminata a travaillé avant de fonder Orée Conseil — pas des clients.",
-  background: [
-    { org: "Fonds de solidarité FTQ", sector: "Institution financière" },
-    { org: "Bell", sector: "Télécommunications" },
-    { org: "Bombardier · CGI", sector: "Industrie et services conseils" },
-    { org: "Banque Nationale", sector: "Services financiers" },
-    { org: "Université de Montréal", sector: "Secteur public / para-public" },
-  ],
+    "Orée, c'est la pratique d'Aminata Diabaté — vingt-sept ans de méthodologie, d'optimisation de processus, de gestion du changement et de conformité réglementaire, au cœur des services financiers, des télécommunications, de l'industrie et du secteur public québécois. Vous travaillez directement avec elle. Pas de gestionnaire de compte, pas de transfert de dossier, pas de consultant junior qui apprend votre dossier à vos frais.",
   cta: "À propos d'Aminata",
-  // Bandeaux défilants : ce que couvre la pratique, pas un organigramme.
+  // Bandeaux défilants : ce que couvre la pratique, pas un organigramme.
   rowOne: [
     { title: "Diagnostic Orée", note: "Trois jours, six à huit entretiens, un portrait honnête" },
     { title: "En direct avec Aminata", note: "Aucun transfert, aucun consultant junior" },
@@ -326,7 +315,7 @@ export const ctaBand = {
   titleTop: "Vos frictions n'attendent pas.",
   titleBottom: "Votre plan non plus.",
   body:
-    "Trois jours dans votre organisation : six à huit entretiens ciblés, un atelier de groupe optionnel, et une restitution exécutive. Un portrait honnête des frictions humain-IA, livré en deux semaines. Forfait fixe, sur devis.",
+    "Trois jours consacrés à votre organisation — sur place ou à distance, selon ce qui convient le mieux. Six à huit entretiens ciblés, un atelier de groupe optionnel, et une restitution exécutive. Un portrait honnête des frictions humain-IA, livré en deux semaines. Forfait fixe, sur devis.",
   cta: "Réserver un diagnostic",
 };
 
@@ -337,7 +326,7 @@ export const ctaBand = {
  *
  * L'envoi part vers /api/contact, qui relaie le message dans la boîte de
  * réception d'Aminata. Si le relais échoue, le formulaire propose le logiciel
- * de courriel du visiteur : voir components/ContactForm.tsx.
+ * de courriel du visiteur : voir components/ContactForm.tsx.
  */
 export const contactForm = {
   eyebrow: "Écrire un message",
@@ -361,14 +350,14 @@ export const contactForm = {
   failure: {
     title: "L'envoi n'a pas abouti.",
     body:
-      "Rien n'est perdu : votre message est toujours là. Ouvrez-le dans votre logiciel de courriel, ou réessayez dans un instant.",
+      "Rien n'est perdu : votre message est toujours là. Ouvrez-le dans votre logiciel de courriel, ou réessayez dans un instant.",
     mailto: "Ouvrir dans mon courriel",
     retry: "Réessayer",
   },
 };
 
 /**
- * Pas des témoignages. Orée est en prélancement : inventer des clients nommés
+ * Pas des témoignages. Orée est en prélancement : inventer des clients nommés
  * et des photos serait fabriquer une preuve sociale. Ce sont les objections
  * réelles de chaque public, attribuées au public et non à une personne.
  */
@@ -460,7 +449,7 @@ export const faq: {
         "Aucun outil à vendre : chaque recommandation part du terrain, jamais d'une entente commerciale.",
     },
     /* Définitions de base reprises de la FAQ de l'ancien site. Les chiffres du
-       site sont attribués à l'ISQ et à la CPQ : un lecteur qui ne connaît pas
+       site sont attribués à l'ISQ et à la CPQ : un lecteur qui ne connaît pas
        ces sigles ne devrait pas avoir à les chercher. */
     {
       question: "Que veut dire « taux d'adoption » ?",
@@ -507,14 +496,14 @@ export const frameworks = {
 export const cta = {
   title: "Réservez votre diagnostic Orée",
   body:
-    "Un appel pour confirmer la portée. Trois jours dans votre organisation. Un portrait honnête de ce qui freine le travail, que vous continuiez avec nous ou non.",
+    "Un appel pour confirmer la portée. Trois jours consacrés à votre organisation — sur place ou à distance, selon ce qui convient le mieux. Un portrait honnête de ce qui freine le travail, que vous continuiez avec nous ou non.",
   primary: "Réserver un diagnostic",
   secondary: "Essayer les démos",
 };
 
 export const insights = {
   eyebrow: "Publications",
-  title: "Depuis la pratique",
+  title: "Nos publications",
   cta: "Lire tous les articles",
 };
 

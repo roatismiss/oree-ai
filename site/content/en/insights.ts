@@ -25,8 +25,7 @@ export type Article = {
 
 export const insightsHero = {
   eyebrow: "Insights",
-  titleTop: "From the",
-  titleBottom: "Practice.",
+  titleTop: "Our insights",
   body:
     "Short, sourced articles on AI and the obligations of regulated practice in Quebec. Written for partners and principals, not for engineers. Every claim cites where it came from.",
 };

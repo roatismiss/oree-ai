@@ -20,6 +20,7 @@ import { CostOfInaction } from "@/components/CostOfInaction";
 import { WhyFirm } from "@/components/WhyFirm";
 import { PracticeAreas } from "@/components/PracticeAreas";
 import { Team } from "@/components/Team";
+import { Refrain } from "@/components/Refrain";
 import { CtaBand } from "@/components/CtaBand";
 import { Questions } from "@/components/Questions";
 import { Faq } from "@/components/Faq";
@@ -44,7 +45,7 @@ import { Overview } from "@/components/detail/Overview";
 import { Process } from "@/components/detail/Process";
 import { Deliverables } from "@/components/detail/Deliverables";
 
-import { copy, localePath, type Locale } from "@/content/copy";
+import { copy, localePath, type Dictionary, type Locale } from "@/content/copy";
 
 type P = { locale: Locale };
 
@@ -65,6 +66,10 @@ export function HomePage({ locale }: P) {
         <div id="services">
           <PracticeAreas locale={locale} />
         </div>
+        {/* The pivot between what the practice does and who does it, and the
+            page's one dark, full-bleed moment — everything above and below is
+            an inset ivory panel. */}
+        <Refrain locale={locale} />
         {/* Each of these is the teaser for one of her pages, and each one
             opens it: the founder block goes to À propos, the block below to
             Pourquoi Orée. */}
@@ -335,6 +340,42 @@ export function InsightsPage({ locale }: P) {
   );
 }
 
+/**
+ * Fees for the diagnostic. Both tiers are ranges confirmed after the intro
+ * call, and the note under them is what keeps a range from being read as a
+ * public quote.
+ */
+function Pricing({
+  pricing,
+}: {
+  pricing: NonNullable<Dictionary["serviceDetails"][number]["pricing"]>;
+}) {
+  return (
+    <section className="px-[10px] pt-[10px]">
+      <div className="overflow-hidden rounded-[20px] bg-mousse px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[90px]">
+        <Reveal>
+          <p className="eyebrow text-olive-deep">{pricing.eyebrow}</p>
+        </Reveal>
+        <Reveal delay={0.06}>
+          <h2 className="h-display-tight mt-3 text-ink">{pricing.title}</h2>
+        </Reveal>
+
+        <div className="mt-12 grid gap-5 lg:grid-cols-2">
+          {pricing.tiers.map((tier, i) => (
+            <Reveal key={tier.label} delay={0.06 * i}>
+              <div className="h-full rounded-[14px] bg-light p-8">
+                <p className="eyebrow text-amber-ink">{tier.label}</p>
+                <p className="mt-4 text-[16px] leading-[24px] text-ink">{tier.body}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
 export function ServiceDetailPage({ locale, slug }: P & { slug: string }) {
   const { serviceDetails, detailCta, ui } = copy[locale];
   const service = serviceDetails.find((s) => s.slug === slug);
@@ -354,6 +395,7 @@ export function ServiceDetailPage({ locale, slug }: P & { slug: string }) {
         />
         <Overview eyebrow={ui.whatItAnswers} paragraphs={service.problem} facts={service.facts} />
         <Process eyebrow={ui.howItRuns} title={ui.theProcess} steps={service.process} />
+        {service.pricing && <Pricing pricing={service.pricing} />}
         <Deliverables
           title={ui.whatYouKeep}
           intro={service.deliverablesIntro}
@@ -390,7 +432,12 @@ export function SectorDetailPage({ locale, slug }: P & { slug: string }) {
           title={ui.startingPoints}
           steps={sector.startingPoints}
         />
-        <Deliverables title={ui.whatChanges} items={sector.outcomes} notThis={sector.notThis} />
+        <Deliverables
+          title={ui.whatChanges}
+          items={sector.outcomes}
+          notThis={sector.notThis}
+          reassurance={sector.reassurance}
+        />
         <Cta locale={locale} title={detailCta.title} />
       </main>
       <Footer locale={locale} />

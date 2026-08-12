@@ -99,7 +99,7 @@ export const meta = {
   approach: {
     title: "The approach · Orée",
     description:
-      "The O·R·É·E method: observe, uncover, evaluate, engage. Three days inside your practice, ending in a costed plan you approve line by line.",
+      "The O·R·É·E method: observe, uncover, evaluate, engage. Three days given to your organization, on site or remotely, ending in a costed plan you approve line by line.",
   },
   about: {
     title: "About · Orée Conseil",
@@ -119,12 +119,12 @@ export const meta = {
   services: {
     title: "Services · Orée",
     description:
-      "Orée Diagnostic, Orée Training, Orée Support and the Law 25 Radar. A deliberately small offer, one method, and a costed plan you keep.",
+      "Orée Diagnostic, Orée Training, Orée Support and the Law 25 Radar. A focused offer, one method, and a costed plan you keep.",
   },
   sectors: {
     title: "Sectors · Orée",
     description:
-      "AI governance for notaries, law firms, CHRPs, investment firms and nonprofits in Quebec. Each sector's obligations, and where the method starts.",
+      "AI governance for small businesses, nonprofits, notaries, law firms, CHRPs and investment firms in Quebec. Each sector's obligations, and where the method starts.",
   },
   insights: {
     title: "Insights · Orée",
@@ -237,7 +237,7 @@ export const why = {
   titleTop: "Why now —",
   titleBottom: "The Quebec context",
   paragraphs: [
-    "Orée is an independent AI consulting practice for Quebec SMEs and regulated professional practices. The work starts inside your office, with the way work is actually done, not with a product demonstration.",
+    "Orée is an independent AI consulting practice for Quebec SMEs and regulated professional practices. The work starts with you, on site or remotely, with the way work is actually done, not with a product demonstration.",
     "Every mandate follows one method: observe the real work, uncover the frictions that slow it down, evaluate which ones actually hold back performance, and engage a plan you approve line by line.",
     "We do not sell software and we take no commission from those who do. What you get is a costed plan you can carry out with us or without us.",
   ],
@@ -252,8 +252,8 @@ export const why = {
 
 export const services = {
   eyebrow: "The offering",
-  titleTop: "What I do,",
-  titleBottom: "Who for",
+  titleTop: "A focused offering,",
+  titleBottom: "one method",
   cta: "See the full offering",
   leftLabel: "What I do",
   rightLabel: "Who I do it for",
@@ -271,12 +271,12 @@ export const services = {
     { label: "Law 25 Radar", href: "/services/law-25-radar" },
   ],
   right: [
-    { label: "SMEs and businesses, all sectors", href: "/sectors" },
+    { label: "Small businesses in Quebec", href: "/sectors/small-business" },
+    { label: "Nonprofits · Funder duties", href: "/sectors/nonprofits" },
     { label: "Notaries · Vision 2030", href: "/sectors/notaries" },
     { label: "Law firms · Barreau duties", href: "/sectors/law-firms" },
     { label: "CHRPs and HR advisers", href: "/sectors/hr-advisers" },
     { label: "Investment firms", href: "/sectors/investment-firms" },
-    { label: "Nonprofits · Funder duties", href: "/sectors/nonprofits" },
   ],
 };
 
@@ -286,21 +286,10 @@ export const practice = {
   titleBottom: "Twenty-seven years",
   name: "Aminata Diabaté",
   role: "Founder and Principal Consultant · Orée Conseil",
+  /* No employer is named, at the client's request: the sectors carry the
+     credibility, and nothing can be misread as a client list. */
   body:
-    "Orée is the practice of Aminata Diabaté, who has spent twenty-seven years inside Quebec's most complex organizations. You work with her directly. No account managers, no handoffs, no junior consultant learning your file on your time.",
-  /* Restored from oree-conseil.ca: each organization carries its sector, and
-     the clarification below it is not optional. Without it the list reads as a
-     client list, which it is not. Wording is the old site's, verbatim. */
-  backgroundLabel: "Background",
-  backgroundNote:
-    "Organizations Aminata worked at before founding Orée Conseil — not clients.",
-  background: [
-    { org: "Fonds de solidarité FTQ", sector: "Financial institution" },
-    { org: "Bell", sector: "Telecommunications" },
-    { org: "Bombardier · CGI", sector: "Industry and consulting services" },
-    { org: "Banque Nationale", sector: "Financial services" },
-    { org: "Université de Montréal", sector: "Public / para-public sector" },
-  ],
+    "Orée is the practice of Aminata Diabaté — twenty-seven years of methodology, process optimization, change management and regulatory compliance, at the heart of financial services, telecommunications, industry and Quebec's public sector. You work with her directly. No account managers, no handoffs, no junior consultant learning your file on your time.",
   cta: "About Aminata",
   // Marquee rows: what the practice covers, not a staff roster.
   rowOne: [
@@ -322,7 +311,7 @@ export const ctaBand = {
   titleTop: "Your frictions are not waiting.",
   titleBottom: "Neither should your plan.",
   body:
-    "Three days inside your organization: six to eight targeted interviews, an optional group workshop, and an executive debrief. An honest picture of human-AI friction, delivered within two weeks. Fixed fee, quoted on request.",
+    "Three days given to your organization — on site or remotely, whichever suits you best. Six to eight targeted interviews, an optional group workshop, and an executive debrief. An honest picture of human-AI friction, delivered within two weeks. Fixed fee, quoted on request.",
   cta: "Book a diagnostic",
 };
 
@@ -501,14 +490,14 @@ export const frameworks = {
 export const cta = {
   title: "Book your Orée diagnostic",
   body:
-    "One call to confirm the scope. Three days inside your organization. An honest picture of what slows the work down, whether or not you continue with us.",
+    "One call to confirm the scope. Three days given to your organization — on site or remotely, whichever suits you best. An honest picture of what slows the work down, whether or not you continue with us.",
   primary: "Book a diagnostic",
   secondary: "Try the demos",
 };
 
 export const insights = {
   eyebrow: "Insights",
-  title: "From the practice",
+  title: "Our insights",
   cta: "Read all articles",
 };
 

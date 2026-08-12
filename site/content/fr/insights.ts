@@ -1,10 +1,10 @@
 /**
  * Les trois articles de lancement, en version intégrale. Mêmes règles de voix
- * que content/fr/main.ts : conseillère et non fournisseuse, noms précis, aucune
+ * que content/fr/main.ts : conseillère et non fournisseuse, noms précis, aucune
  * preuve sociale inventée. Chaque affirmation est appuyée par la liste des
  * sources en fin d'article ; les citations sont textuelles.
  *
- * Les citations en bloc gardent leur français d'origine : plusieurs proviennent
+ * Les citations en bloc gardent leur français d'origine : plusieurs proviennent
  * de documents publiés en français, et c'est la version qui fait foi.
  */
 
@@ -12,8 +12,7 @@ import type { Article } from "../en/insights";
 
 export const insightsHero = {
   eyebrow: "Publications",
-  titleTop: "Depuis la",
-  titleBottom: "Pratique.",
+  titleTop: "Nos publications",
   body:
     "Des articles courts et sourcés sur l'IA et les obligations de la pratique réglementée au Québec. Écrits pour des associés et des dirigeants, pas pour des ingénieurs. Chaque affirmation cite d'où elle vient.",
 };
@@ -49,14 +48,14 @@ export const articles: Article[] = [
       },
       {
         type: "p",
-        text: "Le guide, intitulé L'intelligence artificielle générative : guide pratique pour une utilisation responsable, couvre la confidentialité, la vérification, la transparence envers les clients et la facturation. Son objectif déclaré est un usage prudent, réfléchi et éthique de ces technologies dans le travail juridique. Le Barreau a depuis annoncé de la formation continue sur l'encadrement de l'IA générative en pratique, dont une formation désignée obligatoire pour les membres.",
+        text: "Le guide, intitulé L'intelligence artificielle générative : guide pratique pour une utilisation responsable, couvre la confidentialité, la vérification, la transparence envers les clients et la facturation. Son objectif déclaré est un usage prudent, réfléchi et éthique de ces technologies dans le travail juridique. Le Barreau a depuis annoncé de la formation continue sur l'encadrement de l'IA générative en pratique, dont une formation désignée obligatoire pour les membres.",
       },
       { type: "h2", text: "Trois règles portent l'essentiel" },
       {
         type: "list",
         items: [
           "Les données clients n'entrent jamais dans un système ouvert. Tout ce qui est protégé par le secret professionnel reste dans des environnements que le cabinet contrôle, sous des contrats qui disent où sont les données et ce que le fournisseur peut en faire. Au Québec, cette conversation inclut désormais la Loi 25 et l'hébergement des données au Canada.",
-          "Tout ce qui quitte le cabinet est vérifié par un avocat. L'IA générative écrit avec la même assurance quand elle a raison et quand elle a tort. La signature au bas de la lettre est la vôtre : la lecture doit l'être aussi.",
+          "Tout ce qui quitte le cabinet est vérifié par un avocat. L'IA générative écrit avec la même assurance quand elle a raison et quand elle a tort. La signature au bas de la lettre est la vôtre : la lecture doit l'être aussi.",
           "Le client n'est pas un spectateur. Le guide traite la transparence envers les clients comme faisant partie de la relation professionnelle, et les honoraires reflètent le temps réellement investi, pas le temps que la tâche prenait avant l'existence de l'outil.",
         ],
       },
@@ -72,11 +71,11 @@ export const articles: Article[] = [
       { type: "h2", text: "Le plancher de conformité en dessous" },
       {
         type: "p",
-        text: "Quels que soient les outils qu'un cabinet adopte, la Loi 25 continue de s'appliquer : une personne responsable de la protection des renseignements personnels, un registre des incidents conservé au moins cinq ans, et la notification à la Commission d'accès à l'information sans délai lorsqu'un incident présente un risque de préjudice sérieux. Adopter l'IA ne relève pas ce plancher. Cela rend simplement plus visible le fait de s'y tenir.",
+        text: "Quels que soient les outils qu'un cabinet adopte, la Loi 25 continue de s'appliquer : une personne responsable de la protection des renseignements personnels, un registre des incidents conservé au moins cinq ans, et la notification à la Commission d'accès à l'information sans délai lorsqu'un incident présente un risque de préjudice sérieux. Adopter l'IA ne relève pas ce plancher. Cela rend simplement plus visible le fait de s'y tenir.",
       },
       {
         type: "note",
-        text: "La version courte : le Barreau n'a pas demandé aux avocats de choisir entre la compétence et la confidentialité. Il leur a demandé de prouver qu'ils peuvent tenir les deux. C'est un problème d'opérations, et les problèmes d'opérations ont des plans.",
+        text: "La version courte : le Barreau n'a pas demandé aux avocats de choisir entre la compétence et la confidentialité. Il leur a demandé de prouver qu'ils peuvent tenir les deux. C'est un problème d'opérations, et les problèmes d'opérations ont des plans.",
       },
     ],
     sources: [
@@ -91,7 +90,7 @@ export const articles: Article[] = [
       },
       {
         label:
-          "Barreau du Québec, Encadrer l'IA générative dans la pratique du droit : repères déontologiques et professionnels",
+          "Barreau du Québec, Encadrer l'IA générative dans la pratique du droit : repères déontologiques et professionnels",
         url: "https://www.barreau.qc.ca/en/new/notices-to-members/nouvelle-formation-obligatoire-encadrer-ia-generative-pratique-droit/",
       },
       {
@@ -113,23 +112,23 @@ export const articles: Article[] = [
     blocks: [
       {
         type: "p",
-        text: "Demandez à trois notaires ce que le virage numérique signifie et vous obtiendrez trois réponses : les signatures, les logiciels, et le problème de quelqu'un d'autre. La direction donnée par la profession est plus concrète que ça, et elle mérite d'être redite en clair.",
+        text: "Demandez à trois notaires ce que le virage numérique signifie et vous obtiendrez trois réponses : les signatures, les logiciels, et le problème de quelqu'un d'autre. La direction donnée par la profession est plus concrète que ça, et elle mérite d'être redite en clair.",
       },
       { type: "h2", text: "La direction est publique" },
       {
         type: "p",
-        text: "La Chambre des notaires a été explicite sur son cap vers un notariat entièrement technologique. Les actes notariés sur support technologique ne sont plus une curiosité : le Greffe central numérique, le registre numérique central de la profession, est en fonction, et la cohorte de notaires assermentés cette année s'y joint dès son premier jour de pratique. Un projet de loi déposé à l'Assemblée nationale pointe vers une signature numérique qui deviendrait la norme pour les actes notariés plutôt que l'exception.",
+        text: "La Chambre des notaires a été explicite sur son cap vers un notariat entièrement technologique. Les actes notariés sur support technologique ne sont plus une curiosité : le Greffe central numérique, le registre numérique central de la profession, est en fonction, et la cohorte de notaires assermentés cette année s'y joint dès son premier jour de pratique. Un projet de loi déposé à l'Assemblée nationale pointe vers une signature numérique qui deviendrait la norme pour les actes notariés plutôt que l'exception.",
       },
       {
         type: "p",
-        text: "En parallèle, des orientations sont produites sur l'utilisation de l'intelligence artificielle en pratique notariale, sur la vérification, la confidentialité et la responsabilité. Le message est constant d'un document à l'autre : les outils peuvent entrer, les obligations ne bougent pas.",
+        text: "En parallèle, des orientations sont produites sur l'utilisation de l'intelligence artificielle en pratique notariale, sur la vérification, la confidentialité et la responsabilité. Le message est constant d'un document à l'autre : les outils peuvent entrer, les obligations ne bougent pas.",
       },
       { type: "h2", text: "Ce que ça veut dire pour une étude de trois personnes" },
       {
         type: "list",
         items: [
           "Vos actes deviennent des données. Un acte qui vit dans un registre numérique peut être cherché, vérifié et réutilisé d'une façon que le papier n'a jamais permise. C'est une efficacité et une responsabilité en même temps.",
-          "Votre ouverture de dossier devient le goulot. Une fois la signature numérique, la partie lente d'un dossier, c'est tout ce qui la précède : rassembler les faits, vérifier l'identité, monter les pièces. C'est là que l'automatisation bien encadrée paie en premier.",
+          "Votre ouverture de dossier devient le goulot. Une fois la signature numérique, la partie lente d'un dossier, c'est tout ce qui la précède : rassembler les faits, vérifier l'identité, monter les pièces. C'est là que l'automatisation bien encadrée paie en premier.",
           "Vos obligations suivent le dossier. Le secret professionnel et la Loi 25 s'appliquent à l'acte technologique exactement comme ils s'appliquaient au papier, y compris le registre des incidents et le devoir d'aviser la Commission d'accès à l'information lorsqu'un risque sérieux apparaît.",
         ],
       },
@@ -142,10 +141,10 @@ export const articles: Article[] = [
       {
         type: "list",
         items: [
-          "Un inventaire : quels systèmes détiennent aujourd'hui des renseignements personnels, et qui peut les lire.",
+          "Un inventaire : quels systèmes détiennent aujourd'hui des renseignements personnels, et qui peut les lire.",
           "Une personne nommée responsable de la protection des renseignements personnels, comme l'exige la Loi 25, même dans une étude de trois personnes.",
           "Un processus cartographié de bout en bout. La production des actes est le candidat évident, pour que tout outil que vous testez atterrisse sur un processus que vous comprenez vraiment.",
-          "Une règle que votre équipe peut réciter : le logiciel prépare, le notaire décide.",
+          "Une règle que votre équipe peut réciter : le logiciel prépare, le notaire décide.",
         ],
       },
       {
@@ -173,7 +172,7 @@ export const articles: Article[] = [
 
   {
     slug: "law-25-missing-registers",
-    title: "Loi 25 : les registres qui manquent à la plupart des pratiques",
+    title: "Loi 25 : les registres qui manquent à la plupart des pratiques",
     date: "12 juin 2026",
     excerpt:
       "Consentements, incidents et registres de traitement sont la première chose demandée et la dernière préparée. Une courte liste de vérification à passer cette semaine.",
@@ -196,7 +195,7 @@ export const articles: Article[] = [
           "les circonstances de l'incident, et sa date ou sa période, même approximative ;",
           "la date ou la période où l'entreprise en a pris connaissance ;",
           "le nombre de personnes concernées, même approximatif ;",
-          "l'évaluation du risque de préjudice sérieux : sensibilité des renseignements, usages malveillants possibles, conséquences prévisibles, probabilité ;",
+          "l'évaluation du risque de préjudice sérieux : sensibilité des renseignements, usages malveillants possibles, conséquences prévisibles, probabilité ;",
           "lorsque le risque était sérieux, les dates de notification à la Commission et aux personnes concernées ;",
           "les mesures prises pour réduire le risque.",
         ],
@@ -208,11 +207,11 @@ export const articles: Article[] = [
       { type: "h2", text: "Les registres autour du registre" },
       {
         type: "p",
-        text: "Le registre des incidents voyage rarement seul. La même réforme attend une personne désignée responsable de la protection des renseignements personnels, des politiques et pratiques de gouvernance publiées, et des évaluations des facteurs relatifs à la vie privée lors de l'acquisition ou de la refonte de systèmes touchant des renseignements personnels. Une pratique qui adopte des outils d'IA rencontre immédiatement la dernière : l'évaluation est l'endroit naturel pour écrire ce qu'un outil peut lire, où ses données se trouvent physiquement, et qui en vérifie la sortie.",
+        text: "Le registre des incidents voyage rarement seul. La même réforme attend une personne désignée responsable de la protection des renseignements personnels, des politiques et pratiques de gouvernance publiées, et des évaluations des facteurs relatifs à la vie privée lors de l'acquisition ou de la refonte de systèmes touchant des renseignements personnels. Une pratique qui adopte des outils d'IA rencontre immédiatement la dernière : l'évaluation est l'endroit naturel pour écrire ce qu'un outil peut lire, où ses données se trouvent physiquement, et qui en vérifie la sortie.",
       },
       {
         type: "p",
-        text: "Une disposition de plus compte pour l'IA en particulier. Lorsqu'une décision concernant une personne est fondée exclusivement sur un traitement automatisé, la personne doit en être informée. La façon la plus propre de ne jamais buter sur cette règle est la discipline qui vaut la peine d'être adoptée de toute manière : aucune décision ne quitte le bureau sans qu'un humain l'ait lue.",
+        text: "Une disposition de plus compte pour l'IA en particulier. Lorsqu'une décision concernant une personne est fondée exclusivement sur un traitement automatisé, la personne doit en être informée. La façon la plus propre de ne jamais buter sur cette règle est la discipline qui vaut la peine d'être adoptée de toute manière : aucune décision ne quitte le bureau sans qu'un humain l'ait lue.",
       },
       { type: "h2", text: "Une liste de vérification à passer cette semaine" },
       {
@@ -221,7 +220,7 @@ export const articles: Article[] = [
           "Nommer par écrit la personne responsable de la protection des renseignements personnels.",
           "Créer le registre des incidents aujourd'hui, même vide. Un registre vide, c'est de la conformité. Un registre absent, c'est de l'exposition.",
           "Lister les systèmes qui détiennent des renseignements personnels, et l'endroit où les données se trouvent physiquement.",
-          "Rédiger la procédure en deux paragraphes : qui évalue un incident, qui appelle la Commission.",
+          "Rédiger la procédure en deux paragraphes : qui évalue un incident, qui appelle la Commission.",
           "Placer un point de contrôle humain sur toute sortie automatisée qui touche le dossier d'une personne.",
         ],
       },

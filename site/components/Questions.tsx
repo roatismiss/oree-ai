@@ -15,7 +15,7 @@ export function Questions({ locale }: { locale: Locale }) {
 
   return (
     <section className="px-[10px] pt-[10px]">
-      <div className="overflow-hidden rounded-[20px] bg-cream pb-[100px] pt-20 lg:pt-[100px]">
+      <div className="panel-wash overflow-hidden rounded-[20px] bg-cream pb-[100px] pt-20 lg:pt-[100px]">
         <div className="px-6 sm:px-10 lg:px-[130px]">
           <Reveal>
             <p className="eyebrow text-ink">{questions.eyebrow}</p>

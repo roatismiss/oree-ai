@@ -8,7 +8,7 @@ export function Blog({ locale }: { locale: Locale }) {
 
   return (
     <section id="insights" className="px-[10px] pt-[10px]">
-      <div className="overflow-hidden rounded-[20px] bg-sand px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[100px]">
+      <div className="panel-wash overflow-hidden rounded-[20px] bg-sand px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[100px]">
         <Reveal>
           <p className="eyebrow text-ink">{insights.eyebrow}</p>
         </Reveal>

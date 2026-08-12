@@ -9,7 +9,7 @@ export function Cta({ locale, title }: { locale: Locale; title?: string }) {
 
   return (
     <section className="px-[10px] pt-[10px]">
-      <div className="relative overflow-hidden rounded-[20px] border border-hairline bg-mousse px-6 py-16 sm:px-10 lg:px-[130px] lg:py-[70px]">
+      <div className="panel-wash relative overflow-hidden rounded-[20px] border border-hairline bg-mousse px-6 py-16 sm:px-10 lg:px-[130px] lg:py-[70px]">
         <div className="relative">
           <Reveal>
             <h2 className="h-display text-ink">{heading}</h2>

@@ -8,7 +8,7 @@ export const servicesHero = {
   titleTop: "What a mandate",
   titleBottom: "Leaves behind",
   body:
-    "A deliberately small offer, one method. Each mandate ends with something written down that you keep and can act on, whether or not the work continues with us. The diagnostic is where every engagement starts.",
+    "A focused offer, one method. Each mandate ends with something written down that you keep and can act on, whether or not the work continues with us. The diagnostic is where every engagement starts.",
 };
 
 export const serviceList = {
@@ -19,9 +19,9 @@ export const serviceList = {
       n: "01",
       name: "Orée Diagnostic",
       summary:
-        "Three days inside your office. We observe the work as it is actually done, map which tasks AI can carry and which it cannot, and check each candidate against the obligations you already hold.",
+        "Three days given to your organization — on site or remotely, whichever suits you best. We observe the work as it is actually done, map which tasks AI can carry and which it cannot, and check each candidate against the obligations you already hold.",
       meta: [
-        { label: "Format", value: "On site" },
+        { label: "Format", value: "On site or remote" },
         { label: "Duration", value: "Three days" },
         { label: "You end with", value: "A costed action plan" },
       ],

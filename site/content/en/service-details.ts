@@ -5,7 +5,8 @@
  * Structure mirrors the Framer service-details page: overview with a fact
  * table, then a numbered process with phase labels, then what you keep.
  *
- * No prices anywhere. Orée's fee schedule is not something to invent.
+ * Only the diagnostic carries a price, and it is a range confirmed after the
+ * intro call rather than a public quote. No other service invents a figure.
  */
 
 export type ServiceDetail = {
@@ -29,6 +30,15 @@ export type ServiceDetail = {
   deliverables: { title: string; body: string; phase?: string; points?: string[] }[];
   /** Optional lede above the deliverables grid. */
   deliverablesIntro?: string;
+  /**
+   * Ranges, not quotes. Both tiers are confirmed after the intro call, and the
+   * note below them is what stops a range being read as a fixed price.
+   */
+  pricing?: {
+    eyebrow: string;
+    title: string;
+    tiers: { label: string; body: string }[];
+  };
   /** Honest scope limit. Says what the service is not. */
   notThis: string;
   image: string;
@@ -40,16 +50,18 @@ export const serviceDetails: ServiceDetail[] = [
     n: "01",
     name: "Orée Diagnostic",
     eyebrow: "Service 01 · The starting point",
-    titleTop: "Three days",
-    titleBottom: "On your floor",
+    titleTop: "Three days,",
+    titleBottom: "with you",
     lede:
-      "The diagnostic is where every mandate begins. Three days inside your office, watching the work as it is actually done, and ending with a costed plan you approve line by line.",
+      "The diagnostic is where every mandate begins. Three days given to your organization — on site or remotely, whichever suits you best — watching the work as it is actually done, and ending with a costed plan you approve line by line.",
     problem: [
       "Most AI advice arrives as a product demonstration: here is the tool, here is what it does, sign here. That order is backwards for a regulated practice. The tool cannot be assessed until someone has seen how your files actually move, who touches them, and which obligations attach at each step.",
       "So the diagnostic starts with observation rather than software. We sit with the work, including the parts nobody writes down: the workarounds, the double-checking, the tasks that quietly take a whole afternoon.",
+      "The optional group workshop is run with the LEGO® Serious Play® method, a facilitation approach known for surfacing the frictions that interviews alone do not reveal.",
+      "Whether the session runs on site or remotely, the facilitation draws on a certified qualification in virtual meeting facilitation.",
     ],
     facts: [
-      { label: "Format", value: "On site, in your office" },
+      { label: "Format", value: "On site or remote" },
       { label: "Duration", value: "Three consecutive days" },
       { label: "Who takes part", value: "You and the staff who do the work" },
       { label: "Fee", value: "Fixed, quoted before we begin" },
@@ -135,6 +147,20 @@ export const serviceDetails: ServiceDetail[] = [
         body: "Custom indicators to measure progress over time, without depending on the consultant.",
       },
     ],
+    pricing: {
+      eyebrow: "What it costs",
+      title: "Two rates, confirmed after the call",
+      tiers: [
+        {
+          label: "SMEs and regulated professions",
+          body: "The diagnostic runs between $3,000 and $6,000, depending on the size of your organization — confirmed after the intro call.",
+        },
+        {
+          label: "Nonprofits",
+          body: "A reduced rate applies to nonprofits, between $1,500 and $3,000, because these are settings Orée deliberately chooses to invest in.",
+        },
+      ],
+    },
     notThis:
       "The diagnostic does not install anything, and it does not commit you to a second mandate. If the honest answer is that AI has little to offer your practice this year, that is what the plan will say.",
     image: "/img/sector-1.png",
@@ -154,7 +180,8 @@ export const serviceDetails: ServiceDetail[] = [
       "A custom human-AI collaboration program, built from the diagnostic's findings. Full cohort or condensed session, depending on the size of the organization.",
     problem: [
       "Generic AI training teaches a tool. A week later the tool has changed, and nobody can say which parts of their own work it was supposed to touch. The session was interesting and nothing moved.",
-      "Orée Training starts from the frictions the diagnostic already named in your office. The examples are your files, the checkpoints are the ones your obligations require, and people leave knowing which of their own tasks they are allowed to hand over and which they are not.",
+      "Orée Training starts from the frictions the diagnostic already named at your place. The examples are your files, the checkpoints are the ones your obligations require, and people leave knowing which of their own tasks they are allowed to hand over and which they are not.",
+      "The design of Orée Training also draws on a higher-education teaching certification earned at Harvard.",
     ],
     facts: [
       { label: "Format", value: "Cohort or condensed session" },
@@ -183,7 +210,7 @@ export const serviceDetails: ServiceDetail[] = [
         n: "03",
         title: "The session",
         body:
-          "Full cohort or condensed, on site. People work their real tasks, and see where the human checkpoint sits in each one.",
+          "Full cohort or condensed, on site or remote. People work their real tasks, and see where the human checkpoint sits in each one.",
         phase: "On the day",
       },
       {

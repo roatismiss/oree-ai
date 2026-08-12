@@ -16,7 +16,7 @@ export function WhyFirm({ locale }: { locale: Locale }) {
 
   return (
     <section className="px-[10px] pt-[10px]">
-      <div className="relative overflow-hidden rounded-[20px] bg-sand px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[80px]">
+      <div className="panel-wash relative overflow-hidden rounded-[20px] bg-sand px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[80px]">
         <div className="relative">
           <Reveal>
             <p className="eyebrow text-olive-deep">{why.eyebrow}</p>

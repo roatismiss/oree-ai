@@ -8,7 +8,7 @@ export function CtaBand({ locale }: { locale: Locale }) {
 
   return (
     <section className="px-[10px] pt-[10px]">
-      <div className="relative overflow-hidden rounded-[20px] border border-hairline bg-mousse px-6 py-14 sm:px-10 lg:px-[70px] lg:py-[60px]">
+      <div className="panel-wash relative overflow-hidden rounded-[20px] border border-hairline bg-mousse px-6 py-14 sm:px-10 lg:px-[70px] lg:py-[60px]">
         <div className="relative">
           <Reveal>
             <h2 className="h-band text-olive-deep">{ctaBand.titleTop}</h2>

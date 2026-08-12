@@ -12,13 +12,17 @@ const rise = {
 const ease = [0.16, 1, 0.3, 1] as const;
 
 /* Light, typographic hero: no photography, per the client's wish for a soft,
-   people-first look that reads as a small individual practice. */
+   people-first look that reads as a small individual practice. The backdrop
+   below keeps to that — it is atmosphere in the palette's own khakis, not a
+   picture of anything. */
 export function Hero({ locale }: { locale: Locale }) {
   const { hero } = copy[locale];
 
   return (
     <section className="px-[10px] pt-[10px]">
       <div className="relative flex min-h-[480px] flex-col justify-center overflow-hidden rounded-[20px] bg-light px-6 py-24 sm:px-12 lg:min-h-[620px] lg:px-[130px] lg:py-[80px]">
+        <div className="hero-horizon absolute inset-0" aria-hidden />
+
         <div className="relative">
           <motion.p {...rise} transition={{ duration: 0.7, ease }} className="eyebrow text-amber-ink">
             {hero.eyebrow}
@@ -53,8 +57,10 @@ export function Hero({ locale }: { locale: Locale }) {
             transition={{ duration: 0.8, delay: 0.32, ease }}
             className="mt-9 flex flex-wrap items-center gap-6"
           >
+            {/* The refrain used to sit here, at 17px, competing with the button
+                on the same line. It now has the dark band of its own further
+                down the page — see components/Refrain.tsx. */}
             <Button variant="dark" href={localePath(locale, "/contact")}>{hero.cta}</Button>
-            <span className="refrain text-[17px] text-olive-deep">{hero.refrain}</span>
           </motion.div>
         </div>
       </div>

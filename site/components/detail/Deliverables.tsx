@@ -7,6 +7,7 @@ export function Deliverables({
   intro,
   items,
   notThis,
+  reassurance,
 }: {
   /* Optional: on the standalone deliverables page the hero already carries the
      heading, and repeating it put the same words on screen twice. */
@@ -14,6 +15,7 @@ export function Deliverables({
   intro?: string;
   items: Item[];
   notThis: string;
+  reassurance?: string;
 }) {
   return (
     <section className="px-[10px] pt-[10px]">
@@ -59,9 +61,10 @@ export function Deliverables({
         {/* Scope limit, stated plainly. The template had no equivalent, but an
             advisory practice that never says what it is not reads as a vendor. */}
         <Reveal delay={0.1}>
-          <p className="mt-12 max-w-[760px] border-l-2 border-amber-ink/40 pl-6 text-[15px] leading-[24px] text-grey">
-            {notThis}
-          </p>
+          <div className="mt-12 max-w-[760px] space-y-4 border-l-2 border-amber-ink/40 pl-6 text-[15px] leading-[24px] text-grey">
+            <p>{notThis}</p>
+            {reassurance && <p>{reassurance}</p>}
+          </div>
         </Reveal>
       </div>
     </section>

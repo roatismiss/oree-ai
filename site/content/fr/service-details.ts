@@ -1,6 +1,6 @@
 /**
  * Une page de détail par service. Même structure que la version anglaise, et
- * mêmes règles : aucun prix, et une limite de portée énoncée franchement.
+ * mêmes règles : aucun prix, et une limite de portée énoncée franchement.
  */
 
 import type { ServiceDetail } from "../en/service-details";
@@ -11,16 +11,18 @@ export const serviceDetails: ServiceDetail[] = [
     n: "01",
     name: "Diagnostic Orée",
     eyebrow: "Service 01 · Le point de départ",
-    titleTop: "Trois jours",
-    titleBottom: "Dans vos murs",
+    titleTop: "Trois jours,",
+    titleBottom: "avec vous",
     lede:
-      "Le diagnostic est le point de départ de tout mandat. Trois jours dans vos bureaux, à observer le travail tel qu'il se fait vraiment, pour aboutir à un plan chiffré que vous approuvez ligne par ligne.",
+      "Le diagnostic est le point de départ de tout mandat. Trois jours consacrés à votre organisation — sur place ou à distance, selon ce qui convient le mieux —, à observer le travail tel qu'il se fait vraiment, pour aboutir à un plan chiffré que vous approuvez ligne par ligne.",
     problem: [
-      "La plupart des conseils en IA arrivent sous forme de démonstration de produit : voici l'outil, voici ce qu'il fait, signez ici. Pour une pratique réglementée, l'ordre est inversé. On ne peut pas évaluer l'outil avant d'avoir vu comment vos dossiers circulent vraiment, qui les touche, et quelles obligations s'attachent à chaque étape.",
-      "Le diagnostic commence donc par l'observation, pas par le logiciel. Nous nous assoyons avec le travail, y compris ce que personne n'écrit : les contournements, les doubles vérifications, les tâches qui grugent discrètement un après-midi entier.",
+      "La plupart des conseils en IA arrivent sous forme de démonstration de produit : voici l'outil, voici ce qu'il fait, signez ici. Pour une pratique réglementée, l'ordre est inversé. On ne peut pas évaluer l'outil avant d'avoir vu comment vos dossiers circulent vraiment, qui les touche, et quelles obligations s'attachent à chaque étape.",
+      "Le diagnostic commence donc par l'observation, pas par le logiciel. Nous nous assoyons avec le travail, y compris ce que personne n'écrit : les contournements, les doubles vérifications, les tâches qui grugent discrètement un après-midi entier.",
+      "L'atelier de groupe optionnel s'appuie sur la méthode LEGO® Serious Play®, une approche de facilitation reconnue pour faire émerger les frictions que les entretiens seuls ne révèlent pas.",
+      "Que la rencontre se déroule sur place ou à distance, l'animation s'appuie sur une formation certifiée en facilitation de rencontres virtuelles.",
     ],
     facts: [
-      { label: "Format", value: "Sur place, dans vos bureaux" },
+      { label: "Format", value: "Sur place ou à distance" },
       { label: "Durée", value: "Trois jours consécutifs" },
       { label: "Qui participe", value: "Vous et les gens qui font le travail" },
       { label: "Honoraires", value: "Fixes, chiffrés avant le début" },
@@ -46,19 +48,19 @@ export const serviceDetails: ServiceDetail[] = [
         n: "03",
         title: "Évaluer",
         body:
-          "Chaque candidate est confrontée aux obligations que vous détenez : secret professionnel, Loi 25, les orientations de votre ordre, et l'endroit où les données se trouveraient physiquement.",
+          "Chaque candidate est confrontée aux obligations que vous détenez : secret professionnel, Loi 25, les orientations de votre ordre, et l'endroit où les données se trouveraient physiquement.",
         phase: "Jour 2 à 3",
       },
       {
         n: "04",
         title: "Engager",
         body:
-          "Nous chiffrons le plan et vous l'approuvez ligne par ligne. Chaque étape nomme son point de contrôle humain : vous savez qui signe, et à quel moment.",
+          "Nous chiffrons le plan et vous l'approuvez ligne par ligne. Chaque étape nomme son point de contrôle humain : vous savez qui signe, et à quel moment.",
         phase: "Jour 3",
       },
     ],
     /* Les outils nommés de la méthode, repris de la page « Livrables » de
-       l'ancien site. Chacun porte son nom : « la grille Orée » et « la matrice
+       l'ancien site. Chacun porte son nom : « la grille Orée » et « la matrice
        de priorisation » sont les instruments propres à la pratique, et les
        nommer est précisément le point. */
     deliverablesIntro: "Des livrables concrets, pas des rapports complexes.",
@@ -83,7 +85,7 @@ export const serviceDetails: ServiceDetail[] = [
       {
         phase: "Jour 3 · Engager",
         title: "Le plan d'action chiffré",
-        body: "Le rapport de restitution : portrait des constats, trois priorités d'action argumentées, et un plan avec échéancier. Remis modifiable, et approuvé par vous ligne par ligne.",
+        body: "Le rapport de restitution : portrait des constats, trois priorités d'action argumentées, et un plan avec échéancier. Remis modifiable, et approuvé par vous ligne par ligne.",
       },
       {
         phase: "Jour 3 · Engager",
@@ -106,6 +108,20 @@ export const serviceDetails: ServiceDetail[] = [
         body: "Des indicateurs personnalisés pour mesurer la progression dans le temps, sans dépendre de la consultante.",
       },
     ],
+    pricing: {
+      eyebrow: "Ce que ça coûte",
+      title: "Deux tarifs, confirmés après l'appel",
+      tiers: [
+        {
+          label: "PME et professions réglementées",
+          body: "Le diagnostic se situe entre 3 000 $ et 6 000 $, selon la taille de votre organisation — précisé après l'appel initial.",
+        },
+        {
+          label: "OBNL",
+          body: "Un tarif réduit s'applique aux OBNL, entre 1 500 $ et 3 000 $, parce que ce sont des milieux où Orée choisit délibérément d'investir.",
+        },
+      ],
+    },
     notThis:
       "Le diagnostic n'installe rien et ne vous engage pas à un second mandat. Si la réponse honnête est que l'IA a peu à offrir à votre pratique cette année, c'est ce que le plan dira.",
     image: "/img/sector-1.png",
@@ -113,7 +129,7 @@ export const serviceDetails: ServiceDetail[] = [
 
   /* La Formation Orée existait sur l'ancien site sous le nom « Formation Orée »
      et avait disparu lors de la construction du site A. Réintégrée selon le
-     plan de lancement : elle fait partie de l'offre officielle. */
+     plan de lancement : elle fait partie de l'offre officielle. */
   {
     slug: "training",
     n: "02",
@@ -125,7 +141,8 @@ export const serviceDetails: ServiceDetail[] = [
       "Programme sur mesure en collaboration humain-IA, construit à partir des constats du diagnostic. Cohorte complète ou séance condensée selon la taille de l'organisation.",
     problem: [
       "Une formation générique en IA enseigne un outil. Une semaine plus tard, l'outil a changé, et personne ne peut dire quelles parties de son propre travail il était censé toucher. La séance était intéressante et rien n'a bougé.",
-      "La Formation Orée part des frictions que le diagnostic a déjà nommées dans vos bureaux. Les exemples sont vos dossiers, les points de contrôle sont ceux qu'exigent vos obligations, et les gens repartent en sachant lesquelles de leurs tâches ils ont le droit de confier, et lesquelles non.",
+      "La Formation Orée part des frictions que le diagnostic a déjà nommées chez vous. Les exemples sont vos dossiers, les points de contrôle sont ceux qu'exigent vos obligations, et les gens repartent en sachant lesquelles de leurs tâches ils ont le droit de confier, et lesquelles non.",
+      "La conception de Formation Orée s'appuie aussi sur une certification en pédagogie de niveau supérieur obtenue à Harvard.",
     ],
     facts: [
       { label: "Format", value: "Cohorte ou séance condensée" },
@@ -154,7 +171,7 @@ export const serviceDetails: ServiceDetail[] = [
         n: "03",
         title: "La séance",
         body:
-          "Cohorte complète ou format condensé, sur place. Les gens travaillent leurs tâches réelles et voient où se place le point de contrôle humain dans chacune.",
+          "Cohorte complète ou format condensé, sur place ou à distance. Les gens travaillent leurs tâches réelles et voient où se place le point de contrôle humain dans chacune.",
         phase: "Le jour même",
       },
       {
@@ -180,7 +197,7 @@ export const serviceDetails: ServiceDetail[] = [
       },
     ],
     notThis:
-      "La formation n'est pas une certification et n'accrédite personne. Elle ne remplace pas non plus le diagnostic : sans lui, la séance n'a aucun constat sur lequel se construire.",
+      "La formation n'est pas une certification et n'accrédite personne. Elle ne remplace pas non plus le diagnostic : sans lui, la séance n'a aucun constat sur lequel se construire.",
     image: "/img/sector-3.png",
   },
 
@@ -192,7 +209,7 @@ export const serviceDetails: ServiceDetail[] = [
     titleTop: "Jusqu'à ce que",
     titleBottom: "Ça tienne sans nous",
     lede:
-      "Un plan sur papier n'est pas un changement de pratique. L'appui, c'est le déploiement accompagné : outils choisis, gabarits rédigés, résultats surveillés, et le travail qui vous est remis.",
+      "Un plan sur papier n'est pas un changement de pratique. L'appui, c'est le déploiement accompagné : outils choisis, gabarits rédigés, résultats surveillés, et le travail qui vous est remis.",
     problem: [
       "L'écart entre un plan approuvé et une pratique qui fonctionne, c'est là que la plupart des adoptions échouent. Le gabarit ne finit jamais par être écrit, le point de contrôle est sauté une fois sous la pression d'une échéance, et en un trimestre le bureau est revenu à son point de départ.",
       "L'appui referme cet écart délibérément, et il est conçu pour se terminer. La mesure du succès, c'est que vous n'ayez plus besoin du mandat.",
@@ -264,7 +281,7 @@ export const serviceDetails: ServiceDetail[] = [
     lede:
       "Les obligations bougent. Le Radar est une veille continue sur celles qui s'appliquent à vous, pour que votre position soit à jour avant que quiconque ait l'occasion de le demander.",
     problem: [
-      "Consentements, registres de traitement et journaux d'incidents sont les premières choses demandées lors d'un examen et, d'ordinaire, les dernières préparées. Ce n'est pas difficile, mais ça dérive : un nouvel outil s'ajoute, un fournisseur change ses conditions, un délai de conservation expire, et le registre ne correspond plus à la pratique.",
+      "Consentements, registres de traitement et journaux d'incidents sont les premières choses demandées lors d'un examen et, d'ordinaire, les dernières préparées. Ce n'est pas difficile, mais ça dérive : un nouvel outil s'ajoute, un fournisseur change ses conditions, un délai de conservation expire, et le registre ne correspond plus à la pratique.",
       "Le Radar empêche l'écart de s'ouvrir. C'est un travail délibérément peu spectaculaire, et c'est celui qui détermine ce qui se passe quand une question arrive.",
     ],
     facts: [
@@ -280,7 +297,7 @@ export const serviceDetails: ServiceDetail[] = [
         n: "01",
         title: "L'état des lieux",
         body:
-          "Nous établissons ce que vous détenez aujourd'hui : quels renseignements personnels, collectés sur quelle base, conservés où, et pour combien de temps.",
+          "Nous établissons ce que vous détenez aujourd'hui : quels renseignements personnels, collectés sur quelle base, conservés où, et pour combien de temps.",
         phase: "Mise en place",
       },
       {
@@ -294,7 +311,7 @@ export const serviceDetails: ServiceDetail[] = [
         n: "03",
         title: "La veille",
         body:
-          "Les changements sont suivis à mesure : nouveaux outils, conditions de fournisseurs modifiées, échéances de conservation, orientations qui bougent.",
+          "Les changements sont suivis à mesure : nouveaux outils, conditions de fournisseurs modifiées, échéances de conservation, orientations qui bougent.",
         phase: "En continu",
       },
       {

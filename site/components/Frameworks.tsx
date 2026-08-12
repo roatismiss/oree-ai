@@ -8,8 +8,11 @@ export function Frameworks({ locale }: { locale: Locale }) {
   const strip = [...frameworks.items, ...frameworks.items, ...frameworks.items];
 
   return (
-    <section className="px-[10px] pt-[10px]">
-      <div className="relative overflow-hidden rounded-[20px] bg-light py-20 lg:py-[80px]">
+    /* Full-bleed rather than an inset rounded panel: the marquee reads better
+       running off both edges than stopping short of a 20px radius, and the page
+       needs somewhere the repeating panel shape breaks. */
+    <section className="mt-[10px]">
+      <div className="panel-wash relative overflow-hidden bg-light py-20 lg:py-[80px]">
         <div className="relative">
           <div className="grid gap-8 px-6 sm:px-10 lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)] lg:px-[130px]">
             <Reveal>

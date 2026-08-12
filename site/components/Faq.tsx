@@ -15,7 +15,7 @@ export function Faq({ locale }: { locale: Locale }) {
 
   return (
     <section className="px-[10px] pt-[10px]">
-      <div className="overflow-hidden rounded-[20px] bg-light px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[100px]">
+      <div className="panel-wash overflow-hidden rounded-[20px] bg-light px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[100px]">
         <Reveal>
           <p className="eyebrow text-olive-deep">{faq.eyebrow}</p>
         </Reveal>

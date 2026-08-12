@@ -20,10 +20,90 @@ export type SectorDetail = {
   /** What the profession gets out of it, in its own terms. */
   outcomes: { title: string; body: string }[];
   notThis: string;
+  /**
+   * Set on the four sectors that are still hypotheses rather than delivered
+   * mandates. It sits with the guardrail line and says what the method will not
+   * take over, which is the reassurance those readers actually need.
+   */
+  reassurance?: string;
   image: string;
 };
 
 export const sectorDetails: SectorDetail[] = [
+  /* The site's own tagline promises "SMEs and regulated professions", but the
+     first five sheets are all regulated niches. This one closes the gap: the
+     largest part of the target audience had only a generic link to the sectors
+     overview. */
+  {
+    slug: "small-business",
+    name: "Small businesses",
+    eyebrow: "Sector · Prioritization and limited resources",
+    titleTop: "For Quebec",
+    titleBottom: "small businesses",
+    lede:
+      "You have neither the time nor the budget to pick the wrong tool. The question is not whether AI can help — it is where to start, with what you already have.",
+    situation: [
+      "In a small business, the same person handles sales, scheduling, invoicing and everything that fits nowhere else. There is no experimentation budget and no IT department to ask. AI is talked about everywhere, but rarely with an example that looks like what you actually do.",
+      "Meanwhile, large firms are adopting AI twice as fast as smaller ones — a starting gap that is widening, not closing. And a bad tool trial costs a small operation more: the lost time is not as easy to make back.",
+      "The way forward is not to buy a tool and see what happens. It is to understand first where the work actually slows down, before committing to anything.",
+    ],
+    facts: [
+      { label: "Framework", value: "Prioritization before buying tools" },
+      { label: "Also applies", value: "Law 25" },
+      { label: "Core concern", value: "Limited time and resources" },
+      { label: "Where we start", value: "The most repetitive task of the week" },
+      { label: "Typical finding", value: "Many tools tried, none adopted" },
+      { label: "Never touched", value: "The final decisions stay yours" },
+    ],
+    startingPoints: [
+      {
+        n: "01",
+        title: "The repetitive task that eats the most time",
+        body:
+          "Identifying the weekly task that takes the longest and matters least strategically, often data entry, filing or repetitive writing, and checking whether AI can genuinely lighten it.",
+        phase: "Usually first",
+      },
+      {
+        n: "02",
+        title: "Sorting through information",
+        body:
+          "Finding an answer quickly in your documents, contracts or emails, without rereading everything each time.",
+        phase: "Early",
+      },
+      {
+        n: "03",
+        title: "First drafts of communications",
+        body:
+          "Customer replies, product descriptions, posts: a first draft generated, always reviewed before it goes out.",
+        phase: "Once the basics are in place",
+      },
+      {
+        n: "04",
+        title: "The basics you have to meet",
+        body:
+          "Checking what Law 25 already requires of you, even at small scale, and making sure nothing new puts you offside.",
+        phase: "Continuous",
+      },
+    ],
+    outcomes: [
+      {
+        title: "One clear starting point, not ten trials",
+        body: "You know where to begin, with a costed plan rather than a list of tools to try one by one.",
+      },
+      {
+        title: "Time given back, not replaced",
+        body: "The hours recovered go towards what moves the business forward, not towards learning a complicated new tool.",
+      },
+      {
+        title: "Nothing imposed, nothing installed without you",
+        body: "The mandate stays bounded: you keep control of what is adopted and what is not.",
+      },
+    ],
+    notThis:
+      "Orée sells no tools and takes no commission from those who do — the recommendation stays independent, whatever the size of the business.",
+    image: "/img/sector-2.png",
+  },
+
   {
     slug: "notaries",
     name: "Notaries",
@@ -31,7 +111,7 @@ export const sectorDetails: SectorDetail[] = [
     titleTop: "For Quebec",
     titleBottom: "Notaries",
     lede:
-      "Vision 2030 has set a direction and the profession is being asked to move. The question is no longer whether to adopt, but how to adopt without touching what must stay untouched.",
+      "Here is how the method would apply to a notarial practice. Vision 2030 has set a direction, and the profession will increasingly be asked to adapt — a real need, provided nothing comes near the authentic act itself.",
     situation: [
       "A notarial practice cannot experiment. The authentic act carries a weight that a draft contract does not, and professional secrecy is not a policy you can revise after an incident. That makes the usual advice, try it and see, unusable.",
       "At the same time the pressure is real: clients expect faster turnaround, the Chambre has signalled where the profession is heading, and the firms that wait will be explaining that choice by 2030.",
@@ -91,6 +171,8 @@ export const sectorDetails: SectorDetail[] = [
     ],
     notThis:
       "Orée does not automate the authentic act and would advise against anyone who offers to. The notary's judgment and signature are the point of the profession, not a bottleneck to be removed.",
+    reassurance:
+      "The method never takes over: it sits alongside your practice for the length of the mandate, without settling in, and without ever touching what has to stay in your hands.",
     image: "/img/sector-1.png",
   },
 
@@ -101,7 +183,7 @@ export const sectorDetails: SectorDetail[] = [
     titleTop: "For Quebec",
     titleBottom: "Law firms",
     lede:
-      "Your duties to the Barreau do not bend for a new tool. We map which drafting and intake tasks can be delegated, and we write down who signs before anything leaves the office.",
+      "Here is how the method would apply to a law firm. Duties to the Barreau leave no room for improvisation — exactly the kind of constraint where observing before equipping can make a real difference, without ever putting the lawyer's signature at stake.",
     situation: [
       "The exposure in a law firm is specific and it is personal. If a draft goes out wrong under your signature, the liability lands on you, not on the supplier whose terms of service disclaimed everything.",
       "Meanwhile the tools are already in the building. Associates use them for first passes, for summarising, for translating a clause into plain language for a client. Most firms have no written position on any of it.",
@@ -161,6 +243,8 @@ export const sectorDetails: SectorDetail[] = [
     ],
     notThis:
       "Orée does not give legal advice and does not tell you what your professional obligations are. Your duties are yours to interpret; we make sure the technology decisions are documented against them.",
+    reassurance:
+      "Nothing is imposed or automated by default: the method identifies what can be delegated and stops dead at the edge of your professional judgment.",
     image: "/img/sector-2.png",
   },
 
@@ -171,7 +255,7 @@ export const sectorDetails: SectorDetail[] = [
     titleTop: "For CHRPs",
     titleBottom: "And HR teams",
     lede:
-      "Your teams are almost certainly using these tools already, quietly and without a record. Governing that is more useful than forbidding it, and the 2027 ethics requirement is coming either way.",
+      "Here is how the method would apply to an HR team. Your teams are probably using these tools already, quietly — a real need for guardrails, without ever monitoring or dictating, only naming what is already happening and setting clear limits.",
     situation: [
       "HR sits on the most sensitive material in most organisations: performance notes, medical accommodations, complaints, terminations. It is also the function where AI adoption is most likely to happen informally, because the work is heavy on drafting and correspondence.",
       "A ban does not work here. It moves the practice off the record without removing it, which is the worst of both outcomes: the exposure remains and the visibility is gone.",
@@ -231,6 +315,8 @@ export const sectorDetails: SectorDetail[] = [
     ],
     notThis:
       "Orée does not build or recommend tools that score, rank or screen individual employees or candidates. That is a category where the risk to people outweighs the efficiency, and we say so rather than quote for it.",
+    reassurance:
+      "The goal is not to control the team, but to make what it already does visible and defensible — without adding administrative weight.",
     image: "/img/sector-3.png",
   },
 
@@ -241,7 +327,7 @@ export const sectorDetails: SectorDetail[] = [
     titleTop: "For investment",
     titleBottom: "Firms",
     lede:
-      "The first question an examiner asks is where the data sits and who can read it. We answer that on paper before anything is deployed, so the answer exists when it is needed.",
+      "Here is how the method would apply to an investment firm. The question of data residency and traceability comes up sooner or later — a real need for documentary rigour, without slowing your operations down or staying longer than necessary.",
     situation: [
       "In a regulated financial practice the question is rarely whether a tool is useful. It is whether you can describe, precisely and in writing, what happens to client information when it passes through that tool.",
       "Most suppliers cannot answer that clearly, and their terms of service are written to avoid committing. That is a finding in itself, and it is usually the one that decides the shortlist.",
@@ -301,6 +387,8 @@ export const sectorDetails: SectorDetail[] = [
     ],
     notThis:
       "Orée does not advise on investment decisions, models or trading systems. The scope is governance of the technology and the information it touches, not the financial judgment it might inform.",
+    reassurance:
+      "The mandate is time-boxed from the start: the method answers one precise question, then withdraws.",
     image: "/img/sector-4.png",
   },
 
