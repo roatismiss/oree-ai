@@ -108,6 +108,79 @@ export const sectorDetails: SectorDetail[] = [
   },
 
   {
+    key: "nonprofits",
+    slug: "nonprofits",
+    name: "Nonprofits",
+    eyebrow: "Sector · Funder and governance duties",
+    titleTop: "For Quebec",
+    titleBottom: "nonprofits",
+    lede:
+      "The mission comes first, but the paperwork behind it is what quietly consumes the team. The question is not whether AI can help, it's what a small organization can adopt without risking the trust it runs on.",
+    situation: [
+      "A nonprofit of one to ten people rarely has anyone whose job is technology. The executive director drafts the grant report, answers donors, sits on hiring, and still runs programs, often all in the same afternoon. There is no IT department to ask whether a tool is safe to use.",
+      "At the same time, every funder wants its own format, on its own timeline, and donors expect their information handled with the same care as a bank would show it. A shortcut that saves an afternoon but damages that trust costs more than it returns.",
+      "The way through is not to automate the mission. It is to automate what sits around it: the paperwork, the repeated formats, the register nobody has time to keep current.",
+    ],
+    facts: [
+      { label: "Framework", value: "Funder reporting duties" },
+      { label: "Also applies", value: "Law 25" },
+      { label: "Core concern", value: "Donor and beneficiary data" },
+      { label: "Where we start", value: "Grant reports and applications" },
+      { label: "Typical finding", value: "One person carries it all" },
+      { label: "Never touched", value: "Who is eligible for help" },
+    ],
+    startingPoints: [
+      {
+        n: "01",
+        title: "Grant reports and funding applications",
+        body:
+          "The recurring narrative sections, budget tables and outcome summaries funders ask for every cycle, drafted from your own past reports and reviewed before it goes out.",
+        phase: "Usually first",
+      },
+      {
+        n: "02",
+        title: "Donor and volunteer records",
+        body:
+          "Cleaning up and organizing the lists that live across spreadsheets, email threads and someone's memory, so the information is usable and the Law 25 obligations attached to it are traceable.",
+        phase: "Early",
+      },
+      {
+        n: "03",
+        title: "Donor and partner correspondence",
+        body:
+          "First drafts of thank-you letters, update newsletters and partner emails. The volume work, not the relationship itself.",
+        phase: "Once the basics hold",
+      },
+      {
+        n: "04",
+        title: "Board governance records",
+        body:
+          "Policies, conflict-of-interest registers, and the Law 25 documentation the board is ultimately responsible for, kept current rather than assembled under pressure before a meeting.",
+        phase: "Continuous",
+      },
+    ],
+    outcomes: [
+      {
+        title: "Time back for the person who has none",
+        body: "The hours recovered come from the paperwork around the mission, not from the programs or the relationships that define the organization.",
+      },
+      {
+        title: "A record the board can stand behind",
+        body: "Written reasoning for what was delegated to a tool and what was not, ready for a funder audit or a board question.",
+      },
+      {
+        title: "Funder-ready, on every cycle",
+        body: "Reports that used to eat a week get produced from a process instead of rebuilt from scratch each time.",
+      },
+    ],
+    notThis:
+      "Orée does not recommend AI to decide who is eligible for a service or a benefit, when the population served is vulnerable. That decision stays with the people accountable to your board and your community, not a scoring model.",
+    /* Placeholder: the detail template does not render this field today (the
+       Overview `object` slot is unused), so no dedicated artwork was commissioned. */
+    image: "/img/sector-1.png",
+  },
+
+  {
     key: "notaries",
     slug: "notaries",
     name: "Notaries",
@@ -397,79 +470,6 @@ export const sectorDetails: SectorDetail[] = [
     reassurance:
       "The mandate is time-boxed from the start: the method answers one precise question, then withdraws.",
     image: "/img/sector-4.png",
-  },
-
-  {
-    key: "nonprofits",
-    slug: "nonprofits",
-    name: "Nonprofits",
-    eyebrow: "Sector · Funder and governance duties",
-    titleTop: "For Quebec",
-    titleBottom: "nonprofits",
-    lede:
-      "The mission comes first, but the paperwork behind it is what quietly consumes the team. The question is not whether AI can help, it's what a small organization can adopt without risking the trust it runs on.",
-    situation: [
-      "A nonprofit of one to ten people rarely has anyone whose job is technology. The executive director drafts the grant report, answers donors, sits on hiring, and still runs programs, often all in the same afternoon. There is no IT department to ask whether a tool is safe to use.",
-      "At the same time, every funder wants its own format, on its own timeline, and donors expect their information handled with the same care as a bank would show it. A shortcut that saves an afternoon but damages that trust costs more than it returns.",
-      "The way through is not to automate the mission. It is to automate what sits around it: the paperwork, the repeated formats, the register nobody has time to keep current.",
-    ],
-    facts: [
-      { label: "Framework", value: "Funder reporting duties" },
-      { label: "Also applies", value: "Law 25" },
-      { label: "Core concern", value: "Donor and beneficiary data" },
-      { label: "Where we start", value: "Grant reports and applications" },
-      { label: "Typical finding", value: "One person carries it all" },
-      { label: "Never touched", value: "Who is eligible for help" },
-    ],
-    startingPoints: [
-      {
-        n: "01",
-        title: "Grant reports and funding applications",
-        body:
-          "The recurring narrative sections, budget tables and outcome summaries funders ask for every cycle, drafted from your own past reports and reviewed before it goes out.",
-        phase: "Usually first",
-      },
-      {
-        n: "02",
-        title: "Donor and volunteer records",
-        body:
-          "Cleaning up and organizing the lists that live across spreadsheets, email threads and someone's memory, so the information is usable and the Law 25 obligations attached to it are traceable.",
-        phase: "Early",
-      },
-      {
-        n: "03",
-        title: "Donor and partner correspondence",
-        body:
-          "First drafts of thank-you letters, update newsletters and partner emails. The volume work, not the relationship itself.",
-        phase: "Once the basics hold",
-      },
-      {
-        n: "04",
-        title: "Board governance records",
-        body:
-          "Policies, conflict-of-interest registers, and the Law 25 documentation the board is ultimately responsible for, kept current rather than assembled under pressure before a meeting.",
-        phase: "Continuous",
-      },
-    ],
-    outcomes: [
-      {
-        title: "Time back for the person who has none",
-        body: "The hours recovered come from the paperwork around the mission, not from the programs or the relationships that define the organization.",
-      },
-      {
-        title: "A record the board can stand behind",
-        body: "Written reasoning for what was delegated to a tool and what was not, ready for a funder audit or a board question.",
-      },
-      {
-        title: "Funder-ready, on every cycle",
-        body: "Reports that used to eat a week get produced from a process instead of rebuilt from scratch each time.",
-      },
-    ],
-    notThis:
-      "Orée does not recommend AI to decide who is eligible for a service or a benefit, when the population served is vulnerable. That decision stays with the people accountable to your board and your community, not a scoring model.",
-    /* Placeholder: the detail template does not render this field today (the
-       Overview `object` slot is unused), so no dedicated artwork was commissioned. */
-    image: "/img/sector-1.png",
   },
 ];
 

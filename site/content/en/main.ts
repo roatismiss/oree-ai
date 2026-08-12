@@ -290,7 +290,7 @@ export const services = {
 };
 
 export const practice = {
-  eyebrow: "The practice",
+  eyebrow: "About",
   titleTop: "One practitioner,",
   titleBottom: "Twenty-seven years",
   name: "Aminata Diabaté",
@@ -299,6 +299,13 @@ export const practice = {
      credibility, and nothing can be misread as a client list. */
   body:
     "Orée is the practice of Aminata Diabaté — twenty-seven years of methodology, process optimization, change management and regulatory compliance, at the heart of financial services, telecommunications, industry and Quebec's public sector. You work with her directly. No account managers, no handoffs, no junior consultant learning your file on your time.",
+  /* Added on the home page on request — not part of the client's document.
+     Same paragraphs as story.bio[0..1] on /about; shown only here, not on
+     /about, where Story.tsx already carries this text right below. */
+  extendedBio: [
+    "Twenty-seven years inside complex organizations taught me to recognize large-scale change in any form it takes. Inside a major financial institution, I lived AI adoption from the inside — its risks, its resistance, its blind spots — led a records-management mandate for the compliance department in the thick of Law 25 obligations, and ran a supplier-contract optimization project using Lean. At a large industrial player, I spent four years as a change-management consultant, applying the Prosci/ADKAR methodology on a major mandate. In telecommunications, in consulting services, and in Quebec's public and para-public sector, it was other transformations that shaped me.",
+    "This practice is grounded in a degree in economics and political science from Université de Montréal, and in established frameworks applied in the field: the ADKAR change-management methodology, a solid Lean Six Sigma foundation, and two professional certifications — Business Relationship Management Professional (BRMP) and Management of Portfolio (MoP), Foundation and Practitioner. It is that double experience, lived in the field and structured by method, that shaped the design of O·R·É·E.",
+  ],
   cta: "About Aminata",
   // Marquee rows: what the practice covers, not a staff roster.
   rowOne: [

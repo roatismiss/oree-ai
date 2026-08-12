@@ -50,9 +50,11 @@ import { copy, localePath, type Dictionary, type Locale } from "@/content/copy";
 type P = { locale: Locale };
 
 /**
- * Home, following oree-conseil.ca: the tagline, the O·R·É·E block, who it is
- * for, then out to the other pages. The biography and the Quebec figures used
- * to sit here; they now have their own pages, as they did on her site.
+ * Home, following oree-conseil.ca: the tagline, who's behind the practice,
+ * the O·R·É·E block, who it is for, then out to the other pages. The founder
+ * comes right after the hook on request — the practice's whole pitch is
+ * working directly with her, not a firm, so that has to land before the
+ * method does.
  */
 export function HomePage({ locale }: P) {
   return (
@@ -60,21 +62,21 @@ export function HomePage({ locale }: P) {
       <Nav locale={locale} />
       <main>
         <Hero locale={locale} />
+        {/* Each of these is the teaser for one of her pages, and each one
+            opens it: the founder block goes to À propos, the block below to
+            Pourquoi Orée. */}
+        <div id="bio">
+          <Team locale={locale} extended />
+        </div>
+        {/* The page's one dark, full-bleed moment — closes the founder intro
+            before the numbered sections open. Everything above and below is
+            an inset ivory panel. */}
+        <Refrain locale={locale} />
         <div id="method">
           <MethodGlance locale={locale} />
         </div>
         <div id="services">
           <PracticeAreas locale={locale} />
-        </div>
-        {/* The pivot between what the practice does and who does it, and the
-            page's one dark, full-bleed moment — everything above and below is
-            an inset ivory panel. */}
-        <Refrain locale={locale} />
-        {/* Each of these is the teaser for one of her pages, and each one
-            opens it: the founder block goes to À propos, the block below to
-            Pourquoi Orée. */}
-        <div id="bio">
-          <Team locale={locale} />
         </div>
         <WhyFirm locale={locale} />
         <CtaBand locale={locale} />
@@ -109,7 +111,7 @@ export function AboutPage({ locale }: P) {
         </section>
         {/* Her portrait and background lead the page, directly under the
             title, rather than sitting below the prose. */}
-        <Team locale={locale} />
+        <Team locale={locale} extended />
         <div id="bio">
           <Story locale={locale} />
         </div>

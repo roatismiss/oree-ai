@@ -295,7 +295,7 @@ export const services = {
 };
 
 export const practice = {
-  eyebrow: "La pratique",
+  eyebrow: "À propos",
   titleTop: "Une praticienne,",
   titleBottom: "Vingt-sept ans",
   name: "Aminata Diabaté",
@@ -304,6 +304,13 @@ export const practice = {
      crédibilité, et rien ne peut être relu comme une liste de clients. */
   body:
     "Orée, c'est la pratique d'Aminata Diabaté — vingt-sept ans de méthodologie, d'optimisation de processus, de gestion du changement et de conformité réglementaire, au cœur des services financiers, des télécommunications, de l'industrie et du secteur public québécois. Vous travaillez directement avec elle. Pas de gestionnaire de compte, pas de transfert de dossier, pas de consultant junior qui apprend votre dossier à vos frais.",
+  /* Ajouté en page d'accueil sur demande — pas dans le document de la cliente.
+     Même paragraphe que story.bio[0..1] sur /a-propos ; affiché seulement ici,
+     pas sur /a-propos, où Story.tsx montre déjà ce texte juste en dessous. */
+  extendedBio: [
+    "Vingt-sept ans à l'intérieur d'organisations complexes m'ont appris à reconnaître un changement de grande ampleur, peu importe sa forme. Dans une grande institution financière, j'ai vécu de l'intérieur l'appropriation de l'IA — ses risques, ses résistances, ses angles morts —, piloté un dossier de gestion documentaire pour le département de la conformité en plein cœur des obligations de la Loi 25, et mené un projet d'optimisation des contrats fournisseurs avec la méthodologie Lean. Chez un grand joueur industriel, j'ai passé quatre ans comme consultante en gestion du changement, appliquant la méthodologie Prosci/ADKAR sur un mandat majeur. En télécommunications, en services-conseils et dans le secteur public et parapublic québécois, ce sont d'autres transformations qui m'ont formée.",
+    "Cette pratique s'ancre dans une formation en économie et sciences politiques à l'Université de Montréal, et dans des cadres reconnus, appliqués sur le terrain : la méthodologie ADKAR en gestion du changement, une base solide en Lean Six Sigma, et deux certifications professionnelles — Business Relationship Management Professional (BRMP) et Management of Portfolio (MoP), Fondations et Praticien. C'est cette double expérience, vécue sur le terrain et structurée par la méthode, qui a nourri la conception d'O·R·É·E.",
+  ],
   cta: "À propos d'Aminata",
   // Bandeaux défilants : ce que couvre la pratique, pas un organigramme.
   rowOne: [

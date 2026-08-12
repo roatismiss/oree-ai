@@ -13,7 +13,7 @@ export function WhyFirm({ locale }: { locale: Locale }) {
       <div className="panel-wash relative overflow-hidden rounded-[20px] bg-sand px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[80px]">
         <div className="relative">
           <Reveal>
-            <SectionMark index="04" label={why.eyebrow} />
+            <SectionMark index="03" label={why.eyebrow} />
           </Reveal>
 
           <SplitHeading top={why.titleTop} bottom={why.titleBottom} className="mt-4 text-ink" />

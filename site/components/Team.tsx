@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Reveal } from "./Reveal";
-import { SectionMark } from "./SectionMark";
 import { Button } from "./Button";
 import { copy, localePath, type Locale } from "@/content/copy";
 
@@ -36,7 +35,15 @@ function Marquee({ items, dir }: { items: Item[]; dir: "left" | "right" }) {
   );
 }
 
-export function Team({ locale }: { locale: Locale }) {
+export function Team({
+  locale,
+  extended = false,
+}: {
+  locale: Locale;
+  /** Show the fuller bio paragraphs below the summary. Home page only — on
+      /about, Story.tsx carries this same text right beneath this section. */
+  extended?: boolean;
+}) {
   const { practice, ui, footer } = copy[locale];
   const { linkedin } = footer.social;
 
@@ -45,7 +52,7 @@ export function Team({ locale }: { locale: Locale }) {
       <div className="panel-wash overflow-hidden rounded-[20px] bg-sand py-20 lg:py-[100px]">
         <div className="px-6 sm:px-10 lg:px-[130px]">
           <Reveal>
-            <SectionMark index="03" label={practice.eyebrow} />
+            <p className="eyebrow text-olive-deep">{practice.eyebrow}</p>
           </Reveal>
 
           <div className="mt-8 grid gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.4fr)] lg:items-start">
@@ -84,6 +91,14 @@ export function Team({ locale }: { locale: Locale }) {
               <p className="mt-8 max-w-[520px] text-[16px] leading-[23px] text-ink">
                 {practice.body}
               </p>
+
+              {extended && (
+                <div className="mt-6 max-w-[520px] space-y-5 text-[15px] leading-[22px] text-ink">
+                  {practice.extendedBio.map((p) => (
+                    <p key={p.slice(0, 24)}>{p}</p>
+                  ))}
+                </div>
+              )}
 
               <div className="mt-9">
                 {/* The founder block opens À propos, where the full biography

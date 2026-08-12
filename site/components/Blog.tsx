@@ -11,7 +11,7 @@ export function Blog({ locale }: { locale: Locale }) {
     <section id="insights" className="px-[10px] pt-[10px]">
       <div className="panel-wash overflow-hidden rounded-[20px] bg-sand px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[100px]">
         <Reveal>
-          <SectionMark index="05" label={insights.eyebrow} tone="ink" />
+          <SectionMark index="04" label={insights.eyebrow} tone="ink" />
         </Reveal>
 
         <div className="mt-6 flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">

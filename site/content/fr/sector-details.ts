@@ -85,6 +85,79 @@ export const sectorDetails: SectorDetail[] = [
   },
 
   {
+    key: "nonprofits",
+    slug: "obnl",
+    name: "OBNL",
+    eyebrow: "Secteur · Obligations envers les bailleurs et gouvernance",
+    titleTop: "Pour les OBNL",
+    titleBottom: "du Québec",
+    lede:
+      "La mission passe en premier, mais c'est la paperasse derrière elle qui use discrètement l'équipe. La question n'est pas si l'IA peut aider — c'est ce qu'un petit organisme peut adopter sans risquer la confiance sur laquelle il repose.",
+    situation: [
+      "Un OBNL d'un à dix employés n'a presque jamais de poste dédié à la technologie. La direction générale rédige le rapport de subvention, répond aux donateurs, participe à l'embauche et fait tourner les programmes — souvent le même après-midi. Il n'y a personne à qui demander si un outil est sécuritaire.",
+      "En même temps, chaque bailleur veut son propre format, selon son propre échéancier, et les donateurs s'attendent à ce que leurs renseignements soient traités avec autant de soin qu'une institution financière. Un raccourci qui fait gagner un après-midi mais qui abîme cette confiance coûte plus cher qu'il ne rapporte.",
+      "La voie à suivre n'est pas d'automatiser la mission — c'est d'automatiser ce qui l'entoure : la paperasse, les formats répétés, le registre que personne n'a le temps de tenir à jour.",
+    ],
+    facts: [
+      { label: "Cadre", value: "Reddition de comptes aux bailleurs" },
+      { label: "S'applique aussi", value: "Loi 25" },
+      { label: "Enjeu central", value: "Données des donateurs et bénéficiaires" },
+      { label: "Point de départ", value: "Rapports et demandes de subvention" },
+      { label: "Constat typique", value: "Une seule personne porte tout" },
+      { label: "Jamais touché", value: "L'admissibilité à l'aide" },
+    ],
+    startingPoints: [
+      {
+        n: "01",
+        title: "Rapports et demandes de subvention",
+        body:
+          "Les sections narratives récurrentes, les tableaux budgétaires et les résumés de résultats que chaque bailleur redemande à chaque cycle, rédigés à partir de vos rapports antérieurs et révisés avant l'envoi.",
+        phase: "Habituellement en premier",
+      },
+      {
+        n: "02",
+        title: "Dossiers de donateurs et de bénévoles",
+        body:
+          "Nettoyer et organiser les listes éparpillées entre chiffriers, courriels et la mémoire de quelqu'un, pour que l'information soit utilisable et que les obligations de la Loi 25 qui s'y rattachent soient traçables.",
+        phase: "Tôt",
+      },
+      {
+        n: "03",
+        title: "Correspondance avec donateurs et partenaires",
+        body:
+          "Premiers jets de lettres de remerciement, d'infolettres et de courriels aux partenaires. Le travail de volume, pas la relation elle-même.",
+        phase: "Une fois les bases en place",
+      },
+      {
+        n: "04",
+        title: "Registres de gouvernance",
+        body:
+          "Politiques, registre des conflits d'intérêts, et la documentation Loi 25 dont le conseil d'administration est ultimement responsable, tenue à jour plutôt qu'assemblée à la hâte avant une réunion.",
+        phase: "En continu",
+      },
+    ],
+    outcomes: [
+      {
+        title: "Du temps rendu à la personne qui n'en a pas",
+        body: "Les heures récupérées viennent de la paperasse autour de la mission, pas des programmes ni des relations qui définissent l'organisme.",
+      },
+      {
+        title: "Un dossier que le conseil peut défendre",
+        body: "Un raisonnement écrit sur ce qui a été délégué à un outil et ce qui ne l'a pas été, prêt pour un audit de bailleur ou une question du conseil.",
+      },
+      {
+        title: "Prêt pour chaque bailleur, à chaque cycle",
+        body: "Des rapports qui prenaient une semaine sont désormais produits à partir d'un processus, plutôt que reconstruits à zéro chaque fois.",
+      },
+    ],
+    notThis:
+      "Orée ne recommande jamais l'IA pour décider qui est admissible à un service ou à une aide, lorsque la population desservie est vulnérable. Cette décision reste entre les mains des personnes redevables envers votre conseil et votre communauté — pas un modèle de notation.",
+    /* Réservé : le gabarit de détail n'affiche pas ce champ pour l'instant (la
+       zone `object` d'Overview n'est pas utilisée), donc aucune image dédiée. */
+    image: "/img/sector-1.png",
+  },
+
+  {
     key: "notaries",
     slug: "notaires",
     name: "Notaires",
@@ -374,79 +447,6 @@ export const sectorDetails: SectorDetail[] = [
     reassurance:
       "Le mandat est borné dans le temps dès le départ : la méthode répond à une question précise, puis se retire.",
     image: "/img/sector-4.png",
-  },
-
-  {
-    key: "nonprofits",
-    slug: "obnl",
-    name: "OBNL",
-    eyebrow: "Secteur · Obligations envers les bailleurs et gouvernance",
-    titleTop: "Pour les OBNL",
-    titleBottom: "du Québec",
-    lede:
-      "La mission passe en premier, mais c'est la paperasse derrière elle qui use discrètement l'équipe. La question n'est pas si l'IA peut aider — c'est ce qu'un petit organisme peut adopter sans risquer la confiance sur laquelle il repose.",
-    situation: [
-      "Un OBNL d'un à dix employés n'a presque jamais de poste dédié à la technologie. La direction générale rédige le rapport de subvention, répond aux donateurs, participe à l'embauche et fait tourner les programmes — souvent le même après-midi. Il n'y a personne à qui demander si un outil est sécuritaire.",
-      "En même temps, chaque bailleur veut son propre format, selon son propre échéancier, et les donateurs s'attendent à ce que leurs renseignements soient traités avec autant de soin qu'une institution financière. Un raccourci qui fait gagner un après-midi mais qui abîme cette confiance coûte plus cher qu'il ne rapporte.",
-      "La voie à suivre n'est pas d'automatiser la mission — c'est d'automatiser ce qui l'entoure : la paperasse, les formats répétés, le registre que personne n'a le temps de tenir à jour.",
-    ],
-    facts: [
-      { label: "Cadre", value: "Reddition de comptes aux bailleurs" },
-      { label: "S'applique aussi", value: "Loi 25" },
-      { label: "Enjeu central", value: "Données des donateurs et bénéficiaires" },
-      { label: "Point de départ", value: "Rapports et demandes de subvention" },
-      { label: "Constat typique", value: "Une seule personne porte tout" },
-      { label: "Jamais touché", value: "L'admissibilité à l'aide" },
-    ],
-    startingPoints: [
-      {
-        n: "01",
-        title: "Rapports et demandes de subvention",
-        body:
-          "Les sections narratives récurrentes, les tableaux budgétaires et les résumés de résultats que chaque bailleur redemande à chaque cycle, rédigés à partir de vos rapports antérieurs et révisés avant l'envoi.",
-        phase: "Habituellement en premier",
-      },
-      {
-        n: "02",
-        title: "Dossiers de donateurs et de bénévoles",
-        body:
-          "Nettoyer et organiser les listes éparpillées entre chiffriers, courriels et la mémoire de quelqu'un, pour que l'information soit utilisable et que les obligations de la Loi 25 qui s'y rattachent soient traçables.",
-        phase: "Tôt",
-      },
-      {
-        n: "03",
-        title: "Correspondance avec donateurs et partenaires",
-        body:
-          "Premiers jets de lettres de remerciement, d'infolettres et de courriels aux partenaires. Le travail de volume, pas la relation elle-même.",
-        phase: "Une fois les bases en place",
-      },
-      {
-        n: "04",
-        title: "Registres de gouvernance",
-        body:
-          "Politiques, registre des conflits d'intérêts, et la documentation Loi 25 dont le conseil d'administration est ultimement responsable, tenue à jour plutôt qu'assemblée à la hâte avant une réunion.",
-        phase: "En continu",
-      },
-    ],
-    outcomes: [
-      {
-        title: "Du temps rendu à la personne qui n'en a pas",
-        body: "Les heures récupérées viennent de la paperasse autour de la mission, pas des programmes ni des relations qui définissent l'organisme.",
-      },
-      {
-        title: "Un dossier que le conseil peut défendre",
-        body: "Un raisonnement écrit sur ce qui a été délégué à un outil et ce qui ne l'a pas été, prêt pour un audit de bailleur ou une question du conseil.",
-      },
-      {
-        title: "Prêt pour chaque bailleur, à chaque cycle",
-        body: "Des rapports qui prenaient une semaine sont désormais produits à partir d'un processus, plutôt que reconstruits à zéro chaque fois.",
-      },
-    ],
-    notThis:
-      "Orée ne recommande jamais l'IA pour décider qui est admissible à un service ou à une aide, lorsque la population desservie est vulnérable. Cette décision reste entre les mains des personnes redevables envers votre conseil et votre communauté — pas un modèle de notation.",
-    /* Réservé : le gabarit de détail n'affiche pas ce champ pour l'instant (la
-       zone `object` d'Overview n'est pas utilisée), donc aucune image dédiée. */
-    image: "/img/sector-1.png",
   },
 ];
 

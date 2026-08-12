@@ -22,12 +22,12 @@ export function Refrain({ locale }: { locale: Locale }) {
   const { hero } = copy[locale];
 
   return (
-    <section className="panel-wash-dark relative mt-[10px] overflow-hidden bg-ink px-6 py-24 sm:px-10 lg:py-[150px]">
+    <section className="panel-wash-dark relative mt-[10px] overflow-hidden bg-ink px-6 py-14 sm:px-10 lg:py-20">
       {/* The same silhouette as the hero, at the other end of the day. It ties
           the dark band back to the name instead of leaving it a black box. */}
       <TreeLine
         tone="basalte"
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-[45%] w-full"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-[35%] w-full"
       />
 
       <div className="relative mx-auto max-w-[900px] text-center">
@@ -43,13 +43,13 @@ export function Refrain({ locale }: { locale: Locale }) {
         </Reveal>
 
         <Reveal delay={0.08}>
-          <p className="refrain mt-10 text-[clamp(1.75rem,4.5vw,3.5rem)] leading-[1.15] text-craie">
+          <p className="refrain mt-6 text-[clamp(1.5rem,3.5vw,2.75rem)] leading-[1.15] text-craie">
             {hero.refrain}
           </p>
         </Reveal>
 
         <Reveal delay={0.16}>
-          <p className="eyebrow mt-8 text-galet">{hero.refrainGloss}</p>
+          <p className="eyebrow mt-5 text-galet">{hero.refrainGloss}</p>
         </Reveal>
       </div>
     </section>
