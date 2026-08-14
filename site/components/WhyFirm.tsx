@@ -31,7 +31,10 @@ export function WhyFirm({ locale }: { locale: Locale }) {
               const Mark = marks[i % marks.length];
               return (
                 <Reveal key={label} delay={0.06 * i}>
-                  <div className="h-full rounded-[14px] bg-light/85 p-6">
+                  {/* These four are guarantees, not a story — the one place on
+                      the page a mineral texture reads as solidity rather than
+                      as decoration. */}
+                  <div className="texture-stone h-full rounded-[14px] bg-light/85 p-6">
                     <span className="flex h-11 w-11 items-center justify-center rounded-full bg-mousse text-olive-deep">
                       <Mark />
                     </span>

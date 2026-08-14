@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Reveal } from "./Reveal";
+import { PineSprig } from "./PineSprig";
 import { copy, localePath, type Locale } from "@/content/copy";
 
 /* The LinkedIn mark, as an inline path so the footer needs no network request
@@ -80,7 +81,17 @@ export function Footer({ locale }: { locale: Locale }) {
           </div>
         </Reveal>
 
-        <div className="relative mt-10 flex items-end justify-center">
+        <Reveal delay={0.04}>
+          {/* The colophon: a drawn sprig, not a stock photo of one, in the
+              same kaki family as the rest of the mark system. One appearance
+              per page, the way a printer's fleuron sits once at the foot of a
+              document rather than being scattered through it. */}
+          <div className="flex justify-center text-yellow/70">
+            <PineSprig />
+          </div>
+        </Reveal>
+
+        <div className="relative mt-4 flex items-end justify-center">
           <h2 className="h-wordmark text-center text-craie">{footer.wordmark}</h2>
         </div>
 
