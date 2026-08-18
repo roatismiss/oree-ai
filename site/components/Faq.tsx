@@ -11,14 +11,14 @@ import { copy, type Locale } from "@/content/copy";
  * engines and assistive technology see all of them. The version before this
  * one rendered only the open item, which hid six answers from both.
  */
-export function Faq({ locale }: { locale: Locale }) {
+export function Faq({ locale, index }: { locale: Locale; index: string }) {
   const { faq } = copy[locale];
 
   return (
     <section className="px-[10px] pt-[10px]">
       <div className="panel-wash overflow-hidden rounded-[20px] bg-light px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[100px]">
         <Reveal>
-          <SectionMark index="04" label={faq.eyebrow} />
+          <SectionMark index={index} label={faq.eyebrow} />
         </Reveal>
 
         <Reveal delay={0.06}>

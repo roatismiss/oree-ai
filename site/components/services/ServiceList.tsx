@@ -3,7 +3,7 @@ import { Reveal } from "../Reveal";
 import { SectionMark } from "../SectionMark";
 import { copy, localePath, type Locale } from "@/content/copy";
 
-export function ServiceList({ locale }: { locale: Locale }) {
+export function ServiceList({ locale, index }: { locale: Locale; index: string }) {
   const { serviceList, serviceDetails, ui } = copy[locale];
 
   /** Card names are the join key to the detail pages, per locale. */
@@ -14,7 +14,7 @@ export function ServiceList({ locale }: { locale: Locale }) {
     <section className="px-[10px] pt-[10px]">
       <div className="panel-wash overflow-hidden rounded-[20px] bg-sand px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[90px]">
         <Reveal>
-          <SectionMark index="02" label={serviceList.eyebrow} tone="ink" />
+          <SectionMark index={index} label={serviceList.eyebrow} tone="ink" />
         </Reveal>
         <Reveal delay={0.06}>
           <h2 className="h-display mt-8 text-ink">{serviceList.title}</h2>
@@ -43,6 +43,12 @@ export function ServiceList({ locale }: { locale: Locale }) {
                         </div>
                       ))}
                     </dl>
+
+                    {/* The entry price, on the one card that has one. There is
+                        no pricing page, so this is where a visitor finds it. */}
+                    {s.note && (
+                      <p className="mt-6 text-[14px] leading-[20px] text-olive-deep">{s.note}</p>
+                    )}
 
                     {slugFor(s.name) && (
                       <Link

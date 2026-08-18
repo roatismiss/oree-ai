@@ -4,14 +4,14 @@ import { SectionMark } from "./SectionMark";
 import { Button } from "./Button";
 import { copy, localePath, type Locale } from "@/content/copy";
 
-export function Blog({ locale }: { locale: Locale }) {
+export function Blog({ locale, index }: { locale: Locale; index: string }) {
   const { insights, articles } = copy[locale];
 
   return (
     <section id="insights" className="px-[10px] pt-[10px]">
       <div className="panel-wash overflow-hidden rounded-[20px] bg-sand px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[100px]">
         <Reveal>
-          <SectionMark index="04" label={insights.eyebrow} tone="ink" />
+          <SectionMark index={index} label={insights.eyebrow} tone="ink" />
         </Reveal>
 
         <div className="mt-6 flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">

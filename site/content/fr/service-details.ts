@@ -30,6 +30,12 @@ export const serviceDetails: ServiceDetail[] = [
       { label: "Vous en ressortez avec", value: "Un plan d'action chiffré" },
       { label: "Engagement ensuite", value: "Aucun" },
     ],
+    processBefore: {
+      phase: "Avant · La semaine de préparation",
+      title: "La préparation",
+      body:
+        "Avant la première journée sur place : un appel de cadrage avec la personne qui porte le mandat, le choix conjoint des personnes à rencontrer, l'entente de confidentialité signée, et la logistique réglée. Les trois jours s'ouvrent donc avec les bonnes personnes dans la salle et rien à improviser.",
+    },
     process: [
       {
         n: "01",
@@ -60,6 +66,26 @@ export const serviceDetails: ServiceDetail[] = [
         phase: "Jour 3",
       },
     ],
+    processAfter: {
+      phase: "Après · Une fois le plan remis",
+      title: "Ce qui s'ouvre ensuite",
+      body:
+        "Le plan est à vous, et trois chemins s'ouvrent à partir de là. Aucun n'est obligatoire — le diagnostic se termine sans engagement dans un sens comme dans l'autre.",
+      paths: [
+        {
+          name: "Vous le réalisez vous-même",
+          body: "Le plan est écrit pour être exécuté sans nous. Beaucoup d'organisations s'arrêtent ici, et c'est une fin légitime du mandat.",
+        },
+        {
+          name: "Formation Orée",
+          body: "Si les constats touchent surtout la façon dont les gens travaillent, l'équipe se forme sur les outils que le diagnostic a retenus pour elle.",
+        },
+        {
+          name: "Appui Orée",
+          body: "Si le plan demande à être tenu dans la durée, le suivi mensuel ancre les changements jusqu'à ce qu'ils tiennent sans nous.",
+        },
+      ],
+    },
     /* Les outils nommés de la méthode, repris de la page « Livrables » de
        l'ancien site. Chacun porte son nom : « la grille Orée » et « la matrice
        de priorisation » sont les instruments propres à la pratique, et les
@@ -136,8 +162,10 @@ export const serviceDetails: ServiceDetail[] = [
     n: "02",
     name: "Formation Orée",
     eyebrow: "Service 02 · Monter les équipes en compétence",
-    titleTop: "L'équipe apprend",
-    titleBottom: "La méthode",
+    /* L'équipe n'apprend pas O·R·É·E — elle apprend à se servir des outils
+       que le diagnostic a retenus pour elle. */
+    titleTop: "L'équipe",
+    titleBottom: "S'approprie les outils",
     lede:
       "Programme sur mesure en collaboration humain-IA, construit à partir des constats du diagnostic. Cohorte complète ou séance condensée selon la taille de l'organisation.",
     problem: [
@@ -150,38 +178,8 @@ export const serviceDetails: ServiceDetail[] = [
       { label: "Bâtie sur", value: "Les constats de votre diagnostic" },
       { label: "Qui participe", value: "Les gens qui font le travail" },
       { label: "Matériel", value: "Rédigé sur vos propres cas" },
-      { label: "Vous en ressortez avec", value: "Une équipe capable de mener la méthode" },
+      { label: "Vous en ressortez avec", value: "Une équipe autonome sur les outils retenus" },
       { label: "Honoraires", value: "Fixes, chiffrés avant le début" },
-    ],
-    process: [
-      {
-        n: "01",
-        title: "Cadrage",
-        body:
-          "Nous choisissons quels constats le programme couvre, et qui doit être dans la salle. Tout le monde n'a pas besoin de la même séance.",
-        phase: "Avant",
-      },
-      {
-        n: "02",
-        title: "Construction du matériel",
-        body:
-          "Les exercices sont rédigés sur vos propres cas, avec les obligations qui s'y appliquent, pour que rien n'ait à être traduit après coup.",
-        phase: "Avant",
-      },
-      {
-        n: "03",
-        title: "La séance",
-        body:
-          "Cohorte complète ou format condensé, sur place ou à distance. Les gens travaillent leurs tâches réelles et voient où se place le point de contrôle humain dans chacune.",
-        phase: "Le jour même",
-      },
-      {
-        n: "04",
-        title: "Ce qui suit",
-        body:
-          "Le matériel vous reste, accompagné d'une courte liste de ce que l'équipe a demandé et qui n'a pas encore de réponse.",
-        phase: "Après",
-      },
     ],
     deliverables: [
       {
@@ -224,36 +222,6 @@ export const serviceDetails: ServiceDetail[] = [
       { label: "Vous en ressortez avec", value: "Gabarits, registres et transfert" },
       { label: "Sortie", value: "Planifiée dès le premier jour" },
     ],
-    process: [
-      {
-        n: "01",
-        title: "Sélection",
-        body:
-          "Nous choisissons les outils précis en fonction des exigences du plan, y compris l'endroit où les données résident et ce que les conditions du fournisseur permettent réellement.",
-        phase: "Étape 1",
-      },
-      {
-        n: "02",
-        title: "Gabarits et points de contrôle",
-        body:
-          "Les consignes, les formulaires et les étapes de signature sont rédigés pour vos dossiers, pour que l'étape humaine soit intégrée au processus plutôt que laissée à la mémoire.",
-        phase: "Étape 2",
-      },
-      {
-        n: "03",
-        title: "Mise en service réelle",
-        body:
-          "Les premiers vrais dossiers passent en notre présence. Ce qui casse ici est plus utile que tout ce qu'un pilote sur données d'exemple aurait montré.",
-        phase: "Étape 3",
-      },
-      {
-        n: "04",
-        title: "Transfert",
-        body:
-          "Documentation, un responsable interne nommé, et une date de revue. Nous partons quand la pratique tourne sans nous.",
-        phase: "Étape 4",
-      },
-    ],
     deliverables: [
       {
         title: "Des gabarits qui servent",
@@ -281,8 +249,12 @@ export const serviceDetails: ServiceDetail[] = [
     eyebrow: "Service 04 · La veille",
     titleTop: "Savoir où",
     titleBottom: "Vous en êtes",
+    /* Le Radar est un outil de cartographie des risques liés aux processus
+       IA, pas une veille. La phrase « Essayez la version simplifiée
+       ci-dessous » a été retirée à la demande d'Aminata : aucun outil n'est
+       intégré à la page pour l'instant. */
     lede:
-      "Les obligations bougent. Le Radar est une veille continue sur celles qui s'appliquent à vous, pour que votre position soit à jour avant que quiconque ait l'occasion de le demander.",
+      "Le Radar cartographie chaque processus touché par l'IA dans votre organisation, et repère où l'ÉFVP, l'information des personnes concernées et la révision humaine sont réelles — ou seulement symboliques. La cartographie complète se construit avec vous durant le Diagnostic Orée.",
     problem: [
       "Consentements, registres de traitement et journaux d'incidents sont les premières choses demandées lors d'un examen et, d'ordinaire, les dernières préparées. Ce n'est pas difficile, mais ça dérive : un nouvel outil s'ajoute, un fournisseur change ses conditions, un délai de conservation expire, et le registre ne correspond plus à la pratique.",
       "Le Radar empêche l'écart de s'ouvrir. C'est un travail délibérément peu spectaculaire, et c'est celui qui détermine ce qui se passe quand une question arrive.",
@@ -294,36 +266,6 @@ export const serviceDetails: ServiceDetail[] = [
       { label: "Reddition", value: "Une position à jour, sur demande" },
       { label: "Vous en ressortez avec", value: "Des registres conformes à la réalité" },
       { label: "Résiliation", value: "En tout temps, les registres restent vôtres" },
-    ],
-    process: [
-      {
-        n: "01",
-        title: "L'état des lieux",
-        body:
-          "Nous établissons ce que vous détenez aujourd'hui : quels renseignements personnels, collectés sur quelle base, conservés où, et pour combien de temps.",
-        phase: "Mise en place",
-      },
-      {
-        n: "02",
-        title: "Les registres",
-        body:
-          "Les registres de traitement, de consentement et d'incidents sont mis dans une forme qui correspond à la pratique et qu'un examinateur peut lire.",
-        phase: "Mise en place",
-      },
-      {
-        n: "03",
-        title: "La veille",
-        body:
-          "Les changements sont suivis à mesure : nouveaux outils, conditions de fournisseurs modifiées, échéances de conservation, orientations qui bougent.",
-        phase: "En continu",
-      },
-      {
-        n: "04",
-        title: "La position",
-        body:
-          "À tout moment, vous pouvez demander où vous en êtes et obtenir une réponse écrite, plutôt que d'entamer une fouille interne.",
-        phase: "Sur demande",
-      },
     ],
     deliverables: [
       {

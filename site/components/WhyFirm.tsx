@@ -5,7 +5,7 @@ import { Button } from "./Button";
 import { marks } from "./Marks";
 import { copy, localePath, type Locale } from "@/content/copy";
 
-export function WhyFirm({ locale }: { locale: Locale }) {
+export function WhyFirm({ locale, index }: { locale: Locale; index: string }) {
   const { why } = copy[locale];
 
   return (
@@ -13,7 +13,7 @@ export function WhyFirm({ locale }: { locale: Locale }) {
       <div className="panel-wash relative overflow-hidden rounded-[20px] bg-sand px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[80px]">
         <div className="relative">
           <Reveal>
-            <SectionMark index="03" label={why.eyebrow} />
+            <SectionMark index={index} label={why.eyebrow} />
           </Reveal>
 
           <SplitHeading top={why.titleTop} bottom={why.titleBottom} className="mt-4 text-ink" />

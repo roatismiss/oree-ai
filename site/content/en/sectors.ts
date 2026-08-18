@@ -16,7 +16,7 @@ export const sectorsHero = {
    lowest-risk entry point first, then the one sector with a real client, then
    the four regulated professions. */
 export const sectorList = {
-  title: "Here is where the method fits",
+  title: "An analysis, sector by sector",
   items: [
     {
       name: "Small businesses",

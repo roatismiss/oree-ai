@@ -3,7 +3,8 @@
  * "What we do" rows on the home page.
  *
  * Structure mirrors the Framer service-details page: overview with a fact
- * table, then a numbered process with phase labels, then what you keep.
+ * table, then what you keep. Only the diagnostic also publishes its numbered
+ * process — the other three are not run often enough yet to promise a sequence.
  *
  * Only the diagnostic carries a price, and it is a range confirmed after the
  * intro call rather than a public quote. No other service invents a figure.
@@ -23,7 +24,28 @@ export type ServiceDetail = {
   /** The problem this service answers, in the profession's own terms. */
   problem: string[];
   facts: { label: string; value: string }[];
-  process: { n: string; title: string; body: string; phase: string }[];
+  /**
+   * Diagnostic only. The other three services are not run often enough yet for
+   * their sequence to be published as a promise, so they omit this and the
+   * detail page drops the section rather than showing a thin one.
+   */
+  process?: { n: string; title: string; body: string; phase: string }[];
+  /**
+   * Bookends around the numbered steps: the prep week that happens before day
+   * one, and the paths open once the plan is delivered.
+   *
+   * Deliberately unnumbered. O·R·É·E is exactly four letters, so numbering
+   * these 05 and 06 would break the mnemonic the numerals stand for — the same
+   * confusion the section numbering was just fixed for.
+   */
+  processBefore?: { title: string; body: string; phase: string };
+  processAfter?: {
+    title: string;
+    body: string;
+    phase: string;
+    /** The routes open after delivery. Named, not sold. */
+    paths: { name: string; body: string }[];
+  };
   /**
    * `phase` and `points` exist so the diagnostic's named tools can be shown
    * the way the old site's deliverables page showed them: grouped by the day
@@ -70,6 +92,12 @@ export const serviceDetails: ServiceDetail[] = [
       { label: "You end with", value: "A costed action plan" },
       { label: "Commitment after", value: "None" },
     ],
+    processBefore: {
+      phase: "Before · The prep week",
+      title: "The preparation",
+      body:
+        "Before the first day on site: a scoping call with the person carrying the mandate, the interview subjects chosen together, the confidentiality agreement signed, and the logistics settled. The three days then open with the right people in the room and nothing left to improvise.",
+    },
     process: [
       {
         n: "01",
@@ -100,6 +128,26 @@ export const serviceDetails: ServiceDetail[] = [
         phase: "Day 3",
       },
     ],
+    processAfter: {
+      phase: "After · Once the plan is delivered",
+      title: "What opens next",
+      body:
+        "The plan is yours, and three paths open from it. None of them is required — the diagnostic ends with no commitment either way.",
+      paths: [
+        {
+          name: "You carry it out yourself",
+          body: "The plan is written to be executed without us. Many organizations stop here, and that is a legitimate end to the mandate.",
+        },
+        {
+          name: "Orée Training",
+          body: "If the findings bear mostly on how people work, the team is trained on the tools the diagnostic selected for it.",
+        },
+        {
+          name: "Orée Support",
+          body: "If the plan needs to hold over time, monthly follow-up anchors the changes until they stand without us.",
+        },
+      ],
+    },
     /* The named tools of the method, restored from the old site's deliverables
        page. Each one is called by its own name here: "the Orée grid" and "the
        prioritization matrix" are the practice's own instruments, and naming
@@ -176,8 +224,10 @@ export const serviceDetails: ServiceDetail[] = [
     n: "02",
     name: "Orée Training",
     eyebrow: "Service 02 · Building team capability",
+    /* The team is not learning O·R·É·E — it is learning to work the tools the
+       diagnostic selected for them. */
     titleTop: "The team",
-    titleBottom: "Learns the method",
+    titleBottom: "Takes up the tools",
     lede:
       "A custom human-AI collaboration program, built from the diagnostic's findings. Full cohort or condensed session, depending on the size of the organization.",
     problem: [
@@ -190,38 +240,8 @@ export const serviceDetails: ServiceDetail[] = [
       { label: "Built from", value: "Your diagnostic findings" },
       { label: "Who takes part", value: "The people who do the work" },
       { label: "Materials", value: "Written on your own cases" },
-      { label: "You end with", value: "A team that can run the method" },
+      { label: "You end with", value: "A team self-sufficient on the chosen tools" },
       { label: "Fee", value: "Fixed, quoted before we begin" },
-    ],
-    process: [
-      {
-        n: "01",
-        title: "Scoping",
-        body:
-          "We choose which findings the program covers, and who needs to be in the room. Not everyone needs the same session.",
-        phase: "Before",
-      },
-      {
-        n: "02",
-        title: "Building the material",
-        body:
-          "Exercises are written on your own cases, with the obligations that apply to them, so nothing has to be translated afterwards.",
-        phase: "Before",
-      },
-      {
-        n: "03",
-        title: "The session",
-        body:
-          "Full cohort or condensed, on site or remote. People work their real tasks, and see where the human checkpoint sits in each one.",
-        phase: "On the day",
-      },
-      {
-        n: "04",
-        title: "What follows",
-        body:
-          "The materials stay with you, along with a short list of what the team asked for and could not yet be answered.",
-        phase: "After",
-      },
     ],
     deliverables: [
       {
@@ -264,36 +284,6 @@ export const serviceDetails: ServiceDetail[] = [
       { label: "You end with", value: "Templates, registers, and the handover" },
       { label: "Exit", value: "Planned from day one" },
     ],
-    process: [
-      {
-        n: "01",
-        title: "Selection",
-        body:
-          "We choose the specific tools against the plan's requirements, including where the data sits and what the supplier's terms actually permit.",
-        phase: "Stage 1",
-      },
-      {
-        n: "02",
-        title: "Templates and checkpoints",
-        body:
-          "The prompts, forms and sign-off steps are written for your matters, so the human step is built into the process rather than remembered.",
-        phase: "Stage 2",
-      },
-      {
-        n: "03",
-        title: "Running it live",
-        body:
-          "The first real files go through with us present. What breaks here is more useful than anything a pilot on sample data would have shown.",
-        phase: "Stage 3",
-      },
-      {
-        n: "04",
-        title: "Handover",
-        body:
-          "Documentation, a named internal owner, and a review date. We leave when the practice runs without us.",
-        phase: "Stage 4",
-      },
-    ],
     deliverables: [
       {
         title: "Working templates",
@@ -321,8 +311,11 @@ export const serviceDetails: ServiceDetail[] = [
     eyebrow: "Service 04 · The watch",
     titleTop: "Know where",
     titleBottom: "You stand",
+    /* The Radar is an AI-process risk mapping tool, not a watch. The sentence
+       "Try the simplified version below" was dropped at Aminata's request: no
+       tool is embedded on the page for now. */
     lede:
-      "Obligations move. The Radar is a continuous watch over the ones that apply to you, so your position is current before anyone has occasion to ask.",
+      "The Radar maps every process in your organization that AI touches, and finds where the privacy impact assessment, the notice to the people concerned and the human review are real — or merely symbolic. The full map is built with you during the Orée Diagnostic.",
     problem: [
       "Consents, processing registers and incident records are the first things requested in a review and usually the last things prepared. They are not difficult, but they drift: a new tool is added, a supplier changes its terms, a retention period lapses, and the register no longer matches the practice.",
       "The Radar keeps the gap from opening. It is deliberately unglamorous work, and it is the work that determines what happens when a question arrives.",
@@ -334,36 +327,6 @@ export const serviceDetails: ServiceDetail[] = [
       { label: "Reporting", value: "A current position, on request" },
       { label: "You end with", value: "Records that match reality" },
       { label: "Cancellation", value: "Any time, records stay yours" },
-    ],
-    process: [
-      {
-        n: "01",
-        title: "The baseline",
-        body:
-          "We establish what you hold today: which personal information, collected on what basis, kept where, and for how long.",
-        phase: "Setup",
-      },
-      {
-        n: "02",
-        title: "The registers",
-        body:
-          "Processing, consent and incident registers are put into a form that matches the practice and that a reviewer can read.",
-        phase: "Setup",
-      },
-      {
-        n: "03",
-        title: "The watch",
-        body:
-          "Changes are tracked as they happen: new tools, changed supplier terms, retention dates falling due, guidance that shifts.",
-        phase: "Ongoing",
-      },
-      {
-        n: "04",
-        title: "The position",
-        body:
-          "At any point you can ask where you stand and get an answer in writing, rather than beginning an internal search.",
-        phase: "On request",
-      },
     ],
     deliverables: [
       {

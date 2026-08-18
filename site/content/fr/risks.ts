@@ -60,6 +60,11 @@ export const risksReasons = [
 ];
 
 export const risksCases = {
+  /* Cible du bouton « Voir des exemples dans l'histoire » sur /pourquoi-oree.
+     Sans ancrage, il déposait le visiteur en haut de /risques, devant un
+     contenu qu'il venait de lire. L'ancre est propre à la langue parce que
+     l'URL l'est aussi. */
+  anchor: "chaque-revolution",
   title: "Chaque révolution technologique a connu ce même écart",
   items: [
     {

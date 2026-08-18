@@ -72,18 +72,21 @@ export function HomePage({ locale }: P) {
             before the numbered sections open. Everything above and below is
             an inset ivory panel. */}
         <Refrain locale={locale} />
+        {/* Section numbers are passed in, not baked into the components: each
+            page runs its own count from 01, and the same component appearing
+            in a different position elsewhere no longer drags its number along. */}
         <div id="method">
-          <MethodGlance locale={locale} />
+          <MethodGlance locale={locale} index="01" />
         </div>
         <div id="services">
-          <PracticeAreas locale={locale} />
+          <PracticeAreas locale={locale} index="02" />
         </div>
-        <WhyFirm locale={locale} />
+        <WhyFirm locale={locale} index="03" />
         <CtaBand locale={locale} />
         <Frameworks locale={locale} />
         <Cta locale={locale} />
         <div id="insights">
-          <Blog locale={locale} />
+          <Blog locale={locale} index="04" />
         </div>
       </main>
       <Footer locale={locale} />
@@ -104,14 +107,15 @@ export function AboutPage({ locale }: P) {
               <p className="eyebrow text-olive-deep">{aboutHero.eyebrow}</p>
             </Reveal>
             <Reveal delay={0.06}>
-              <h1 className="h-display-tight mt-4 text-ink">{aboutHero.titleTop}</h1>
-              <h1 className="h-display-tight italic text-olive-deep">{aboutHero.titleBottom}</h1>
+              <h1 className="h-display-tight mt-4 italic text-olive-deep">{aboutHero.title}</h1>
             </Reveal>
           </div>
         </section>
         {/* Her portrait and background lead the page, directly under the
-            title, rather than sitting below the prose. */}
-        <Team locale={locale} extended />
+            title, rather than sitting below the prose. Not `extended` here:
+            Story.tsx below carries those same paragraphs, and running both
+            printed the biography twice on one page. */}
+        <Team locale={locale} showCta={false} />
         <div id="bio">
           <Story locale={locale} />
         </div>
@@ -269,7 +273,7 @@ export function ApproachPage({ locale }: P) {
       <Nav locale={locale} />
       <main>
         <ApproachHero locale={locale} />
-        <Method locale={locale} />
+        <Method locale={locale} index="01" />
         <DeliverablesLink locale={locale} label={deliverablesPage.link} />
         <Cta locale={locale} title={approachCta.title} />
       </main>
@@ -301,10 +305,12 @@ export function ServicesPage({ locale }: P) {
       <Nav locale={locale} />
       <main>
         <ServicesHero locale={locale} />
-        <ServiceList locale={locale} />
+        {/* Starts at 01: this page has no section above the service list, and
+            the list used to be numbered 02 with no 01 anywhere before it. */}
+        <ServiceList locale={locale} index="01" />
         <DeliverablesLink locale={locale} label={deliverablesPage.link} />
-        <Included locale={locale} />
-        <Faq locale={locale} />
+        <Included locale={locale} index="02" />
+        <Faq locale={locale} index="03" />
         <Cta locale={locale} title={servicesCta.title} />
       </main>
       <Footer locale={locale} />
@@ -319,7 +325,7 @@ export function SectorsPage({ locale }: P) {
       <Nav locale={locale} />
       <main>
         <SectorsHero locale={locale} />
-        <SectorList locale={locale} />
+        <SectorList locale={locale} index="01" />
         <Cta locale={locale} title={sectorsCta.title} />
       </main>
       <Footer locale={locale} />
@@ -393,8 +399,19 @@ export function ServiceDetailPage({ locale, slug }: P & { slug: string }) {
           backLabel={ui.allServices}
         />
         <Overview eyebrow={ui.whatItAnswers} paragraphs={service.problem} facts={service.facts} />
-        <Process eyebrow={ui.howItRuns} title={ui.theProcess} steps={service.process} />
+        {/* Fees sit directly under the overview, not below the fold: the price
+            is the first thing a visitor to the diagnostic page looks for. */}
         {service.pricing && <Pricing pricing={service.pricing} />}
+        {/* Diagnostic only — see the note on ServiceDetail.process. */}
+        {service.process && (
+          <Process
+            eyebrow={ui.howItRuns}
+            title={ui.theProcess}
+            steps={service.process}
+            before={service.processBefore}
+            after={service.processAfter}
+          />
+        )}
         <Deliverables
           title={ui.whatYouKeep}
           intro={service.deliverablesIntro}
@@ -513,7 +530,9 @@ export function RisksPage({ locale }: P) {
           </div>
         </section>
 
-        <section className="px-[10px] pt-[10px]">
+        {/* `scroll-mt` keeps the heading clear of the fixed nav when the
+            "see examples from history" button lands here. */}
+        <section id={risksCases.anchor} className="scroll-mt-24 px-[10px] pt-[10px]">
           <div className="panel-wash overflow-hidden rounded-[20px] bg-cream px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[80px]">
             <Reveal>
               <h2 className="h-display max-w-[900px] text-ink">{risksCases.title}</h2>

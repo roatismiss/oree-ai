@@ -32,15 +32,16 @@ export const nav = {
  */
 export const aboutHero = {
   eyebrow: "The founder",
-  titleTop: "About —",
-  titleBottom: "Why Aminata",
+  /* One title only: the nav and the eyebrow already say "About", and the
+     prefix repeated it a third time in the same view. The heading carries the
+     mark, not the first name. */
+  title: "Why O·R·É·E",
 };
 
 export const whyHero = {
   eyebrow: "The context",
   titleTop: "Why now —",
   titleBottom: "The Quebec context",
-  seeHistory: "See examples from history",
 };
 
 /* The oree-conseil.ca deliverables page in its original shape: grouped by day,
@@ -291,8 +292,10 @@ export const services = {
 
 export const practice = {
   eyebrow: "About",
-  titleTop: "One practitioner,",
-  titleBottom: "Twenty-seven years",
+  /* "One practitioner, / Twenty-seven years" read as her age. The heading now
+     names what the twenty-seven years count: the practice. */
+  titleTop: "Twenty-seven years",
+  titleBottom: "of practice",
   name: "Aminata Diabaté",
   role: "Founder and Principal Consultant · Orée Conseil",
   /* No employer is named, at the client's request: the sectors carry the

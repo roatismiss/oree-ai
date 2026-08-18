@@ -68,6 +68,10 @@ export const risksReasons = [
 ];
 
 export const risksCases = {
+  /* Target of the "See examples from history" button on /why-oree. Without an
+     anchor it dropped the visitor at the top of /risks, in front of content
+     they had just read. The anchor is per-locale because the URL is too. */
+  anchor: "every-revolution",
   title: "Every technological revolution has faced this same gap",
   items: [
     {

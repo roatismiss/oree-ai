@@ -38,11 +38,15 @@ function Marquee({ items, dir }: { items: Item[]; dir: "left" | "right" }) {
 export function Team({
   locale,
   extended = false,
+  showCta = true,
 }: {
   locale: Locale;
   /** Show the fuller bio paragraphs below the summary. Home page only — on
       /about, Story.tsx carries this same text right beneath this section. */
   extended?: boolean;
+  /** The CTA opens /about, so it is suppressed on /about itself, where it
+      would only link the visitor to the page they are already reading. */
+  showCta?: boolean;
 }) {
   const { practice, ui, footer } = copy[locale];
   const { linkedin } = footer.social;
@@ -100,11 +104,15 @@ export function Team({
                 </div>
               )}
 
-              <div className="mt-9">
-                {/* The founder block opens À propos, where the full biography
-                    and the background list live. */}
-                <Button variant="yellow" href={localePath(locale, "/about")}>{practice.cta}</Button>
-              </div>
+              {showCta && (
+                <div className="mt-9">
+                  {/* The founder block opens À propos, where the full biography
+                      and the background list live. */}
+                  <Button variant="yellow" href={localePath(locale, "/about")}>
+                    {practice.cta}
+                  </Button>
+                </div>
+              )}
             </Reveal>
           </div>
         </div>

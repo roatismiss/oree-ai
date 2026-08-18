@@ -4,18 +4,17 @@
  * « Offre » d'oree-conseil.ca.
  */
 
+import type { ServiceCard } from "../en/services";
+
 export const servicesHero = {
   eyebrow: "L'offre Orée",
-  titleTop: "Ce qu'un mandat",
-  titleBottom: "Laisse derrière",
+  titleTop: "Ce que vous gardez,",
+  titleBottom: "après le mandat",
   body:
     "Une offre ciblée, une seule méthode. Chaque mandat se termine par quelque chose d'écrit, que vous gardez et pouvez appliquer, que le travail se poursuive avec nous ou non. Le diagnostic est le point de départ de tout engagement.",
 };
 
-export const serviceList = {
-  eyebrow: "En détail",
-  title: "Les services",
-  items: [
+const serviceCards: ServiceCard[] = [
     {
       n: "01",
       name: "Diagnostic Orée",
@@ -26,6 +25,7 @@ export const serviceList = {
         { label: "Durée", value: "Trois jours" },
         { label: "Vous en ressortez avec", value: "Un plan d'action chiffré" },
       ],
+      note: "À partir de 1 500 $ (OBNL) ou 3 000 $ — les autres services sont établis sur mesure.",
     },
     {
       n: "02",
@@ -35,7 +35,7 @@ export const serviceList = {
       meta: [
         { label: "Format", value: "Cohorte ou séance condensée" },
         { label: "Bâtie sur", value: "Les constats du diagnostic" },
-        { label: "Vous en ressortez avec", value: "Une équipe capable de la mener" },
+        { label: "Vous en ressortez avec", value: "Une équipe autonome sur les outils retenus" },
       ],
     },
     {
@@ -62,7 +62,12 @@ export const serviceList = {
         { label: "Vous en ressortez avec", value: "Une position à jour" },
       ],
     },
-  ],
+];
+
+export const serviceList = {
+  eyebrow: "En détail",
+  title: "Les services",
+  items: serviceCards,
 };
 
 export const included = {

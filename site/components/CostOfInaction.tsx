@@ -6,7 +6,7 @@ import { copy, localePath, type Locale } from "@/content/copy";
    "Pourquoi Orée" page. The four statements are the argument for acting now,
    so they stay on the homepage rather than only on /risks. */
 export function CostOfInaction({ locale }: { locale: Locale }) {
-  const { costOfInaction } = copy[locale];
+  const { costOfInaction, risksCases } = copy[locale];
 
   return (
     <section className="px-[10px] pt-[10px]">
@@ -34,7 +34,9 @@ export function CostOfInaction({ locale }: { locale: Locale }) {
 
         <Reveal delay={0.16}>
           <div className="mt-12">
-            <Button variant="dark" href={localePath(locale, "/risks")}>
+            {/* Straight to the historical cases — the reasons above are the
+                short form of what the top of /risks already says. */}
+            <Button variant="dark" href={localePath(locale, `/risks#${risksCases.anchor}`)}>
               {costOfInaction.cta}
             </Button>
           </div>

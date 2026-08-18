@@ -1,67 +1,82 @@
 /**
  * Copy for the Services page. Same voice rules as content/en.ts.
- * Deliberately no prices: Orée's fee schedule is not something to invent here.
+ *
+ * Only the diagnostic names a figure, and only as a floor. There is no
+ * separate pricing page: with three of the four services scoped to fit, one
+ * would read as an empty table, so the entry price lives on the card instead.
  */
+
+export type ServiceCard = {
+  n: string;
+  name: string;
+  summary: string;
+  meta: { label: string; value: string }[];
+  /** Entry price. Diagnostic only — the others are quoted per mandate. */
+  note?: string;
+};
 
 export const servicesHero = {
   eyebrow: "The Orée offer",
-  titleTop: "What a mandate",
-  titleBottom: "Leaves behind",
+  titleTop: "What you keep,",
+  titleBottom: "after the mandate",
   body:
     "A focused offer, one method. Each mandate ends with something written down that you keep and can act on, whether or not the work continues with us. The diagnostic is where every engagement starts.",
 };
 
+const serviceCards: ServiceCard[] = [
+  {
+    n: "01",
+    name: "Orée Diagnostic",
+    summary:
+      "Three days given to your organization — on site or remotely, whichever suits you best. We observe the work as it is actually done, map which tasks AI can carry and which it cannot, and check each candidate against the obligations you already hold.",
+    meta: [
+      { label: "Format", value: "On site or remote" },
+      { label: "Duration", value: "Three days" },
+      { label: "You end with", value: "A costed action plan" },
+    ],
+    note: "From $1,500 (nonprofits) or $3,000 — the other services are scoped to fit.",
+  },
+  {
+    n: "02",
+    name: "Orée Training",
+    summary:
+      "A custom human-AI collaboration program, built from the diagnostic's findings. Full cohort or condensed session, depending on the size of the organization.",
+    meta: [
+      { label: "Format", value: "Cohort or condensed session" },
+      { label: "Built from", value: "The diagnostic's findings" },
+      { label: "You end with", value: "A team self-sufficient on the chosen tools" },
+    ],
+  },
+  {
+    n: "03",
+    name: "Orée Support",
+    /* Her own wording first: monthly follow-up is what defines the service in
+       her own document, and it had gone missing. */
+    summary:
+      "Monthly follow-up over time to anchor changes into teams' actual practices, with ongoing adjustments. Tools selected, templates written, and the practice handed back to you once it holds without us.",
+    meta: [
+      { label: "Format", value: "Guided rollout" },
+      { label: "Duration", value: "Until it holds" },
+      { label: "You end with", value: "Templates and registers" },
+    ],
+  },
+  {
+    n: "04",
+    name: "Law 25 Radar",
+    summary:
+      "A continuous watch over the obligations that move: consents, processing registers, incident records. You know where you stand before anyone has occasion to ask.",
+    meta: [
+      { label: "Format", value: "Ongoing watch" },
+      { label: "Scope", value: "Consents, registers, incidents" },
+      { label: "You end with", value: "A current position" },
+    ],
+  },
+];
+
 export const serviceList = {
   eyebrow: "In detail",
   title: "The services",
-  items: [
-    {
-      n: "01",
-      name: "Orée Diagnostic",
-      summary:
-        "Three days given to your organization — on site or remotely, whichever suits you best. We observe the work as it is actually done, map which tasks AI can carry and which it cannot, and check each candidate against the obligations you already hold.",
-      meta: [
-        { label: "Format", value: "On site or remote" },
-        { label: "Duration", value: "Three days" },
-        { label: "You end with", value: "A costed action plan" },
-      ],
-    },
-    {
-      n: "02",
-      name: "Orée Training",
-      summary:
-        "A custom human-AI collaboration program, built from the diagnostic's findings. Full cohort or condensed session, depending on the size of the organization.",
-      meta: [
-        { label: "Format", value: "Cohort or condensed session" },
-        { label: "Built from", value: "The diagnostic's findings" },
-        { label: "You end with", value: "A team that can run it" },
-      ],
-    },
-    {
-      n: "03",
-      name: "Orée Support",
-      /* Her own wording first: monthly follow-up is what defines the service in
-         her own document, and it had gone missing. */
-      summary:
-        "Monthly follow-up over time to anchor changes into teams' actual practices, with ongoing adjustments. Tools selected, templates written, and the practice handed back to you once it holds without us.",
-      meta: [
-        { label: "Format", value: "Guided rollout" },
-        { label: "Duration", value: "Until it holds" },
-        { label: "You end with", value: "Templates and registers" },
-      ],
-    },
-    {
-      n: "04",
-      name: "Law 25 Radar",
-      summary:
-        "A continuous watch over the obligations that move: consents, processing registers, incident records. You know where you stand before anyone has occasion to ask.",
-      meta: [
-        { label: "Format", value: "Ongoing watch" },
-        { label: "Scope", value: "Consents, registers, incidents" },
-        { label: "You end with", value: "A current position" },
-      ],
-    },
-  ],
+  items: serviceCards,
 };
 
 export const included = {

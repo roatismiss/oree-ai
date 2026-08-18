@@ -40,15 +40,16 @@ export const nav = {
  */
 export const aboutHero = {
   eyebrow: "La fondatrice",
-  titleTop: "À propos —",
-  titleBottom: "Pourquoi Aminata",
+  /* Un seul titre : la nav et le surtitre disent déjà « À propos », et le
+     préfixe le répétait une troisième fois sur la même vue. Le titre porte
+     la marque, pas le prénom. Points médians conformes au reste du site. */
+  title: "Pourquoi O·R·É·E",
 };
 
 export const whyHero = {
   eyebrow: "Le contexte",
   titleTop: "Pourquoi maintenant —",
   titleBottom: "Le contexte québécois",
-  seeHistory: "Voir des exemples dans l'histoire",
 };
 
 /* La page « Livrables » d'oree-conseil.ca, dans sa structure d'origine :
@@ -296,8 +297,10 @@ export const services = {
 
 export const practice = {
   eyebrow: "À propos",
-  titleTop: "Une praticienne,",
-  titleBottom: "Vingt-sept ans",
+  /* « Une praticienne, / Vingt-sept ans » se lisait comme son âge. Le titre
+     nomme maintenant ce que les vingt-sept ans comptent : la pratique. */
+  titleTop: "Vingt-sept ans",
+  titleBottom: "de pratique",
   name: "Aminata Diabaté",
   role: "Fondatrice et consultante principale · Orée Conseil",
   /* Aucun employeur nommé, à la demande de la cliente : les secteurs portent la

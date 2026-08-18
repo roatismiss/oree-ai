@@ -3,14 +3,14 @@ import { Reveal } from "../Reveal";
 import { SectionMark } from "../SectionMark";
 import { copy, localePath, type Locale } from "@/content/copy";
 
-export function SectorList({ locale }: { locale: Locale }) {
+export function SectorList({ locale, index }: { locale: Locale; index: string }) {
   const { sectorList } = copy[locale];
 
   return (
     <section className="px-[10px] pt-[10px]">
       <div className="panel-wash overflow-hidden rounded-[20px] bg-sand px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[90px]">
         <Reveal>
-          <SectionMark index="01" className="mb-8" />
+          <SectionMark index={index} className="mb-8" />
         </Reveal>
         <Reveal>
           <h2 className="h-display text-ink">{sectorList.title}</h2>

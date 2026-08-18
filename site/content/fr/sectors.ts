@@ -16,7 +16,7 @@ export const sectorsHero = {
    cliente — le plus large et le moins risqué en tête, le seul secteur avec un
    vrai client ensuite, puis les quatre professions réglementées. */
 export const sectorList = {
-  title: "Voici où la méthode se prête",
+  title: "Une analyse, secteur par secteur",
   items: [
     {
       name: "Petites entreprises",
