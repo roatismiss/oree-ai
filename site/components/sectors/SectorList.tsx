@@ -23,7 +23,7 @@ export function SectorList({ locale, index }: { locale: Locale; index: string })
                   rules are never drawn in black. */}
               <div className="border-t border-hairline py-7 last:border-b">
                 <div className="flex items-baseline gap-5">
-                  <span className="eyebrow shrink-0 text-amber">
+                  <span className="eyebrow shrink-0 text-grey">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <Link

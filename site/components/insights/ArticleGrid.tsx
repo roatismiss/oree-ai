@@ -20,7 +20,7 @@ export function ArticleGrid({ locale }: { locale: Locale }) {
                       cards were built to carry — the template's photographs of
                       courtrooms, which were never of this practice. */}
                   <div className="flex items-center gap-4">
-                    <span className="eyebrow shrink-0 text-amber">
+                    <span className="eyebrow shrink-0 text-grey">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <span className="h-px min-w-0 flex-1 bg-hairline" aria-hidden />

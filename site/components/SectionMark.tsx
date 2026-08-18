@@ -10,6 +10,12 @@
  * Numbering them in DM Mono is the brand's own habit — its reference document
  * sets "JOUR 1 — IMMERSION" the same way — and a page that counts its own
  * sections reads as edited rather than assembled.
+ *
+ * The amber numeral in this component is reserved for section marks. List
+ * numerals elsewhere (sector rows, article rows, O·R·É·E steps) are set in
+ * grey precisely so a list item never reads as a section heading when the two
+ * land next to each other — which is what made /methode and /secteurs look
+ * misnumbered.
  */
 export function SectionMark({
   index,
