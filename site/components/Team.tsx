@@ -39,6 +39,7 @@ export function Team({
   locale,
   extended = false,
   showCta = true,
+  marquees = true,
 }: {
   locale: Locale;
   /** Show the fuller bio paragraphs below the summary. Home page only — on
@@ -47,6 +48,12 @@ export function Team({
   /** The CTA opens /about, so it is suppressed on /about itself, where it
       would only link the visitor to the page they are already reading. */
   showCta?: boolean;
+  /** The two scrolling bands of what the practice covers. They belong on the
+      home page, where this block is an introduction and the bands are the
+      first sight of the offer. On /about they landed between the founder's
+      summary and her full biography, breaking the one long read the page
+      exists to give — the client struck them there. */
+  marquees?: boolean;
 }) {
   const { practice, ui, footer } = copy[locale];
   const { linkedin } = footer.social;
@@ -117,10 +124,12 @@ export function Team({
           </div>
         </div>
 
-        <div className="mt-16 space-y-5">
-          <Marquee items={practice.rowOne} dir="left" />
-          <Marquee items={practice.rowTwo} dir="right" />
-        </div>
+        {marquees && (
+          <div className="mt-16 space-y-5">
+            <Marquee items={practice.rowOne} dir="left" />
+            <Marquee items={practice.rowTwo} dir="right" />
+          </div>
+        )}
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Jost, DM_Mono } from "next/font/google";
 import { Splash } from "@/components/Splash";
+import { HashScroll } from "@/components/HashScroll";
 import { copy } from "@/content/copy";
 import "../globals.css";
 
@@ -81,6 +82,7 @@ export default function FrRootLayout({
           }}
         />
         <Splash />
+        <HashScroll />
         {children}
       </body>
     </html>

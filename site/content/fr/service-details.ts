@@ -9,9 +9,8 @@ export const serviceDetails: ServiceDetail[] = [
   {
     key: "diagnostic",
     slug: "diagnostic",
-    n: "01",
     name: "Diagnostic Orée",
-    eyebrow: "Service 01 · Le point de départ",
+    eyebrow: "Service · Le point de départ",
     titleTop: "Trois jours,",
     titleBottom: "avec vous",
     lede:
@@ -24,7 +23,7 @@ export const serviceDetails: ServiceDetail[] = [
     ],
     facts: [
       { label: "Format", value: "Sur place ou à distance" },
-      { label: "Durée", value: "Trois jours consécutifs" },
+      { label: "Durée", value: "Trois jours sur deux semaines" },
       { label: "Qui participe", value: "Vous et les gens qui font le travail" },
       { label: "Honoraires", value: "Fixes, chiffrés avant le début" },
       { label: "Vous en ressortez avec", value: "Un plan d'action chiffré" },
@@ -101,13 +100,11 @@ export const serviceDetails: ServiceDetail[] = [
         phase: "Jour 1 · Observer et relever",
         title: "La grille Orée",
         body: "L'instrument propre à la pratique. Chaque friction est lue sur cinq dimensions, pour qu'aucune ne soit classée comme un problème d'outil alors qu'elle relève de la gouvernance.",
-        points: ["Cognitive", "Processuelle", "Culturelle", "Technique", "Gouvernance"],
       },
       {
         phase: "Jour 2 · Évaluer",
         title: "Matrice de priorisation",
         body: "Effort, valeur et risque sont scorés pour chaque piste, afin de distinguer les gains rapides des chantiers de fond plutôt que de les mélanger.",
-        points: ["Effort", "Valeur", "Risque"],
       },
       {
         phase: "Jour 3 · Engager",
@@ -147,6 +144,7 @@ export const serviceDetails: ServiceDetail[] = [
           body: "Un tarif réduit s'applique aux OBNL, entre 1 500 $ et 3 000 $, parce que ce sont des milieux où Orée choisit délibérément d'investir.",
         },
       ],
+      note: "Ce tarif est indiqué à titre indicatif pour un mandat prévoyant 2 à 3 entretiens terrain. Au-delà de cette portée, le tarif sera raffiné avec vous avant la confirmation du mandat.",
     },
     notThis:
       "Le diagnostic n'installe rien et ne vous engage pas à un second mandat. Si la réponse honnête est que l'IA a peu à offrir à votre pratique cette année, c'est ce que le plan dira.",
@@ -159,9 +157,8 @@ export const serviceDetails: ServiceDetail[] = [
   {
     key: "training",
     slug: "formation",
-    n: "02",
     name: "Formation Orée",
-    eyebrow: "Service 02 · Monter les équipes en compétence",
+    eyebrow: "Service · Monter les équipes en compétence",
     /* L'équipe n'apprend pas O·R·É·E — elle apprend à se servir des outils
        que le diagnostic a retenus pour elle. */
     titleTop: "L'équipe",
@@ -203,9 +200,8 @@ export const serviceDetails: ServiceDetail[] = [
   {
     key: "support",
     slug: "appui",
-    n: "03",
     name: "Appui Orée",
-    eyebrow: "Service 03 · Le déploiement",
+    eyebrow: "Service · Le déploiement",
     titleTop: "Jusqu'à ce que",
     titleBottom: "Ça tienne sans nous",
     lede:
@@ -244,9 +240,8 @@ export const serviceDetails: ServiceDetail[] = [
   {
     key: "law-25-radar",
     slug: "radar-loi-25",
-    n: "04",
     name: "Radar Loi 25",
-    eyebrow: "Service 04 · La veille",
+    eyebrow: "Service · La cartographie des risques",
     titleTop: "Savoir où",
     titleBottom: "Vous en êtes",
     /* Le Radar est un outil de cartographie des risques liés aux processus
@@ -256,33 +251,59 @@ export const serviceDetails: ServiceDetail[] = [
     lede:
       "Le Radar cartographie chaque processus touché par l'IA dans votre organisation, et repère où l'ÉFVP, l'information des personnes concernées et la révision humaine sont réelles — ou seulement symboliques. La cartographie complète se construit avec vous durant le Diagnostic Orée.",
     problem: [
-      "Consentements, registres de traitement et journaux d'incidents sont les premières choses demandées lors d'un examen et, d'ordinaire, les dernières préparées. Ce n'est pas difficile, mais ça dérive : un nouvel outil s'ajoute, un fournisseur change ses conditions, un délai de conservation expire, et le registre ne correspond plus à la pratique.",
-      "Le Radar empêche l'écart de s'ouvrir. C'est un travail délibérément peu spectaculaire, et c'est celui qui détermine ce qui se passe quand une question arrive.",
+      "Une organisation peut tenir une politique impeccable et travailler d'une façon qui s'en écarte : une ÉFVP jamais reprise depuis qu'un outil s'est ajouté, un avis aux personnes concernées enterré dans une page de conditions, une révision humaine qui tient en un clic sur « approuver ».",
+      "Le Radar regarde les processus un par un et nomme lesquels tiennent, lesquels ne tiennent qu'en apparence, et lesquels demandent une correction avant qu'une question arrive.",
     ],
     facts: [
-      { label: "Format", value: "Veille continue" },
-      { label: "Portée", value: "Consentements, registres, incidents" },
-      { label: "Cadres", value: "Loi 25 et LPRPDE" },
-      { label: "Reddition", value: "Une position à jour, sur demande" },
-      { label: "Vous en ressortez avec", value: "Des registres conformes à la réalité" },
-      { label: "Résiliation", value: "En tout temps, les registres restent vôtres" },
+      { label: "Format", value: "Cartographie de processus" },
+      { label: "Portée", value: "Les processus touchés par l'IA" },
+      { label: "Ce qui est examiné", value: "ÉFVP, information, révision humaine" },
+      { label: "Cadres", value: "Loi 25" },
+      { label: "Vous en ressortez avec", value: "Un niveau de risque par processus" },
+      { label: "Validation", value: "Tout risque élevé revu avec un conseiller juridique" },
     ],
     deliverables: [
       {
-        title: "Des registres à jour",
-        body: "Traitements, consentements et incidents consignés au rythme de ce que la pratique fait réellement.",
+        title: "La carte des processus",
+        body: "Chaque cas d'usage touché par l'IA, relevé pendant les entretiens et l'observation sur place — ce que le processus fait réellement, pas ce que la politique en dit.",
       },
       {
-        title: "Un journal des changements",
-        body: "Ce qui a bougé, quand, et ce qui a été fait. Le récit qu'un examinateur voudra à côté des registres.",
+        title: "Un niveau de risque par processus",
+        body: "Élevé, moyen ou faible. Il sert à prioriser la conversation ; il ne tranche pas une question de conformité.",
       },
       {
-        title: "Une position écrite",
-        body: "Où vous en êtes face à vos obligations, disponible sur demande plutôt qu'assemblée dans l'urgence.",
+        title: "Un chemin de correction",
+        body: "Pour chaque écart relevé, ce qu'il faudrait changer et dans quel ordre, porté au rapport de diagnostic.",
       },
     ],
+    /* Traduction du texte anglais fourni par la cliente. À faire relire par
+       Aminata : le passage porte des renvois d'articles et une limite de
+       responsabilité, et la version française est celle que liront ses
+       clients québécois. */
+    radar: {
+      eyebrow: "L'outil",
+      title: "Ce qu'il est, ce qu'il n'est pas",
+      intro:
+        "Le Radar Loi 25 est l'un des outils utilisés pendant un Diagnostic Orée. Il cartographie, processus par processus, chaque cas d'usage touché par l'IA chez un client, et repère où trois obligations clés de la Loi 25 sont réellement respectées — ou seulement en apparence : l'évaluation des facteurs relatifs à la vie privée (art. 3.3), l'information des personnes concernées, et la révision humaine des décisions (art. 12.1).",
+      is: {
+        title: "Ce qu'est le Radar",
+        paragraphs: [
+          "Un outil de terrain, rempli pendant les entretiens et l'observation sur place, mandat par mandat — pas un audit à distance fondé sur les politiques écrites. Il pousse vers des questions concrètes plutôt que vers les intentions déclarées : combien de temps prend réellement la validation, en moyenne ? La personne responsable ouvre-t-elle le dossier, ou clique-t-elle simplement sur « approuver » ? C'est ce genre de question qui distingue une supervision réelle d'une supervision symbolique.",
+          "Chaque processus cartographié reçoit un niveau de risque opérationnel — élevé, moyen ou faible — qui sert à prioriser la conversation et à structurer le rapport de diagnostic remis au client, avec un chemin de correction clair pour chaque écart relevé.",
+        ],
+      },
+      isNot: {
+        title: "Ce qu'il n'est pas",
+        paragraphs: [
+          "Ce n'est pas un verdict juridique. Le niveau de risque affiché est une estimation opérationnelle, pas une conclusion de conformité : tout cas à risque élevé ou moyen est validé auprès d'un conseiller juridique qualifié avant qu'une conclusion soit transmise au client.",
+          "Ce n'est pas non plus un outil d'audit automatisé qui remplace le jugement humain — il l'outille. Le Radar oriente l'attention et accélère le diagnostic ; il ne se substitue ni à l'expertise de la personne qui mène l'entretien, ni à l'avis du conseiller juridique.",
+        ],
+      },
+      closing:
+        "C'est la même logique qui gouverne toute la pratique : l'IA rédige, l'humain décide.",
+    },
     notThis:
-      "Le Radar n'est pas un avis juridique et ne remplace pas votre conseiller. Il garde vos registres à jour et signale ce qui a bougé ; le jugement juridique reste où il doit être.",
+      "Le Radar n'est pas un avis juridique et ne remplace pas votre conseiller. Tout cas à risque élevé ou moyen est validé auprès d'un conseiller juridique qualifié avant qu'une conclusion vous soit transmise ; le jugement juridique reste où il doit être.",
     image: "/img/sector-4.png",
   },
 ];

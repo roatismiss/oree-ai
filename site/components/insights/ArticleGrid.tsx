@@ -16,14 +16,12 @@ export function ArticleGrid({ locale }: { locale: Locale }) {
                 className="group flex h-full flex-col overflow-hidden rounded-[14px] bg-light transition-transform duration-300 hover:-translate-y-1"
               >
                 <div className="flex flex-1 flex-col p-7">
-                  {/* The number and rule stand in for the cover image these
-                      cards were built to carry — the template's photographs of
-                      courtrooms, which were never of this practice. */}
-                  <div className="flex items-center gap-4">
-                    <span className="eyebrow shrink-0 text-grey">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <span className="h-px min-w-0 flex-1 bg-hairline" aria-hidden />
+                  {/* The rule stands in for the cover image these cards were
+                      built to carry — the template's photographs of courtrooms,
+                      which were never of this practice. Held at the eyebrow's
+                      18px so dropping the numeral did not shift the card. */}
+                  <div className="flex h-[18px] items-center">
+                    <span className="h-px w-full bg-hairline" aria-hidden />
                   </div>
                   <p className="mt-6 text-[12px] uppercase tracking-[0.1em] text-grey">
                     {a.date} · {a.readingTime}

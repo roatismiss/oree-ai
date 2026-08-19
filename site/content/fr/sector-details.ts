@@ -37,28 +37,24 @@ export const sectorDetails: SectorDetail[] = [
     ],
     startingPoints: [
       {
-        n: "01",
         title: "La tâche répétitive qui mange le plus de temps",
         body:
           "Identifier la tâche hebdomadaire la plus chronophage et la moins stratégique, souvent de la saisie, du classement ou de la rédaction répétitive, et vérifier si l'IA peut vraiment l'alléger.",
         phase: "Habituellement en premier",
       },
       {
-        n: "02",
         title: "Le tri de l'information",
         body:
           "Retrouver rapidement une réponse dans vos documents, contrats ou courriels, sans tout relire à chaque fois.",
         phase: "Tôt",
       },
       {
-        n: "03",
         title: "Les premiers jets de communication",
         body:
           "Réponses aux clients, descriptions de produits, publications : un premier jet généré, toujours révisé avant l'envoi.",
         phase: "Une fois les bases en place",
       },
       {
-        n: "04",
         title: "Les bases à respecter",
         body:
           "Vérifier ce que la Loi 25 exige déjà de vous, même à petite échelle, et s'assurer que rien de nouveau ne vous met en tort.",
@@ -108,28 +104,24 @@ export const sectorDetails: SectorDetail[] = [
     ],
     startingPoints: [
       {
-        n: "01",
         title: "Rapports et demandes de subvention",
         body:
           "Les sections narratives récurrentes, les tableaux budgétaires et les résumés de résultats que chaque bailleur redemande à chaque cycle, rédigés à partir de vos rapports antérieurs et révisés avant l'envoi.",
         phase: "Habituellement en premier",
       },
       {
-        n: "02",
         title: "Dossiers de donateurs et de bénévoles",
         body:
           "Nettoyer et organiser les listes éparpillées entre chiffriers, courriels et la mémoire de quelqu'un, pour que l'information soit utilisable et que les obligations de la Loi 25 qui s'y rattachent soient traçables.",
         phase: "Tôt",
       },
       {
-        n: "03",
         title: "Correspondance avec donateurs et partenaires",
         body:
           "Premiers jets de lettres de remerciement, d'infolettres et de courriels aux partenaires. Le travail de volume, pas la relation elle-même.",
         phase: "Une fois les bases en place",
       },
       {
-        n: "04",
         title: "Registres de gouvernance",
         body:
           "Politiques, registre des conflits d'intérêts, et la documentation Loi 25 dont le conseil d'administration est ultimement responsable, tenue à jour plutôt qu'assemblée à la hâte avant une réunion.",
@@ -181,28 +173,24 @@ export const sectorDetails: SectorDetail[] = [
     ],
     startingPoints: [
       {
-        n: "01",
         title: "Ouverture et montage du dossier",
         body:
           "La collecte des documents avant qu'un dossier soit travaillable. Gros volume, peu de jugement, et l'endroit le plus simple pour redonner du temps sans approcher l'acte.",
         phase: "Habituellement en premier",
       },
       {
-        n: "02",
         title: "Lecture des documents longs",
         body:
           "Interroger un titre, une servitude ou un acte antérieur et obtenir une réponse qui cite la clause dont elle provient, pour que la vérification reste à un clic.",
         phase: "Tôt",
       },
       {
-        n: "03",
         title: "Premiers jets des clauses standards",
         body:
           "Des clauses répétitives rédigées à partir de vos propres précédents, revues et signées par le notaire. Elle propose, vous décidez.",
         phase: "Une fois la confiance acquise",
       },
       {
-        n: "04",
         title: "Le travail de registre",
         body:
           "Consentements, conservation, et les registres Loi 25 qui soutiennent tout le reste, tenus à jour plutôt qu'assemblés sur demande.",
@@ -254,28 +242,24 @@ export const sectorDetails: SectorDetail[] = [
     ],
     startingPoints: [
       {
-        n: "01",
         title: "Ce qui est déjà en usage",
         body:
           "Un inventaire honnête des outils présents dans l'édifice, y compris ceux que personne n'a inscrits sur un formulaire. C'est presque toujours la première surprise.",
         phase: "Semaine un",
       },
       {
-        n: "02",
         title: "Ouverture de dossier et conflits",
         body:
           "Structurer les nouveaux mandats à mesure qu'ils arrivent. Du travail de volume avec des règles claires, où le gain est réel et le risque, contenable.",
         phase: "Habituellement en premier",
       },
       {
-        n: "03",
         title: "Rédaction de premier jet",
         body:
           "Des documents standards rédigés à partir de vos précédents, qui s'arrêtent à un point de contrôle visible. L'avocat révise, l'associé signe, et le dossier consigne les deux.",
         phase: "Une fois la politique établie",
       },
       {
-        n: "04",
         title: "La position écrite",
         body:
           "Une courte norme interne sur ce qui peut être délégué et là où un humain doit se tenir. Assez courte pour que les gens la lisent.",
@@ -327,28 +311,24 @@ export const sectorDetails: SectorDetail[] = [
     ],
     startingPoints: [
       {
-        n: "01",
         title: "Mettre au jour ce qui se passe",
         body:
           "Un inventaire sans reproche de la façon dont l'équipe utilise déjà ces outils. Ça ne fonctionne que si c'est vraiment sans reproche : c'est donc ainsi que nous le menons.",
         phase: "En premier",
       },
       {
-        n: "02",
         title: "Tracer la ligne sur les données sensibles",
         body:
           "Quelles catégories de renseignements sur les employés ne doivent jamais approcher un outil externe, écrit assez simplement pour être suivi sous pression.",
         phase: "Immédiatement après",
       },
       {
-        n: "03",
         title: "Correspondance et rédaction",
         body:
           "Là où le gain est réel : projets de politiques, descriptions de postes, premiers jets de correspondance courante, tout en s'arrêtant avant tout ce qui concerne une personne nommée.",
         phase: "Une fois la ligne tracée",
       },
       {
-        n: "04",
         title: "Le registre de formation",
         body:
           "Une formation de supervision documentée qui répond à l'exigence de 2027 et donne à l'équipe une norme qu'elle peut réellement appliquer.",
@@ -400,28 +380,24 @@ export const sectorDetails: SectorDetail[] = [
     ],
     startingPoints: [
       {
-        n: "01",
         title: "La question des données d'abord",
         body:
           "Où les renseignements se trouveraient physiquement, qui peut y accéder, sous quelle juridiction, et ce que le fournisseur s'engage à faire par écrit plutôt qu'en marketing.",
         phase: "Avant tout le reste",
       },
       {
-        n: "02",
         title: "Lire les conditions comme il faut",
         body:
           "Les ententes de fournisseurs lues pour ce qu'elles permettent réellement, y compris l'entraînement sur vos saisies et les droits des sous-traitants. Ça élimine plus de candidats que n'importe quelle comparaison de fonctionnalités.",
         phase: "Présélection",
       },
       {
-        n: "03",
         title: "Recherche et synthèse",
         body:
           "Le gain réel le plus sûr : travailler sur du matériel public et des documents internes qui ne contiennent aucun identifiant de client.",
         phase: "Premier déploiement",
       },
       {
-        n: "04",
         title: "Le dossier d'inspection",
         body:
           "La trace écrite de ce qui a été déployé, de ce que ça touche, de qui l'a approuvé et sur quelle base, tenue à jour plutôt qu'assemblée sur demande.",

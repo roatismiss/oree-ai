@@ -27,14 +27,14 @@ function Row({ label, href }: { label: string; href: string }) {
   );
 }
 
-export function PracticeAreas({ locale, index }: { locale: Locale; index: string }) {
+export function PracticeAreas({ locale }: { locale: Locale }) {
   const { services } = copy[locale];
 
   return (
     <section className="px-[10px] pt-[10px]">
       <div className="panel-wash overflow-hidden rounded-[20px] bg-craie px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[80px]">
         <Reveal>
-          <SectionMark index={index} label={services.eyebrow} tone="amber" />
+          <SectionMark label={services.eyebrow} tone="amber" />
         </Reveal>
 
         <SplitHeading top={services.titleTop} bottom={services.titleBottom} className="mt-2 text-ink" />

@@ -6,14 +6,14 @@ import { copy, localePath, type Locale } from "@/content/copy";
 /* The O·R·É·E mnemonic in the position it held on oree-conseil.ca: directly
    under the hero, before the Quebec figures. The letter carries the emphasis
    the old site gave it, so the four verbs read as one mark at a glance. */
-export function MethodGlance({ locale, index }: { locale: Locale; index: string }) {
+export function MethodGlance({ locale }: { locale: Locale }) {
   const { methodGlance } = copy[locale];
 
   return (
     <section className="px-[10px] pt-[10px]">
       <div className="panel-wash overflow-hidden rounded-[20px] bg-craie px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[80px]">
         <Reveal>
-          <SectionMark index={index} label={methodGlance.mnemonic} tone="amber" />
+          <SectionMark label={methodGlance.mnemonic} tone="amber" />
         </Reveal>
 
         <div className="mt-8 flex flex-wrap items-end justify-between gap-6">

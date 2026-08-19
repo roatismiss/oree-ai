@@ -38,28 +38,24 @@ export const method = {
     "Four movements across three days, on site or remotely. Each one produces something you keep, whether or not the mandate continues.",
   steps: [
     {
-      n: "01",
       fr: "Observer",
       en: "Observe",
       body:
         "We sit with the work as it is actually done, not as the procedure manual describes it. Dossiers, handoffs, the workarounds nobody documents.",
     },
     {
-      n: "02",
       fr: "Relever",
       en: "Uncover",
       body:
         "We map which tasks AI can genuinely carry and which it cannot. The second list matters more than the first, and it is the one most vendors skip.",
     },
     {
-      n: "03",
       fr: "Évaluer",
       en: "Evaluate",
       body:
         "We check each candidate against the obligations you actually carry: professional secrecy, Law 25, your order's guidance, and where the data would physically sit.",
     },
     {
-      n: "04",
       fr: "Engager",
       en: "Engage",
       body:

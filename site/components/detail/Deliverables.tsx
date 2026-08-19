@@ -1,6 +1,6 @@
 import { Reveal } from "../Reveal";
 
-type Item = { title: string; body: string; phase?: string; points?: string[] };
+type Item = { title: string; body: string; phase?: string };
 
 export function Deliverables({
   title,
@@ -41,18 +41,6 @@ export function Deliverables({
                 {d.phase && <p className="eyebrow mb-4 text-amber-ink">{d.phase}</p>}
                 <h3 className="h-row text-[22px] text-ink">{d.title}</h3>
                 <p className="mt-4 text-[15px] leading-[23px] text-grey">{d.body}</p>
-                {d.points && (
-                  <ul className="mt-5 flex flex-wrap gap-2">
-                    {d.points.map((p) => (
-                      <li
-                        key={p}
-                        className="rounded-full bg-mousse px-3 py-1 text-[13px] leading-[18px] text-olive-deep"
-                      >
-                        {p}
-                      </li>
-                    ))}
-                  </ul>
-                )}
               </div>
             </Reveal>
           ))}

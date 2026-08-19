@@ -2,7 +2,7 @@ import { Reveal } from "../Reveal";
 import { SectionMark } from "../SectionMark";
 import { copy, type Locale } from "@/content/copy";
 
-export function Method({ locale, index }: { locale: Locale; index: string }) {
+export function Method({ locale }: { locale: Locale }) {
   const { method } = copy[locale];
 
   return (
@@ -10,7 +10,7 @@ export function Method({ locale, index }: { locale: Locale; index: string }) {
       <div className="panel-wash relative overflow-hidden rounded-[20px] bg-craie px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[80px]">
         <div className="relative">
           <Reveal>
-            <SectionMark index={index} label={method.eyebrow} tone="amber" className="mb-10" />
+            <SectionMark label={method.eyebrow} tone="amber" className="mb-10" />
           </Reveal>
 
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start">
@@ -32,21 +32,14 @@ export function Method({ locale, index }: { locale: Locale; index: string }) {
               beside it, which keeps the two from ever drifting apart. */}
           <ol className="mt-14">
             {method.steps.map((s, i) => (
-              <Reveal key={s.n} delay={0.06 * i}>
+              <Reveal key={s.fr} delay={0.06 * i}>
                 <li className="grid gap-4 border-t border-hairline py-10 sm:grid-cols-[104px_minmax(0,1fr)] sm:gap-8 lg:gap-14 [&:last-child]:border-b">
-                  <div className="flex items-baseline gap-5 sm:block">
-                    {/* Grey, not amber: the section mark above this list is an
-                        amber "01" in the same eyebrow face, and a step numbered
-                        the same way read as the section number repeated. The
-                        step's real marker is the letter beneath it. */}
-                    <p className="eyebrow text-grey">{s.n}</p>
-                    <p
-                      aria-hidden
-                      className="font-display text-[52px] italic leading-none text-olive-deep sm:mt-4 lg:text-[68px]"
-                    >
-                      {s.fr.charAt(0)}
-                    </p>
-                  </div>
+                  <p
+                    aria-hidden
+                    className="font-display text-[52px] italic leading-none text-olive-deep lg:text-[68px]"
+                  >
+                    {s.fr.charAt(0)}
+                  </p>
 
                   <div>
                     <h3 className="h-row text-ink">

@@ -3,14 +3,14 @@ import { Reveal } from "../Reveal";
 import { SectionMark } from "../SectionMark";
 import { copy, localePath, type Locale } from "@/content/copy";
 
-export function SectorList({ locale, index }: { locale: Locale; index: string }) {
+export function SectorList({ locale }: { locale: Locale }) {
   const { sectorList } = copy[locale];
 
   return (
     <section className="px-[10px] pt-[10px]">
       <div className="panel-wash overflow-hidden rounded-[20px] bg-sand px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[90px]">
         <Reveal>
-          <SectionMark index={index} className="mb-8" />
+          <SectionMark className="mb-8" />
         </Reveal>
         <Reveal>
           <h2 className="h-display text-ink">{sectorList.title}</h2>
@@ -23,9 +23,6 @@ export function SectorList({ locale, index }: { locale: Locale; index: string })
                   rules are never drawn in black. */}
               <div className="border-t border-hairline py-7 last:border-b">
                 <div className="flex items-baseline gap-5">
-                  <span className="eyebrow shrink-0 text-grey">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
                   <Link
                     href={localePath(locale, `/sectors/${s.slug}`)}
                     className="h-row text-[22px] text-ink underline-offset-[6px] transition-colors duration-300 hover:text-olive-deep hover:underline"

@@ -3,7 +3,7 @@ import { Reveal } from "../Reveal";
 import { SectionMark } from "../SectionMark";
 import { copy, localePath, type Locale } from "@/content/copy";
 
-export function ServiceList({ locale, index }: { locale: Locale; index: string }) {
+export function ServiceList({ locale }: { locale: Locale }) {
   const { serviceList, serviceDetails, ui } = copy[locale];
 
   /** Card names are the join key to the detail pages, per locale. */
@@ -14,7 +14,7 @@ export function ServiceList({ locale, index }: { locale: Locale; index: string }
     <section className="px-[10px] pt-[10px]">
       <div className="panel-wash overflow-hidden rounded-[20px] bg-sand px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[90px]">
         <Reveal>
-          <SectionMark index={index} label={serviceList.eyebrow} tone="ink" />
+          <SectionMark label={serviceList.eyebrow} tone="ink" />
         </Reveal>
         <Reveal delay={0.06}>
           <h2 className="h-display mt-8 text-ink">{serviceList.title}</h2>
@@ -26,7 +26,6 @@ export function ServiceList({ locale, index }: { locale: Locale; index: string }
               <article className="rounded-[16px] bg-light p-8 lg:p-10">
                 <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-14">
                   <div className="flex items-start gap-6">
-                    <span className="h-row shrink-0 text-amber-ink">{s.n}</span>
                     <h3 className="h-row text-[34px] leading-[1.05] text-ink">{s.name}</h3>
                   </div>
 

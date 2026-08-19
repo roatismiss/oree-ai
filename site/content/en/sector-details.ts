@@ -18,7 +18,7 @@ export type SectorDetail = {
   situation: string[];
   facts: { label: string; value: string }[];
   /** Where a mandate typically starts for this profession. */
-  startingPoints: { n: string; title: string; body: string; phase: string }[];
+  startingPoints: { title: string; body: string; phase: string }[];
   /** What the profession gets out of it, in its own terms. */
   outcomes: { title: string; body: string }[];
   notThis: string;
@@ -60,28 +60,24 @@ export const sectorDetails: SectorDetail[] = [
     ],
     startingPoints: [
       {
-        n: "01",
         title: "The repetitive task that eats the most time",
         body:
           "Identifying the weekly task that takes the longest and matters least strategically, often data entry, filing or repetitive writing, and checking whether AI can genuinely lighten it.",
         phase: "Usually first",
       },
       {
-        n: "02",
         title: "Sorting through information",
         body:
           "Finding an answer quickly in your documents, contracts or emails, without rereading everything each time.",
         phase: "Early",
       },
       {
-        n: "03",
         title: "First drafts of communications",
         body:
           "Customer replies, product descriptions, posts: a first draft generated, always reviewed before it goes out.",
         phase: "Once the basics are in place",
       },
       {
-        n: "04",
         title: "The basics you have to meet",
         body:
           "Checking what Law 25 already requires of you, even at small scale, and making sure nothing new puts you offside.",
@@ -131,28 +127,24 @@ export const sectorDetails: SectorDetail[] = [
     ],
     startingPoints: [
       {
-        n: "01",
         title: "Grant reports and funding applications",
         body:
           "The recurring narrative sections, budget tables and outcome summaries funders ask for every cycle, drafted from your own past reports and reviewed before it goes out.",
         phase: "Usually first",
       },
       {
-        n: "02",
         title: "Donor and volunteer records",
         body:
           "Cleaning up and organizing the lists that live across spreadsheets, email threads and someone's memory, so the information is usable and the Law 25 obligations attached to it are traceable.",
         phase: "Early",
       },
       {
-        n: "03",
         title: "Donor and partner correspondence",
         body:
           "First drafts of thank-you letters, update newsletters and partner emails. The volume work, not the relationship itself.",
         phase: "Once the basics hold",
       },
       {
-        n: "04",
         title: "Board governance records",
         body:
           "Policies, conflict-of-interest registers, and the Law 25 documentation the board is ultimately responsible for, kept current rather than assembled under pressure before a meeting.",
@@ -204,28 +196,24 @@ export const sectorDetails: SectorDetail[] = [
     ],
     startingPoints: [
       {
-        n: "01",
         title: "Intake and file assembly",
         body:
           "The gathering of documents before a file is workable. High volume, low judgment, and the easiest place to give time back without going near the act.",
         phase: "Usually first",
       },
       {
-        n: "02",
         title: "Reading long documents",
         body:
           "Asking questions of a title, a servitude or a prior deed and getting an answer that cites the clause it came from, so verification stays a click away.",
         phase: "Early",
       },
       {
-        n: "03",
         title: "First drafts of standard clauses",
         body:
           "Repetitive clauses drafted from your own precedents, with the notary reviewing and signing. It proposes, you decide.",
         phase: "Once trust is earned",
       },
       {
-        n: "04",
         title: "The register work",
         body:
           "Consents, retention, and the Law 25 records that sit underneath all of it, kept current rather than assembled when asked.",
@@ -277,28 +265,24 @@ export const sectorDetails: SectorDetail[] = [
     ],
     startingPoints: [
       {
-        n: "01",
         title: "What is already in use",
         body:
           "An honest inventory of the tools in the building, including the ones nobody put on a form. This is almost always the first surprise.",
         phase: "Week one",
       },
       {
-        n: "02",
         title: "Intake and conflicts",
         body:
           "Structuring new matters as they arrive. Volume work with clear rules, where the gain is real and the risk is containable.",
         phase: "Usually first",
       },
       {
-        n: "03",
         title: "First-pass drafting",
         body:
           "Standard documents drafted from your precedents, stopping at a visible checkpoint. The associate reviews, the partner signs, and the file records both.",
         phase: "After the policy exists",
       },
       {
-        n: "04",
         title: "The written position",
         body:
           "A short internal standard covering what may be delegated and where a human must stand. Short enough that people read it.",
@@ -350,28 +334,24 @@ export const sectorDetails: SectorDetail[] = [
     ],
     startingPoints: [
       {
-        n: "01",
         title: "Surfacing what is happening",
         body:
           "A no-blame inventory of how the team is already using these tools. It works only if it is genuinely no-blame, so that is how we run it.",
         phase: "First",
       },
       {
-        n: "02",
         title: "Drawing the line on sensitive data",
         body:
           "Which categories of employee information may never go near an external tool, written plainly enough to be followed under time pressure.",
         phase: "Immediately after",
       },
       {
-        n: "03",
         title: "Correspondence and drafting",
         body:
           "Where the genuine gain is: policy drafts, job descriptions, first passes at routine correspondence, all stopping short of anything about a named individual.",
         phase: "Once the line is drawn",
       },
       {
-        n: "04",
         title: "The training record",
         body:
           "Documented supervision training that serves the 2027 requirement and gives the team a standard they can actually apply.",
@@ -423,28 +403,24 @@ export const sectorDetails: SectorDetail[] = [
     ],
     startingPoints: [
       {
-        n: "01",
         title: "The data question first",
         body:
           "Where information would physically sit, who can access it, under whose jurisdiction, and what the supplier commits to in writing rather than in marketing.",
         phase: "Before anything else",
       },
       {
-        n: "02",
         title: "Reading the terms properly",
         body:
           "Supplier agreements read for what they actually permit, including training on your inputs and sub-processor rights. This eliminates more candidates than any feature comparison.",
         phase: "Shortlisting",
       },
       {
-        n: "03",
         title: "Research and summarisation",
         body:
           "The safest genuine gain: working over public material and internal documents that contain no client identifiers.",
         phase: "First deployment",
       },
       {
-        n: "04",
         title: "The examiner file",
         body:
           "The written record of what was deployed, what it touches, who approved it and on what basis, kept current rather than assembled on request.",

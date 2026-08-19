@@ -14,7 +14,6 @@ export type ServiceDetail = {
   /** Stable id shared by the fr/en pair, for cross-locale slug lookup. */
   key: string;
   slug: string;
-  n: string;
   name: string;
   eyebrow: string;
   /** Hero lines, split the way the display heading wants them. */
@@ -35,8 +34,8 @@ export type ServiceDetail = {
    * one, and the paths open once the plan is delivered.
    *
    * Deliberately unnumbered. O·R·É·E is exactly four letters, so numbering
-   * these 05 and 06 would break the mnemonic the numerals stand for — the same
-   * confusion the section numbering was just fixed for.
+   * these 05 and 06 would break the mnemonic the numerals stand for. The
+   * diagnostic steps are now the only numbered thing on the site.
    */
   processBefore?: { title: string; body: string; phase: string };
   processAfter?: {
@@ -47,11 +46,16 @@ export type ServiceDetail = {
     paths: { name: string; body: string }[];
   };
   /**
-   * `phase` and `points` exist so the diagnostic's named tools can be shown
-   * the way the old site's deliverables page showed them: grouped by the day
-   * that produces them, with the Orée grid's five dimensions spelled out.
+   * `phase` exists so the diagnostic's named tools can be shown the way the
+   * old site's deliverables page showed them: grouped by the day that
+   * produces them.
+   *
+   * There was a `points` field too, rendering the Orée grid's five dimensions
+   * and the matrix's three axes as tags under the card. The client struck
+   * both: the body above each card already names them in a sentence, and the
+   * tags repeated the sentence in a heavier voice.
    */
-  deliverables: { title: string; body: string; phase?: string; points?: string[] }[];
+  deliverables: { title: string; body: string; phase?: string }[];
   /** Optional lede above the deliverables grid. */
   deliverablesIntro?: string;
   /**
@@ -61,6 +65,23 @@ export type ServiceDetail = {
   pricing?: {
     eyebrow: string;
     tiers: { label: string; body: string }[];
+    /** What the range is contingent on. Named by the client: the figures
+        assume a mandate of two to three field interviews. */
+    note: string;
+  };
+  /**
+   * Radar Loi 25 only. The tool reads a client's AI-touched processes against
+   * three Law 25 obligations and puts a risk level on each, so what it is and
+   * what it is not carry equal weight and get their own section rather than a
+   * card in the deliverables grid.
+   */
+  radar?: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    is: { title: string; paragraphs: string[] };
+    isNot: { title: string; paragraphs: string[] };
+    closing: string;
   };
   /** Honest scope limit. Says what the service is not. */
   notThis: string;
@@ -71,9 +92,8 @@ export const serviceDetails: ServiceDetail[] = [
   {
     key: "diagnostic",
     slug: "diagnostic",
-    n: "01",
     name: "Orée Diagnostic",
-    eyebrow: "Service 01 · The starting point",
+    eyebrow: "Service · The starting point",
     titleTop: "Three days,",
     titleBottom: "with you",
     lede:
@@ -86,7 +106,7 @@ export const serviceDetails: ServiceDetail[] = [
     ],
     facts: [
       { label: "Format", value: "On site or remote" },
-      { label: "Duration", value: "Three consecutive days" },
+      { label: "Duration", value: "Three days over two weeks" },
       { label: "Who takes part", value: "You and the staff who do the work" },
       { label: "Fee", value: "Fixed, quoted before we begin" },
       { label: "You end with", value: "A costed action plan" },
@@ -163,13 +183,11 @@ export const serviceDetails: ServiceDetail[] = [
         phase: "Day 1 · Observe and uncover",
         title: "The Orée grid",
         body: "The practice's own instrument. Every friction is read across five dimensions, so nothing is filed as a tooling problem when it is a governance one.",
-        points: ["Cognitive", "Process", "Cultural", "Technical", "Governance"],
       },
       {
         phase: "Day 2 · Evaluate",
         title: "Prioritization matrix",
         body: "Effort, value and risk scored for each lead, so quick wins are separated from the deeper projects rather than mixed in with them.",
-        points: ["Effort", "Value", "Risk"],
       },
       {
         phase: "Day 3 · Engage",
@@ -209,6 +227,7 @@ export const serviceDetails: ServiceDetail[] = [
           body: "A reduced rate applies to nonprofits, between $1,500 and $3,000, because these are settings Orée deliberately chooses to invest in.",
         },
       ],
+      note: "This rate is provided as an estimate for an engagement involving 2 to 3 field interviews. Beyond this scope, the rate will be refined with you before the mandate is confirmed.",
     },
     notThis:
       "The diagnostic does not install anything, and it does not commit you to a second mandate. If the honest answer is that AI has little to offer your practice this year, that is what the plan will say.",
@@ -221,9 +240,8 @@ export const serviceDetails: ServiceDetail[] = [
   {
     key: "training",
     slug: "training",
-    n: "02",
     name: "Orée Training",
-    eyebrow: "Service 02 · Building team capability",
+    eyebrow: "Service · Building team capability",
     /* The team is not learning O·R·É·E — it is learning to work the tools the
        diagnostic selected for them. */
     titleTop: "The team",
@@ -265,9 +283,8 @@ export const serviceDetails: ServiceDetail[] = [
   {
     key: "support",
     slug: "support",
-    n: "03",
     name: "Orée Support",
-    eyebrow: "Service 03 · The rollout",
+    eyebrow: "Service · The rollout",
     titleTop: "Until it holds",
     titleBottom: "Without us",
     lede:
@@ -306,9 +323,8 @@ export const serviceDetails: ServiceDetail[] = [
   {
     key: "law-25-radar",
     slug: "law-25-radar",
-    n: "04",
     name: "Law 25 Radar",
-    eyebrow: "Service 04 · The watch",
+    eyebrow: "Service · Risk mapping",
     titleTop: "Know where",
     titleBottom: "You stand",
     /* The Radar is an AI-process risk mapping tool, not a watch. The sentence
@@ -317,33 +333,55 @@ export const serviceDetails: ServiceDetail[] = [
     lede:
       "The Radar maps every process in your organization that AI touches, and finds where the privacy impact assessment, the notice to the people concerned and the human review are real — or merely symbolic. The full map is built with you during the Orée Diagnostic.",
     problem: [
-      "Consents, processing registers and incident records are the first things requested in a review and usually the last things prepared. They are not difficult, but they drift: a new tool is added, a supplier changes its terms, a retention period lapses, and the register no longer matches the practice.",
-      "The Radar keeps the gap from opening. It is deliberately unglamorous work, and it is the work that determines what happens when a question arrives.",
+      "An organization can hold an impeccable policy and work in ways that depart from it: a privacy impact assessment never revisited after a tool was added, notice to affected individuals buried in a page of terms, human review that amounts to a click on approve.",
+      "The Radar reads the processes one at a time and names which ones hold, which ones only appear to, and which need correcting before a question arrives.",
     ],
     facts: [
-      { label: "Format", value: "Ongoing watch" },
-      { label: "Scope", value: "Consents, registers, incidents" },
-      { label: "Frameworks", value: "Law 25 and PIPEDA" },
-      { label: "Reporting", value: "A current position, on request" },
-      { label: "You end with", value: "Records that match reality" },
-      { label: "Cancellation", value: "Any time, records stay yours" },
+      { label: "Format", value: "Process mapping" },
+      { label: "Scope", value: "The processes AI touches" },
+      { label: "What is examined", value: "Impact assessment, notice, human review" },
+      { label: "Frameworks", value: "Law 25" },
+      { label: "You end with", value: "A risk level for each process" },
+      { label: "Validation", value: "Every high risk reviewed with legal counsel" },
     ],
     deliverables: [
       {
-        title: "Current registers",
-        body: "Processing, consent and incident records kept in step with what the practice actually does.",
+        title: "The process map",
+        body: "Every AI-touched use case, recorded during interviews and on-site observation — what the process actually does, not what the policy says it does.",
       },
       {
-        title: "A change log",
-        body: "What moved, when, and what was done about it. The narrative a reviewer will want alongside the registers.",
+        title: "A risk level for each process",
+        body: "High, medium, or low. It prioritizes the conversation; it does not settle a question of compliance.",
       },
       {
-        title: "A written position",
-        body: "Where you stand against your obligations, available on request rather than assembled under pressure.",
+        title: "A remediation path",
+        body: "For each gap identified, what would have to change and in what order, carried into the diagnostic report.",
       },
     ],
+    radar: {
+      eyebrow: "The tool",
+      title: "What it is, what it isn't",
+      intro:
+        "Radar Loi 25 is one of the tools used during an Orée Diagnostic. It maps, process by process, every AI-touched use case at a client, and pinpoints where three key obligations under Quebec's Law 25 are genuinely met — or only appear to be: the privacy impact assessment (s. 3.3), notice to affected individuals, and human review of decisions (s. 12.1).",
+      is: {
+        title: "What the Radar is",
+        paragraphs: [
+          "A field tool, filled out during interviews and on-site observation, mandate by mandate — not a remote audit based on written policy. It pushes toward concrete questions rather than stated intentions: how long does validation actually take, on average? Does the person responsible open the file, or just click approve? That kind of digging is what separates genuine oversight from symbolic oversight.",
+          "Each mapped process gets an operational risk level — high, medium, or low — used to prioritize the conversation and structure the diagnostic report delivered to the client, with a clear remediation path for each gap identified.",
+        ],
+      },
+      isNot: {
+        title: "What the Radar isn't",
+        paragraphs: [
+          "It is not a legal verdict. The risk level shown is an operational estimate, not a compliance conclusion: any high- or medium-risk case is validated with a qualified legal advisor before a conclusion is shared with the client.",
+          "Nor is it an automated audit tool that replaces human judgment — it equips it. The Radar directs attention and speeds up the diagnostic; it doesn't substitute for the expertise of the person conducting the interview, or for legal counsel's opinion.",
+        ],
+      },
+      closing:
+        "That is the same logic that governs the whole practice: AI drafts, the human decides.",
+    },
     notThis:
-      "The Radar is not legal advice and does not replace your counsel. It keeps your records current and flags what has moved; the legal judgment stays where it belongs.",
+      "The Radar is not legal advice and does not replace your counsel. Any high- or medium-risk case is validated with a qualified legal advisor before a conclusion reaches you; the legal judgment stays where it belongs.",
     image: "/img/sector-4.png",
   },
 

@@ -42,6 +42,7 @@ import { ArticleHero } from "@/components/insights/ArticleHero";
 import { ArticleBody } from "@/components/insights/ArticleBody";
 import { DetailHero } from "@/components/detail/DetailHero";
 import { Overview } from "@/components/detail/Overview";
+import { Radar } from "@/components/detail/Radar";
 import { Process } from "@/components/detail/Process";
 import { Deliverables } from "@/components/detail/Deliverables";
 
@@ -69,24 +70,21 @@ export function HomePage({ locale }: P) {
           <Team locale={locale} extended />
         </div>
         {/* The page's one dark, full-bleed moment — closes the founder intro
-            before the numbered sections open. Everything above and below is
-            an inset ivory panel. */}
+            before the method and offer sections open. Everything above and
+            below is an inset ivory panel. */}
         <Refrain locale={locale} />
-        {/* Section numbers are passed in, not baked into the components: each
-            page runs its own count from 01, and the same component appearing
-            in a different position elsewhere no longer drags its number along. */}
         <div id="method">
-          <MethodGlance locale={locale} index="01" />
+          <MethodGlance locale={locale} />
         </div>
         <div id="services">
-          <PracticeAreas locale={locale} index="02" />
+          <PracticeAreas locale={locale} />
         </div>
-        <WhyFirm locale={locale} index="03" />
+        <WhyFirm locale={locale} />
         <CtaBand locale={locale} />
         <Frameworks locale={locale} />
         <Cta locale={locale} />
         <div id="insights">
-          <Blog locale={locale} index="04" />
+          <Blog locale={locale} />
         </div>
       </main>
       <Footer locale={locale} />
@@ -114,8 +112,9 @@ export function AboutPage({ locale }: P) {
         {/* Her portrait and background lead the page, directly under the
             title, rather than sitting below the prose. Not `extended` here:
             Story.tsx below carries those same paragraphs, and running both
-            printed the biography twice on one page. */}
-        <Team locale={locale} showCta={false} />
+            printed the biography twice on one page. No marquees either: they
+            cut the biography in half on its own page. */}
+        <Team locale={locale} showCta={false} marquees={false} />
         <div id="bio">
           <Story locale={locale} />
         </div>
@@ -273,7 +272,7 @@ export function ApproachPage({ locale }: P) {
       <Nav locale={locale} />
       <main>
         <ApproachHero locale={locale} />
-        <Method locale={locale} index="01" />
+        <Method locale={locale} />
         <DeliverablesLink locale={locale} label={deliverablesPage.link} />
         <Cta locale={locale} title={approachCta.title} />
       </main>
@@ -305,12 +304,10 @@ export function ServicesPage({ locale }: P) {
       <Nav locale={locale} />
       <main>
         <ServicesHero locale={locale} />
-        {/* Starts at 01: this page has no section above the service list, and
-            the list used to be numbered 02 with no 01 anywhere before it. */}
-        <ServiceList locale={locale} index="01" />
+        <ServiceList locale={locale} />
         <DeliverablesLink locale={locale} label={deliverablesPage.link} />
-        <Included locale={locale} index="02" />
-        <Faq locale={locale} index="03" />
+        <Included locale={locale} />
+        <Faq locale={locale} />
         <Cta locale={locale} title={servicesCta.title} />
       </main>
       <Footer locale={locale} />
@@ -325,7 +322,7 @@ export function SectorsPage({ locale }: P) {
       <Nav locale={locale} />
       <main>
         <SectorsHero locale={locale} />
-        <SectorList locale={locale} index="01" />
+        <SectorList locale={locale} />
         <Cta locale={locale} title={sectorsCta.title} />
       </main>
       <Footer locale={locale} />
@@ -376,6 +373,11 @@ function Pricing({
           ))}
         </div>
 
+        <Reveal delay={0.14}>
+          <p className="mt-8 max-w-[720px] text-[15px] leading-[23px] text-olive-deep">
+            {pricing.note}
+          </p>
+        </Reveal>
       </div>
     </section>
   );
@@ -402,6 +404,9 @@ export function ServiceDetailPage({ locale, slug }: P & { slug: string }) {
         {/* Fees sit directly under the overview, not below the fold: the price
             is the first thing a visitor to the diagnostic page looks for. */}
         {service.pricing && <Pricing pricing={service.pricing} />}
+        {/* Radar Loi 25 only: what the tool is and what it is not, before the
+            page lists anything it produces. */}
+        {service.radar && <Radar radar={service.radar} />}
         {/* Diagnostic only — see the note on ServiceDetail.process. */}
         {service.process && (
           <Process

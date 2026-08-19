@@ -1,18 +1,19 @@
 import { Reveal } from "./Reveal";
 import { copy, type Locale } from "@/content/copy";
 
-/* Why now: the four sourced Quebec figures, in a clean quiet grid. */
+/* Why now: the four sourced Quebec figures, in a clean quiet grid.
+
+   No eyebrow above the grid. It read "Pourquoi maintenant · Le contexte
+   québécois", directly beneath a hero whose heading is "Pourquoi
+   maintenant — Le contexte québécois": the same words twice, one
+   scroll apart. The figures open the panel instead. */
 export function Stats({ locale }: { locale: Locale }) {
   const { stats } = copy[locale];
 
   return (
     <section className="px-[10px] pt-[10px]">
       <div className="panel-wash overflow-hidden rounded-[20px] bg-cream px-6 py-16 sm:px-10 lg:px-[120px] lg:py-[80px]">
-        <Reveal>
-          <p className="eyebrow text-amber-ink">{stats.eyebrow}</p>
-        </Reveal>
-
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {stats.items.map((s, i) => (
             <Reveal key={s.figure} delay={0.06 * i}>
               <div className="flex h-full flex-col rounded-[14px] bg-light p-7">

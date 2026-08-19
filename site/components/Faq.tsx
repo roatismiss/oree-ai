@@ -10,23 +10,27 @@ import { copy, type Locale } from "@/content/copy";
  * JavaScript, and the answers stay in the markup even while closed, so search
  * engines and assistive technology see all of them. The version before this
  * one rendered only the open item, which hid six answers from both.
+ *
+ * The heading is the plain question, not a claim. It read "Des réponses
+ * honnêtes, avant tout mandat" — a promise about how a mandate is sold, over a
+ * list that is half vocabulary (what a friction is, what the ISQ is). The
+ * heading now names the section and nothing else.
  */
-export function Faq({ locale, index }: { locale: Locale; index: string }) {
+export function Faq({ locale }: { locale: Locale }) {
   const { faq } = copy[locale];
 
   return (
     <section className="px-[10px] pt-[10px]">
       <div className="panel-wash overflow-hidden rounded-[20px] bg-light px-6 py-20 sm:px-10 lg:px-[130px] lg:py-[100px]">
         <Reveal>
-          <SectionMark index={index} label={faq.eyebrow} />
+          {/* No label on the mark: the heading below says the same word, and
+              SectionMark reserves the label slot for sections whose heading
+              does not already carry it. */}
+          <SectionMark />
         </Reveal>
 
         <Reveal delay={0.06}>
-          <h2 className="h-display-tight mt-8 text-ink">
-            {faq.titleTop}
-            <br />
-            {faq.titleBottom}
-          </h2>
+          <h2 className="h-display-tight mt-8 text-ink">{faq.title}</h2>
         </Reveal>
 
         <div className="mt-12 max-w-[820px] divide-y divide-hairline border-y border-hairline">

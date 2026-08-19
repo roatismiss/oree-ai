@@ -6,9 +6,12 @@ import { Reveal } from "../Reveal";
  * The fact cards used to open with one of the template's four grey glyphs,
  * cycled by position — so a fact about data residency might be introduced by a
  * huddle of people, and the same glyph would reappear three cards later meaning
- * something else. A number says what the mark could not: which fact this is,
- * out of how many. It also puts these cards in the same counting system as the
- * section rules elsewhere.
+ * something else. Those were replaced by a numeral, and the numeral is gone
+ * too: counting the facts implied an order they do not have (format, duration,
+ * who attends and fees are read in any order), and an amber numeral on the
+ * detail pages read as a section mark, which is the one thing amber numerals
+ * are reserved for. The rule the numeral sat on stays, keeping the card's
+ * opening measure and its height.
  *
  * The optional `object` image is gone with them; no caller ever passed one.
  */
@@ -43,11 +46,10 @@ export function Overview({
           {facts.map((f, i) => (
             <Reveal key={f.label} delay={0.05 * i}>
               <div className="h-full rounded-[14px] bg-light p-7">
-                <div className="flex items-center gap-4">
-                  <span className="eyebrow text-amber">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="h-px min-w-0 flex-1 bg-hairline" aria-hidden />
+                {/* Held at the eyebrow's 18px so dropping the numeral did not
+                    raise the label and shorten every card. */}
+                <div className="flex h-[18px] items-center">
+                  <span className="h-px w-full bg-hairline" aria-hidden />
                 </div>
                 <p className="mt-10 text-[13px] uppercase tracking-[0.04em] text-grey">
                   {f.label}

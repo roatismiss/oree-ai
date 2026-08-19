@@ -16,19 +16,17 @@ export const servicesHero = {
 
 const serviceCards: ServiceCard[] = [
     {
-      n: "01",
       name: "Diagnostic Orée",
       summary:
         "Trois jours consacrés à votre organisation — sur place ou à distance, selon ce qui convient le mieux. Nous observons le travail tel qu'il se fait vraiment, cartographions les tâches que l'IA peut porter et celles qu'elle ne peut pas, et confrontons chaque candidate aux obligations que vous détenez déjà.",
       meta: [
         { label: "Format", value: "Sur place ou à distance" },
-        { label: "Durée", value: "Trois jours" },
+        { label: "Durée", value: "Trois jours sur deux semaines" },
         { label: "Vous en ressortez avec", value: "Un plan d'action chiffré" },
       ],
       note: "À partir de 1 500 $ (OBNL) ou 3 000 $ — les autres services sont établis sur mesure.",
     },
     {
-      n: "02",
       name: "Formation Orée",
       summary:
         "Programme sur mesure en collaboration humain-IA, construit à partir des constats du diagnostic. Cohorte complète ou séance condensée selon la taille de l'organisation.",
@@ -39,7 +37,6 @@ const serviceCards: ServiceCard[] = [
       ],
     },
     {
-      n: "03",
       name: "Appui Orée",
       /* Sa formulation d'origine en tête : le suivi mensuel est ce qui définit
          le service dans son propre document, et il avait disparu. */
@@ -52,14 +49,16 @@ const serviceCards: ServiceCard[] = [
       ],
     },
     {
-      n: "04",
       name: "Radar Loi 25",
+      /* Rien n'est surveillé : le Radar cartographie des processus et nomme
+         les facteurs à risque. La formulation précédente promettait une veille
+         continue, ce que la pratique n'offre pas. */
       summary:
-        "Une veille continue sur les obligations qui bougent : consentements, registres de traitement, incidents. Vous savez où vous en êtes avant que quiconque ait l'occasion de le demander.",
+        "Une cartographie, processus par processus, des cas d'usage touchés par l'IA dans votre organisation. Elle repère où l'ÉFVP, l'information des personnes concernées et la révision humaine des décisions sont réelles — ou seulement en apparence — et attribue à chaque processus un niveau de risque opérationnel.",
       meta: [
-        { label: "Format", value: "Veille continue" },
-        { label: "Portée", value: "Consentements, registres, incidents" },
-        { label: "Vous en ressortez avec", value: "Une position à jour" },
+        { label: "Format", value: "Cartographie de processus" },
+        { label: "Portée", value: "Les processus touchés par l'IA" },
+        { label: "Vous en ressortez avec", value: "Un niveau de risque par processus" },
       ],
     },
 ];

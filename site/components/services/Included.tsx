@@ -2,7 +2,7 @@ import { Reveal } from "../Reveal";
 import { SectionMark } from "../SectionMark";
 import { copy, type Locale } from "@/content/copy";
 
-export function Included({ locale, index }: { locale: Locale; index: string }) {
+export function Included({ locale }: { locale: Locale }) {
   const { included } = copy[locale];
 
   return (
@@ -11,7 +11,7 @@ export function Included({ locale, index }: { locale: Locale; index: string }) {
         <Reveal>
           {/* No label: the section's own heading is the next thing on the page,
               so a caption here would only say it twice. */}
-          <SectionMark index={index} tone="amber" className="mb-10" />
+          <SectionMark tone="amber" className="mb-10" />
         </Reveal>
 
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-end">

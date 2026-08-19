@@ -38,28 +38,24 @@ export const method = {
     "Quatre temps répartis sur trois jours, sur place ou à distance. Chacun produit quelque chose que vous gardez, que le mandat se poursuive ou non.",
   steps: [
     {
-      n: "01",
       fr: "Observer",
       en: "Observe",
       body:
         "Nous nous assoyons avec le travail tel qu'il se fait vraiment, pas tel que le manuel de procédures le décrit. Les dossiers, les transferts, les contournements que personne ne documente.",
     },
     {
-      n: "02",
       fr: "Relever",
       en: "Uncover",
       body:
         "Nous cartographions les tâches que l'IA peut réellement porter et celles qu'elle ne peut pas. La deuxième liste compte davantage que la première, et c'est celle que la plupart des fournisseurs sautent.",
     },
     {
-      n: "03",
       fr: "Évaluer",
       en: "Evaluate",
       body:
         "Nous confrontons chaque candidate aux obligations que vous portez réellement : secret professionnel, Loi 25, les orientations de votre ordre, et l'endroit où les données se trouveraient physiquement.",
     },
     {
-      n: "04",
       fr: "Engager",
       en: "Engage",
       body:

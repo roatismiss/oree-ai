@@ -214,7 +214,6 @@ export const methodGlance = {
 
 /** Pourquoi maintenant : le contexte québécois. Chiffres sourcés uniquement. */
 export const stats = {
-  eyebrow: "Pourquoi maintenant · Le contexte québécois",
   titleTop: "Adoptée plus vite que",
   titleBottom: "Le travail n'est repensé",
   items: [
@@ -421,18 +420,14 @@ export const questions = {
 
 /** La FAQ prévue au mandat, la friction opérationnelle en premier. */
 export const faq: {
-  eyebrow: string;
-  titleTop: string;
-  titleBottom: string;
+  title: string;
   items: {
     question: string;
     answer: string;
     examples?: { title: string; note: string }[];
   }[];
 } = {
-  eyebrow: "Foire aux questions",
-  titleTop: "Des réponses honnêtes,",
-  titleBottom: "Avant tout mandat",
+  title: "Des questions ?",
   items: [
     {
       question: "Qu'est-ce qu'une friction opérationnelle ?",

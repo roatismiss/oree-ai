@@ -7,7 +7,6 @@
  */
 
 export type ServiceCard = {
-  n: string;
   name: string;
   summary: string;
   meta: { label: string; value: string }[];
@@ -25,19 +24,17 @@ export const servicesHero = {
 
 const serviceCards: ServiceCard[] = [
   {
-    n: "01",
     name: "Orée Diagnostic",
     summary:
       "Three days given to your organization — on site or remotely, whichever suits you best. We observe the work as it is actually done, map which tasks AI can carry and which it cannot, and check each candidate against the obligations you already hold.",
     meta: [
       { label: "Format", value: "On site or remote" },
-      { label: "Duration", value: "Three days" },
+      { label: "Duration", value: "Three days over two weeks" },
       { label: "You end with", value: "A costed action plan" },
     ],
     note: "From $1,500 (nonprofits) or $3,000 — the other services are scoped to fit.",
   },
   {
-    n: "02",
     name: "Orée Training",
     summary:
       "A custom human-AI collaboration program, built from the diagnostic's findings. Full cohort or condensed session, depending on the size of the organization.",
@@ -48,7 +45,6 @@ const serviceCards: ServiceCard[] = [
     ],
   },
   {
-    n: "03",
     name: "Orée Support",
     /* Her own wording first: monthly follow-up is what defines the service in
        her own document, and it had gone missing. */
@@ -61,14 +57,16 @@ const serviceCards: ServiceCard[] = [
     ],
   },
   {
-    n: "04",
     name: "Law 25 Radar",
+    /* Nothing is surveilled: the Radar maps processes and names the factors
+       at risk. The previous copy promised an ongoing watch, which the
+       practice does not offer. */
     summary:
-      "A continuous watch over the obligations that move: consents, processing registers, incident records. You know where you stand before anyone has occasion to ask.",
+      "A process-by-process map of every AI-touched use case in your organization. It pinpoints where the privacy impact assessment, notice to affected individuals, and human review of decisions are genuine — or only apparent — and gives each process an operational risk level.",
     meta: [
-      { label: "Format", value: "Ongoing watch" },
-      { label: "Scope", value: "Consents, registers, incidents" },
-      { label: "You end with", value: "A current position" },
+      { label: "Format", value: "Process mapping" },
+      { label: "Scope", value: "The processes AI touches" },
+      { label: "You end with", value: "A risk level per process" },
     ],
   },
 ];

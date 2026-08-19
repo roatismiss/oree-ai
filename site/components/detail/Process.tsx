@@ -1,8 +1,14 @@
 import { Reveal } from "../Reveal";
 
 /**
- * A numbered row per step, with the number set large in the accent colour on
- * the left and a phase pill on the right. Light surface, per the soft look.
+ * A row per step, with a phase pill on the right. Light surface, per the soft
+ * look.
+ *
+ * The left column holds a large numeral only where the number is the content:
+ * the diagnostic runs 01 to 04 across its three days, and dropping those would
+ * take the sequence with them. The sector pages list starting points that have
+ * no order — theirs was numbering for its own sake, and it renumbered itself
+ * every time a point moved, so they take the same rule the bookends use.
  */
 /** Bookend card. Same surface as a step, but the numeral slot holds a rule
     instead of a number: these frame the sequence, they are not part of it. */
@@ -45,7 +51,8 @@ export function Process({
 }: {
   eyebrow: string;
   title: string;
-  steps: { n: string; title: string; body: string; phase: string }[];
+  /**  only where the step is genuinely the nth of a sequence. */
+  steps: { n?: string; title: string; body: string; phase: string }[];
   before?: { title: string; body: string; phase: string };
   after?: {
     title: string;
@@ -74,12 +81,19 @@ export function Process({
 
         <ol className={`space-y-5 ${before ? "mt-5" : "mt-12"}`}>
           {steps.map((s, i) => (
-            <Reveal key={s.n} delay={0.06 * i}>
+            <Reveal key={s.title} delay={0.06 * i}>
               <li className="rounded-[16px] bg-light p-7 lg:p-9">
                 <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-10">
-                  <span className="font-display text-[40px] font-light leading-none text-olive-deep lg:w-[70px]">
-                    {s.n}
-                  </span>
+                  {s.n ? (
+                    <span className="font-display text-[40px] font-light leading-none text-olive-deep lg:w-[70px]">
+                      {s.n}
+                    </span>
+                  ) : (
+                    <span
+                      aria-hidden
+                      className="hidden h-px w-[38px] shrink-0 bg-olive-deep/35 lg:block lg:w-[70px]"
+                    />
+                  )}
 
                   <div className="flex-1">
                     <h3 className="h-row text-ink">{s.title}</h3>

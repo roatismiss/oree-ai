@@ -210,7 +210,6 @@ export const methodGlance = {
 
 /** Why now: the Quebec context. Sourced figures only, per the client brief. */
 export const stats = {
-  eyebrow: "Why now · The Quebec context",
   titleTop: "Adopted faster than",
   titleBottom: "The work is rethought",
   items: [
@@ -415,18 +414,14 @@ export const questions = {
 
 /** The FAQ mandated by the client brief, operational friction first. */
 export const faq: {
-  eyebrow: string;
-  titleTop: string;
-  titleBottom: string;
+  title: string;
   items: {
     question: string;
     answer: string;
     examples?: { title: string; note: string }[];
   }[];
 } = {
-  eyebrow: "Frequently asked",
-  titleTop: "Honest answers,",
-  titleBottom: "Before any mandate",
+  title: "Questions?",
   items: [
     {
       question: "What is an operational friction?",
